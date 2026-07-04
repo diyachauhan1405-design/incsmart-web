@@ -184,7 +184,7 @@ export default function ProjectsSection() {
         </div>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5 font-heading">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5 font-heading">
             Real Results. <br />
             <span className="text-gradient-cyan-lime font-bold">Trusted by Industry Leaders.</span>
           </h2>
@@ -246,12 +246,12 @@ export default function ProjectsSection() {
         </div>
 
         {/* Carousel Slide Wrapper */}
-        <div className="relative flex items-center justify-center mb-8">
+        <div className="relative flex items-center justify-center mb-8 px-10 sm:px-12 lg:px-14">
           
           {/* Navigation Prev */}
           <button 
             onClick={handlePrev}
-            className="absolute left-[-20px] lg:left-[-35px] z-20 w-10 h-10 rounded-full border border-white/10 bg-[#081325]/75 hover:bg-brand-cyan hover:border-brand-cyan text-white hover:text-[#07111D] flex items-center justify-center transition-all shadow-lg active:scale-95"
+            className="absolute left-0 sm:left-1 lg:left-2 z-20 w-10 h-10 rounded-full border border-white/10 bg-[#081325]/75 hover:bg-brand-cyan hover:border-brand-cyan text-white hover:text-[#07111D] flex items-center justify-center transition-all shadow-lg active:scale-95"
             aria-label="Previous Project"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -377,7 +377,7 @@ export default function ProjectsSection() {
           {/* Navigation Next */}
           <button 
             onClick={handleNext}
-            className="absolute right-[-20px] lg:right-[-35px] z-20 w-10 h-10 rounded-full border border-white/10 bg-[#081325]/75 hover:bg-brand-cyan hover:border-brand-cyan text-white hover:text-[#07111D] flex items-center justify-center transition-all shadow-lg active:scale-95"
+            className="absolute right-0 sm:right-1 lg:right-2 z-20 w-10 h-10 rounded-full border border-white/10 bg-[#081325]/75 hover:bg-brand-cyan hover:border-brand-cyan text-white hover:text-[#07111D] flex items-center justify-center transition-all shadow-lg active:scale-95"
             aria-label="Next Project"
           >
             <ChevronRight className="h-5 w-5" />

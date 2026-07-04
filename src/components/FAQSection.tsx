@@ -92,7 +92,7 @@ export default function FAQSection() {
 
         {/* Heading & Description */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5 font-heading">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5 font-heading">
             Everything You Need to Know <br /> Before <span className="text-gradient-cyan-lime font-bold">Getting Started</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
@@ -116,13 +116,13 @@ export default function FAQSection() {
                 {/* Header Toggle */}
                 <button
                   onClick={() => toggleFAQ(idx)}
-                  className="w-full flex items-center justify-between p-5 text-left transition-colors cursor-pointer select-none group"
+                  className="w-full flex items-center justify-between p-5 text-left transition-colors cursor-pointer select-none group gap-3"
                 >
-                  <div className="flex items-center space-x-4">
-                    <div className={`w-9 h-9 rounded-xl border flex items-center justify-center transition-transform duration-300 group-hover:scale-105 ${faq.iconBg} ${faq.iconColor}`}>
+                  <div className="flex items-center space-x-4 min-w-0 flex-1">
+                    <div className={`w-9 h-9 rounded-xl border flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-105 ${faq.iconBg} ${faq.iconColor}`}>
                       <FAQIcon className="h-4.5 w-4.5" />
                     </div>
-                    <span className="text-sm sm:text-base font-bold text-slate-200 group-hover:text-white transition-colors">
+                    <span className="text-sm sm:text-base font-bold text-slate-200 group-hover:text-white transition-colors min-w-0">
                       {faq.question}
                     </span>
                   </div>
@@ -141,16 +141,16 @@ export default function FAQSection() {
                     isOpen ? 'max-h-[500px] opacity-100 border-t border-white/5' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="p-6 flex flex-col md:flex-row gap-6 items-center md:items-start justify-between">
+                  <div className="p-6 flex flex-col lg:flex-row gap-6 items-center lg:items-start justify-between">
                     
                     {/* Answer text */}
-                    <div className="flex-1 text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    <div className="flex-1 min-w-0 text-slate-300 text-xs sm:text-sm leading-relaxed">
                       {faq.answer}
                     </div>
 
                     {/* Custom SVG telemetry visual for the first open item */}
                     {isOpen && idx === 0 && (
-                      <div className="flex-shrink-0 w-[200px] h-[110px] bg-[#0c1a2d] border border-white/10 rounded-xl p-3.5 shadow-2xl relative overflow-hidden flex items-center justify-between select-none">
+                      <div className="flex-shrink-0 w-full max-w-[200px] mx-auto lg:mx-0 h-[110px] bg-[#0c1a2d] border border-white/10 rounded-xl p-3.5 shadow-2xl relative overflow-hidden flex items-center justify-between select-none">
                         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                         
                         {/* Cylinder Graphic */}

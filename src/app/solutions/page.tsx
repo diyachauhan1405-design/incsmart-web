@@ -253,7 +253,7 @@ export default function SolutionsPage() {
 
   return (
     <div className="min-h-screen bg-[#07111D] text-white flex flex-col overflow-hidden">
-      <Header isLoggedIn={true} />
+      <Header />
 
       <main className="flex-grow pt-20">
         
@@ -270,7 +270,7 @@ export default function SolutionsPage() {
               <span className="w-8 h-[1.5px] bg-[#06B6D4]"></span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6 font-heading">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6 font-heading">
               Intelligent Solutions <br />
               Built for Modern <br />
               <span className="text-brand-cyan">Infrastructure.</span>
@@ -385,7 +385,7 @@ export default function SolutionsPage() {
                           {sol.telemetry.type === "iot" && (
                             <div className="text-center space-y-2">
                               <span className="text-xs font-semibold text-slate-400">Total Active Telemetry Nodes</span>
-                              <div className="text-5xl font-black text-brand-blue font-heading tracking-tight">142</div>
+                              <div className="text-3xl sm:text-5xl font-black text-brand-blue font-heading tracking-tight">142</div>
                               <span className="text-[10px] text-emerald-400 font-bold block">Efficiency: 99.4%</span>
                             </div>
                           )}
@@ -426,7 +426,7 @@ export default function SolutionsPage() {
                           {sol.telemetry.type === "bms" && (
                             <div className="text-center space-y-2">
                               <span className="text-xs font-semibold text-slate-400">Total Building Occupancy</span>
-                              <div className="text-5xl font-black text-brand-cyan font-heading">84%</div>
+                              <div className="text-3xl sm:text-5xl font-black text-brand-cyan font-heading">84%</div>
                               <span className="text-[10px] text-slate-400 font-bold block">Lights Active: 62 / 80</span>
                             </div>
                           )}
@@ -530,7 +530,7 @@ export default function SolutionsPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-6 relative">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 relative">
               {techPlatformSteps.map((step, i) => {
                 const Icon = step.icon;
                 return (
@@ -546,7 +546,7 @@ export default function SolutionsPage() {
                     </h4>
 
                     {i < 5 && (
-                      <div className="hidden md:block absolute top-8 left-[70%] w-[60%] h-[2px] bg-gradient-to-r from-brand-blue/25 to-brand-blue/5 z-0 pointer-events-none">
+                      <div className="hidden lg:block absolute top-8 left-[70%] w-[60%] h-[2px] bg-gradient-to-r from-brand-blue/25 to-brand-blue/5 z-0 pointer-events-none">
                         <div className="absolute right-0 -top-1 w-2.5 h-2.5 border-t-2 border-r-2 border-brand-blue/35 transform rotate-45"></div>
                       </div>
                     )}
@@ -569,7 +569,7 @@ export default function SolutionsPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-8 gap-3 sm:gap-4">
               {industriesList.map((ind, i) => {
                 const Icon = ind.icon;
                 return (

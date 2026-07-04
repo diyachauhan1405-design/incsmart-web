@@ -122,7 +122,7 @@ export default function SolutionsSection() {
           {/* Left Column: Heading, Description & Isometric Graphic */}
           <div className="lg:col-span-7 flex flex-col space-y-6">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5 font-heading">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5 font-heading">
                 Intelligent Solutions for <br />
                 <span className="text-gradient-cyan-lime font-bold">Smarter</span> Infrastructure
               </h2>
@@ -171,7 +171,7 @@ export default function SolutionsSection() {
                         </div>
                         
                         {/* Label Badge */}
-                        <div className={`mt-1.5 px-2 py-0.5 rounded text-[8px] font-bold tracking-wider uppercase whitespace-nowrap border transition-all duration-300 ${
+                        <div className={`mt-1.5 px-2 py-0.5 rounded text-[8px] font-bold tracking-wider uppercase border transition-all duration-300 text-center max-w-[72px] sm:max-w-none sm:whitespace-nowrap ${
                           isActive
                             ? 'bg-white text-[#07111D] border-white'
                             : 'bg-[#081325]/95 text-slate-400 border-white/10'

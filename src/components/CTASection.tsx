@@ -59,7 +59,7 @@ export default function CTASection() {
             </div>
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-heading">
               Ready to <br className="hidden sm:inline" />
               <span className="text-gradient-cyan-lime font-bold">Transform Your Infrastructure?</span>
             </h2>

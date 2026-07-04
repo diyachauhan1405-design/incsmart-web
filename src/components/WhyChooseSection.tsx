@@ -157,7 +157,7 @@ export default function WhyChooseSection() {
 
         {/* Heading & Subtitle */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5 font-heading">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5 font-heading">
             Engineering Excellence That <br /> Delivers <span className="text-gradient-cyan-lime font-bold">Measurable Results</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-400 leading-relaxed">

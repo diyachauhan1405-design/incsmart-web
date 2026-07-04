@@ -22,16 +22,11 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import IndiaMap from "@/components/IndiaMap";
+import { storeLocations } from "@/data/storeLocations";
 
 // Graphic resources
 import cloudDiagram from "../../../public/cloud-diagram.png";
-
-const locations = [
-  { name: "Surat, Gujarat", role: "Head Office", top: "52%", left: "42%", color: "bg-purple-500" },
-  { name: "Mumbai, Maharashtra", role: "Regional Office", top: "68%", left: "44%", color: "bg-emerald-500" },
-  { name: "New Delhi", role: "Regional Office", top: "30%", left: "48%", color: "bg-indigo-500" },
-  { name: "Bengaluru, Karnataka", role: "Regional Office", top: "82%", left: "50%", color: "bg-amber-500" }
-];
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -62,7 +57,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-[#07111D] text-white flex flex-col overflow-hidden">
-      <Header isLoggedIn={true} />
+      <Header />
 
       <main className="flex-grow pt-20">
         
@@ -81,7 +76,7 @@ export default function ContactPage() {
                   </span>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.15] font-heading">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15] font-heading">
                   Let's Build Smarter <br />
                   Infrastructure <span className="text-brand-cyan">Together.</span>
                 </h1>
@@ -90,12 +85,12 @@ export default function ContactPage() {
                   Have a project in mind or need more information about our solutions? Our team is here to help you transform your facilities with intelligent IoT, automation, and real-time insights.
                 </p>
 
-                <div className="flex items-center gap-4">
-                  <Link href="#form-section" className="bg-brand-blue hover:bg-blue-600 active:scale-95 text-white rounded-lg px-6 py-3 text-xs font-bold transition-all shadow-md flex items-center gap-2">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+                  <Link href="#form-section" className="bg-brand-blue hover:bg-blue-600 active:scale-95 text-white rounded-lg px-6 py-3 text-xs font-bold transition-all shadow-md flex items-center justify-center gap-2 w-full sm:w-auto">
                     <span>Send us a Message</span>
                     <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <a href="tel:+918980001836" className="border border-white/10 hover:bg-white/5 active:scale-95 text-white rounded-lg px-6 py-3 text-xs font-semibold transition-all flex items-center gap-2">
+                  <a href="tel:+918980001836" className="border border-white/10 hover:bg-white/5 active:scale-95 text-white rounded-lg px-6 py-3 text-xs font-semibold transition-all flex items-center justify-center gap-2 w-full sm:w-auto">
                     <Phone className="w-4 h-4 text-brand-blue" />
                     <span>Talk to an Expert</span>
                   </a>
@@ -280,37 +275,12 @@ export default function ContactPage() {
               </div>
 
               {/* Map/Offices Column */}
-              <div className="lg:col-span-6 flex flex-col space-y-6">
-                <div>
-                  <h3 className="text-xl font-bold text-white font-heading">Our Offices</h3>
-                  <p className="text-xs text-slate-400 mt-1">We have a strong presence to serve you better.</p>
-                </div>
-
-                <div className="relative aspect-[4/3] rounded-3xl border border-white/5 bg-[#081325]/30 p-4 overflow-hidden group">
-                  {/* Styled simulated map */}
-                  <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                  
-                  {locations.map((loc, i) => (
-                    <div 
-                      key={i} 
-                      style={{ top: loc.top, left: loc.left }}
-                      className="absolute z-20 transform -translate-x-1/2 -translate-y-1/2 flex items-center space-x-2"
-                    >
-                      <span className={`w-3.5 h-3.5 rounded-full ${loc.color} border-2 border-white animate-pulse`}></span>
-                      <div className="bg-[#081325]/90 border border-white/10 rounded px-2 py-0.5 text-[8px] font-bold text-white whitespace-nowrap shadow-md">
-                        {loc.name} <span className="text-[7px] text-slate-400 font-normal">({loc.role})</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-5 flex items-center space-x-4">
-                  <Headphones className="w-6 h-6 text-brand-blue flex-shrink-0" />
-                  <div>
-                    <h5 className="text-xs font-bold text-white">Pan India Support</h5>
-                    <p className="text-[10px] text-slate-400 mt-1">Our team is available across India to deliver seamless support and timely service.</p>
-                  </div>
-                </div>
+              <div className="lg:col-span-6">
+                <IndiaMap
+                  locations={storeLocations}
+                  title="Our Offices"
+                  subtitle="We have a strong presence to serve you better."
+                />
               </div>
 
             </div>

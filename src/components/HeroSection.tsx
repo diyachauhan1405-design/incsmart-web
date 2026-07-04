@@ -177,9 +177,9 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
           <div className="lg:col-span-5 flex flex-col space-y-5 sm:space-y-6">
 
             {/* Tagline */}
-            <div className="flex items-center space-x-3">
-              <span className="w-8 h-[2px] bg-gradient-to-r from-brand-lime to-brand-cyan"></span>
-              <span className="text-[10px] font-semibold tracking-[0.2em] text-[#06B6D4] uppercase">
+            <div className="flex items-center space-x-3 min-w-0">
+              <span className="w-8 h-[2px] bg-gradient-to-r from-brand-lime to-brand-cyan flex-shrink-0"></span>
+              <span className="text-[10px] font-semibold tracking-[0.15em] sm:tracking-[0.2em] text-[#06B6D4] uppercase leading-snug">
                 INTELLIGENT IOT & ENERGY MANAGEMENT
               </span>
             </div>
@@ -188,7 +188,7 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-[3.20rem] font-extrabold tracking-tight text-white leading-[1.15] font-heading">
               Powering <br />
               <span className="text-gradient-cyan-lime font-bold">Smarter,</span> <br />
-              <span className="whitespace-nowrap">
+              <span className="sm:whitespace-nowrap">
                 <span className="text-gradient-lime-cyan font-bold">Greener</span> Industries
               </span>
             </h1>

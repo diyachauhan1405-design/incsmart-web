@@ -9,18 +9,15 @@ import IndustriesSection from "./IndustriesSection";
 import ProjectsSection from "./ProjectsSection";
 import WhyChooseSection from "./WhyChooseSection";
 import FAQSection from "./FAQSection";
+import HomeContactSection from "./HomeContactSection";
 import CTASection from "./CTASection";
 import Footer from "./Footer";
 
-interface LandingPageProps {
-  onSignInSuccess: () => void;
-}
-
-export default function LandingPage({ onSignInSuccess }: LandingPageProps) {
+export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#07111D] flex flex-col">
       {/* Navigation Header */}
-      <Header isLoggedIn={false} onSignInSuccess={onSignInSuccess} />
+      <Header />
       
       {/* Main Content Area */}
       <main className="flex-grow">
@@ -47,6 +44,9 @@ export default function LandingPage({ onSignInSuccess }: LandingPageProps) {
 
         {/* FAQs Accordion Section */}
         <FAQSection />
+
+        {/* Contact Us — home page only */}
+        <HomeContactSection />
 
         {/* Call to Action: Ready to Transform */}
         <CTASection />

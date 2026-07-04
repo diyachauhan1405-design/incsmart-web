@@ -139,7 +139,7 @@ export default function ProcessSection() {
 
         {/* Heading & Subtitle */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5 font-heading">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5 font-heading">
             From Connected Assets <br /> to <span className="text-gradient-cyan-lime font-bold">Smarter Decisions</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
@@ -150,13 +150,13 @@ export default function ProcessSection() {
         </div>
 
         {/* Flowchart Layout */}
-        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-0 mb-16 relative">
+        <div className="flex flex-col xl:flex-row items-stretch justify-between gap-8 xl:gap-0 mb-16 relative">
           
           {steps.map((step, idx) => {
             const Icon = step.icon;
             const isLast = idx === steps.length - 1;
             return (
-              <div key={step.number} className="flex-1 flex flex-col lg:flex-row items-stretch lg:items-start group/step">
+              <div key={step.number} className="flex-1 flex flex-col xl:flex-row items-stretch xl:items-start group/step">
                 
                 {/* Step Item Content */}
                 <div className="flex-grow flex flex-col items-center text-center px-4 relative">
@@ -187,7 +187,7 @@ export default function ProcessSection() {
 
                 {/* Animated Arrow Connector (Desktop only) */}
                 {!isLast && (
-                  <div className="hidden lg:flex items-center justify-center w-12 mx-2 relative top-8">
+                  <div className="hidden xl:flex items-center justify-center w-12 mx-2 relative top-8">
                     <svg className="w-12 h-6 overflow-visible" viewBox="0 0 48 24" fill="none">
                       <path
                         d="M 2 12 H 44"
