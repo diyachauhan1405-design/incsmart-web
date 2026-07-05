@@ -171,21 +171,7 @@ export default function Header() {
             ref={mobileMenuRef}
             className="md:hidden fixed inset-x-0 top-20 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto px-3 py-1.5 animate-in fade-in slide-in-from-top-5 duration-200"
           >
-          <div className="bg-[#0b1a2d] border border-white/10 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.5)] p-4 text-slate-200 space-y-4 flex flex-col">
-            {/* Logo Row */}
-            <div className="flex items-center justify-between">
-              <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
-                <Image
-                  src="/logo-main.png"
-                  alt="INCSMART Logo"
-                  width={120}
-                  height={34}
-                  className="h-7 w-auto object-contain"
-                  priority
-                />
-              </Link>
-            </div>
-
+          <div className="bg-[#0b1a2d] border border-white/10 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.5)] p-4 text-slate-200 flex flex-col">
             {/* Menu Links */}
             <nav className="flex flex-col text-sm font-semibold text-slate-200">
               <Link 

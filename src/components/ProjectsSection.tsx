@@ -15,8 +15,7 @@ import {
   Train,
   Factory,
   Hospital,
-  ArrowRight,
-  Calendar
+  ArrowRight
 } from "lucide-react";
 
 interface ProjectItem {
@@ -423,26 +422,6 @@ export default function ProjectsSection() {
               </div>
             );
           })}
-        </div>
-
-        {/* Bottom CTA Consultation Bar */}
-        <div className="w-full bg-[#081325]/50 border border-white/10 rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center space-x-4">
-            <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
-              <Calendar className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-white">Have a similar challenge?</h4>
-              <p className="text-xs text-slate-400 mt-0.5">Let's build a smarter solution for your business.</p>
-            </div>
-          </div>
-          <Link
-            href="#consultation"
-            className="w-full md:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full text-xs font-bold text-slate-900 bg-gradient-to-r from-brand-lime to-brand-cyan hover:opacity-95 active:scale-95 transition-all shadow-lg hover:shadow-brand-cyan/20 cursor-pointer"
-          >
-            <span>Schedule a Consultation</span>
-            <ArrowRight className="h-3.5 w-3.5 ml-2" />
-          </Link>
         </div>
 
       </div>
