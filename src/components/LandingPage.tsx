@@ -10,7 +10,6 @@ import ProjectsSection from "./ProjectsSection";
 import WhyChooseSection from "./WhyChooseSection";
 import FAQSection from "./FAQSection";
 import HomeContactSection from "./HomeContactSection";
-import CTASection from "./CTASection";
 import Footer from "./Footer";
 
 export default function LandingPage() {
@@ -47,9 +46,6 @@ export default function LandingPage() {
 
         {/* Contact Us — home page only */}
         <HomeContactSection />
-
-        {/* Call to Action: Ready to Transform */}
-        <CTASection />
       </main>
 
       {/* Footer Section */}

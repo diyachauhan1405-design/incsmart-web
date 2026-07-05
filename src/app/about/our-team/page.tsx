@@ -260,16 +260,16 @@ export default function OurTeamPage() {
             </div>
 
             {/* Vision & Mission */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="flex flex-col space-y-4">
-                <div>
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
-                    VISION & MISSION
-                  </span>
-                  <h3 className="text-xl font-bold text-white mt-1 font-heading">Our Driving Goals</h3>
-                </div>
+            <div className="space-y-6">
+              <div>
+                <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+                  VISION & MISSION
+                </span>
+                <h3 className="text-xl font-bold text-white mt-1 font-heading">Our Driving Goals</h3>
+              </div>
 
-                <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-6 relative overflow-hidden hover:border-brand-blue/20 transition-all">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+                <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-6 relative overflow-hidden hover:border-brand-blue/20 transition-all h-full flex flex-col">
                   <div className="flex items-center space-x-3 mb-3">
                     <Eye className="w-5 h-5 text-brand-blue" />
                     <h4 className="text-sm font-bold text-white font-heading">OUR VISION</h4>
@@ -278,10 +278,8 @@ export default function OurTeamPage() {
                     To build intelligent, sustainable infrastructure through innovation, connected technologies, and a commitment to excellence.
                   </p>
                 </div>
-              </div>
 
-              <div className="flex flex-col justify-end">
-                <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-6 relative overflow-hidden hover:border-brand-lime/20 transition-all h-full">
+                <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-6 relative overflow-hidden hover:border-brand-lime/20 transition-all h-full flex flex-col">
                   <div className="flex items-center space-x-3 mb-3">
                     <Target className="w-5 h-5 text-[#84CC16]" />
                     <h4 className="text-sm font-bold text-white font-heading">OUR MISSION</h4>

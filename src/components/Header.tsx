@@ -19,13 +19,15 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+    setActiveDropdown(null);
+  };
 
   const toggleDropdown = (menu: string) => {
-    if (activeDropdown === menu) {
-      setActiveDropdown(null);
-    } else {
-      setActiveDropdown(menu);
-    }
+    setActiveDropdown((current) => (current === menu ? null : menu));
   };
 
   useEffect(() => {
@@ -37,9 +39,10 @@ export default function Header() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setActiveDropdown(null);
-      }
+      const target = event.target as Node;
+      if (dropdownRef.current?.contains(target)) return;
+      if (mobileMenuRef.current?.contains(target)) return;
+      setActiveDropdown(null);
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -147,7 +150,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => (isOpen ? closeMobileMenu() : setIsOpen(true))}
               className="text-slate-400 hover:text-white p-2 rounded-lg focus:outline-none"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -161,59 +164,64 @@ export default function Header() {
         <>
           <div
             className="md:hidden fixed inset-0 top-20 z-40 bg-black/60 backdrop-blur-sm"
-            onClick={() => setIsOpen(false)}
+            onClick={closeMobileMenu}
             aria-hidden="true"
           />
-          <div className="md:hidden fixed inset-x-0 top-20 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto px-4 py-2 animate-in fade-in slide-in-from-top-5 duration-200">
-          <div className="bg-[#F3F4F6] border border-slate-200/80 rounded-3xl shadow-2xl p-6 text-slate-800 space-y-6 flex flex-col">
+          <div
+            ref={mobileMenuRef}
+            className="md:hidden fixed inset-x-0 top-20 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto px-3 py-1.5 animate-in fade-in slide-in-from-top-5 duration-200"
+          >
+          <div className="bg-[#0b1a2d] border border-white/10 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.5)] p-4 text-slate-200 space-y-4 flex flex-col">
             {/* Logo Row */}
             <div className="flex items-center justify-between">
-              <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+              <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
                 <Image
                   src="/logo-main.png"
                   alt="INCSMART Logo"
-                  width={140}
-                  height={40}
-                  className="h-8 w-auto object-contain brightness-0"
+                  width={120}
+                  height={34}
+                  className="h-7 w-auto object-contain"
                   priority
                 />
               </Link>
             </div>
 
             {/* Menu Links */}
-            <nav className="flex flex-col space-y-4 text-base font-semibold text-slate-800">
+            <nav className="flex flex-col text-sm font-semibold text-slate-200">
               <Link 
                 href="/solutions" 
-                className="hover:text-black py-1 border-b border-slate-200/60 transition-colors" 
-                onClick={() => setIsOpen(false)}
+                className="hover:text-white py-2 border-b border-white/10 transition-colors" 
+                onClick={closeMobileMenu}
               >
                 Solutions
               </Link>
-              <div className="border-b border-slate-200/60 pb-1">
+              <div className="border-b border-white/10">
                 <button
                   onClick={() => toggleDropdown("about-mobile")}
-                  className="flex items-center justify-between w-full hover:text-black py-1 transition-colors"
+                  className={`flex items-center justify-between w-full py-2 transition-colors text-left ${
+                    activeDropdown === "about-mobile" ? "text-white" : "hover:text-white"
+                  }`}
                 >
                   About Us
                   <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-200 ${
+                    className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${
                       activeDropdown === "about-mobile" ? "transform rotate-180" : ""
                     }`}
                   />
                 </button>
                 {activeDropdown === "about-mobile" && (
-                  <div className="flex flex-col pl-4 mt-2 space-y-2 text-sm font-medium text-slate-600">
+                  <div className="mb-2 rounded-lg border border-white/10 bg-[#07111D]/80 overflow-hidden">
                     <Link
                       href="/about/our-team"
-                      className="hover:text-black transition-colors"
-                      onClick={() => setIsOpen(false)}
+                      className="block px-3 py-2 text-xs font-medium text-slate-400 hover:text-white hover:bg-white/5 border-b border-white/5 transition-colors"
+                      onClick={closeMobileMenu}
                     >
                       Our Team
                     </Link>
                     <Link
                       href="/about/faqs"
-                      className="hover:text-black transition-colors"
-                      onClick={() => setIsOpen(false)}
+                      className="block px-3 py-2 text-xs font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-colors"
+                      onClick={closeMobileMenu}
                     >
                       FAQs
                     </Link>
@@ -222,35 +230,38 @@ export default function Header() {
               </div>
               <Link 
                 href="/solutions#projects" 
-                className="hover:text-black py-1 border-b border-slate-200/60 transition-colors" 
-                onClick={() => setIsOpen(false)}
+                className="hover:text-white py-2 border-b border-white/10 transition-colors" 
+                onClick={closeMobileMenu}
               >
                 Projects
               </Link>
               <Link 
                 href="/contact" 
-                className="hover:text-black py-1 transition-colors" 
-                onClick={() => setIsOpen(false)}
+                className="hover:text-white py-2 transition-colors" 
+                onClick={closeMobileMenu}
               >
                 Contact Us
               </Link>
             </nav>
 
             {/* Phone and CTA */}
-            <div className="flex flex-col items-center pt-4 border-t border-slate-200/80 space-y-4">
+            <div className="flex flex-col items-center pt-3 border-t border-white/10 space-y-3">
               <a
                 href="tel:+919737896176"
-                className="flex items-center text-sm font-bold text-slate-700 hover:text-black transition-colors"
+                className="flex items-center text-xs font-bold text-slate-300 hover:text-white transition-colors"
               >
-                <Phone className="h-4 w-4 mr-2 text-slate-700" />
+                <Phone className="h-3.5 w-3.5 mr-1.5 text-[#3B82F6]" />
                 +91 97378 96176
               </a>
               <Link
                 href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="w-full text-center py-3 rounded-full text-xs font-bold text-white bg-slate-900 hover:bg-black transition-colors shadow-md cursor-pointer"
+                onClick={closeMobileMenu}
+                className="relative inline-flex w-full items-center justify-between pl-4 pr-1.5 py-2 rounded-full text-[11px] font-bold text-slate-900 bg-gradient-to-r from-brand-lime to-brand-cyan hover:opacity-95 active:scale-95 transition-all shadow-lg hover:shadow-brand-cyan/20 group cursor-pointer"
               >
-                Book a Demo
+                <span className="mr-2">Book a Demo</span>
+                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-white text-slate-900 group-hover:translate-x-0.5 transition-transform duration-200">
+                  <ArrowRight className="h-2.5 w-2.5" />
+                </span>
               </Link>
             </div>
           </div>
