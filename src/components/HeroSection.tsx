@@ -165,12 +165,12 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
 
   // Fallback (Not Logged In) layout
   return (
-    <section className="relative pt-24 pb-8 md:pt-28 md:pb-10 bg-[#07111D] overflow-hidden bg-grid-pattern">
+    <section className="relative min-h-screen flex items-center pt-20 pb-6 md:pb-8 bg-[#07111D] overflow-hidden bg-grid-pattern">
       {/* Background radial glows */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-cyan/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[400px] h-[400px] bg-brand-lime/5 rounded-full blur-[150px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
 
           {/* Left Column Content - Copy & CTAs */}
@@ -267,7 +267,7 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
           </div>
 
           {/* Right Column - Factory + Telemetry */}
-          <div className="lg:col-span-7 relative flex items-center justify-center pt-10 lg:pt-0">
+          <div className="lg:col-span-7 relative flex items-center justify-center lg:pt-0">
             <div className="relative w-full max-w-4xl mx-auto">
               <div className="relative w-full aspect-[3/2]">
                 <Image

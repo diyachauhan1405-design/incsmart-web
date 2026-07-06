@@ -4,8 +4,7 @@ import Link from "next/link";
 import { 
   Mail, 
   Phone, 
-  MapPin, 
-  ArrowRight 
+  MapPin
 } from "lucide-react";
 
 export default function Footer() {
@@ -50,7 +49,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Main Footer Links Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-10 lg:gap-x-10 mb-12">
           
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-3 flex flex-col space-y-4">
@@ -116,8 +115,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Solutions */}
-          <div className="lg:col-span-2 flex flex-col space-y-4">
+          {/* Link columns — equal spacing on desktop */}
+          <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 xl:gap-x-10 gap-y-8">
+          {/* Solutions */}
+          <div className="flex flex-col gap-4">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Solutions</h4>
             <ul className="space-y-2.5">
               {solutionLinks.map((link) => (
@@ -130,8 +131,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Industries */}
-          <div className="lg:col-span-2 flex flex-col space-y-4">
+          {/* Industries */}
+          <div className="flex flex-col gap-4">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Industries</h4>
             <ul className="space-y-2.5">
               {industryLinks.map((link) => (
@@ -144,8 +145,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Company */}
-          <div className="lg:col-span-2 flex flex-col space-y-4">
+          {/* Company */}
+          <div className="flex flex-col gap-4">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Company</h4>
             <ul className="space-y-2.5">
               {companyLinks.map((link) => (
@@ -158,13 +159,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 5: Resources */}
-          <div className="lg:col-span-1 flex flex-col space-y-4">
+          {/* Resources */}
+          <div className="flex flex-col gap-4">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Resources</h4>
             <ul className="space-y-2.5">
               {resourceLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-xs text-slate-400 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-xs text-slate-400 hover:text-white transition-colors whitespace-nowrap">
                     {link.label}
                   </Link>
                 </li>
@@ -172,52 +173,28 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 6: Contact & Newsletter */}
-          <div className="lg:col-span-2 flex flex-col space-y-5">
-            <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Contact Us</h4>
-              <ul className="space-y-3 mt-3.5">
-                <li className="flex items-center space-x-2.5 text-xs text-slate-400">
-                  <Phone className="h-3.5 w-3.5 text-[#06B6D4]" />
-                  <a href="tel:+919711888111" className="hover:text-white transition-colors">
-                    +91 97118 88111
-                  </a>
-                </li>
-                <li className="flex items-center space-x-2.5 text-xs text-slate-400">
-                  <Mail className="h-3.5 w-3.5 text-[#06B6D4]" />
-                  <a href="mailto:info@incsmart.in" className="hover:text-white transition-colors">
-                    info@incsmart.in
-                  </a>
-                </li>
-                <li className="flex items-start space-x-2.5 text-xs text-slate-400">
-                  <MapPin className="h-3.5 w-3.5 text-[#06B6D4] mt-0.5" />
-                  <span className="leading-relaxed">Ahmedabad, Gujarat, India</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Newsletter form */}
-            <div className="space-y-2.5 pt-2 border-t border-white/5">
-              <h4 className="text-[9px] font-black uppercase text-slate-500 tracking-wider">Newsletter</h4>
-              <form 
-                onSubmit={(e) => e.preventDefault()} 
-                className="flex items-stretch rounded-lg overflow-hidden border border-white/5 bg-[#081325]/40 focus-within:border-[#06B6D4]/30"
-              >
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="flex-grow bg-transparent px-3 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none w-full"
-                  required 
-                />
-                <button 
-                  type="submit" 
-                  className="px-3 bg-brand-cyan hover:opacity-95 text-slate-900 flex items-center justify-center transition-all cursor-pointer"
-                  aria-label="Subscribe"
-                >
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </button>
-              </form>
-            </div>
+          {/* Contact Us */}
+          <div className="flex flex-col gap-4 col-span-2 sm:col-span-1">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Contact Us</h4>
+            <ul className="space-y-2.5">
+              <li className="flex items-center gap-2.5 text-xs text-slate-400">
+                <Phone className="h-3.5 w-3.5 text-[#06B6D4] shrink-0" />
+                <a href="tel:+919711888111" className="hover:text-white transition-colors">
+                  +91 97118 88111
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5 text-xs text-slate-400">
+                <Mail className="h-3.5 w-3.5 text-[#06B6D4] shrink-0" />
+                <a href="mailto:info@incsmart.in" className="hover:text-white transition-colors break-all">
+                  info@incsmart.in
+                </a>
+              </li>
+              <li className="flex items-start gap-2.5 text-xs text-slate-400">
+                <MapPin className="h-3.5 w-3.5 text-[#06B6D4] shrink-0 mt-0.5" />
+                <span className="leading-relaxed">Ahmedabad, Gujarat, India</span>
+              </li>
+            </ul>
+          </div>
           </div>
 
         </div>
