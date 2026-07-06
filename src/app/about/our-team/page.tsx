@@ -156,7 +156,7 @@ export default function OurTeamPage() {
                     <span>Explore Solutions</span>
                     <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <Link href="#contact" className="border border-white/10 hover:bg-white/5 active:scale-95 text-white rounded-lg px-6 py-3 text-xs font-semibold transition-all flex items-center justify-center w-full sm:w-auto">
+                  <Link href="/contact" className="border border-white/10 hover:bg-white/5 active:scale-95 text-white rounded-lg px-6 py-3 text-xs font-semibold transition-all flex items-center justify-center w-full sm:w-auto">
                     Contact Us
                   </Link>
                 </div>

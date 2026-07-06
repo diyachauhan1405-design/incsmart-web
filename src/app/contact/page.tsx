@@ -22,8 +22,17 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FormSelect from "@/components/FormSelect";
 import IndiaMap from "@/components/IndiaMap";
 import { storeLocations } from "@/data/storeLocations";
+
+const topicOptions = [
+  { value: "iot", label: "Industrial IoT" },
+  { value: "energy", label: "Energy Optimization" },
+  { value: "hvac", label: "HVAC Controls" },
+  { value: "partnership", label: "Business Partnership" },
+  { value: "other", label: "Other Inquiry" },
+];
 
 // Graphic resources
 import cloudDiagram from "../../../public/cloud-diagram.png";
@@ -235,19 +244,13 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <select 
+                  <FormSelect
                     value={formState.subject}
-                    onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                    className="w-full bg-[#040B13]/60 border border-white/5 rounded-xl px-4 py-3 text-xs text-slate-400 placeholder-slate-600 focus:outline-none focus:border-brand-blue/30 transition-all"
+                    onChange={(subject) => setFormState({ ...formState, subject })}
+                    options={topicOptions}
+                    placeholder="Select a Topic *"
                     required
-                  >
-                    <option value="" disabled>Select a Topic *</option>
-                    <option value="iot">Industrial IoT</option>
-                    <option value="energy">Energy Optimization</option>
-                    <option value="hvac">HVAC Controls</option>
-                    <option value="partnership">Business Partnership</option>
-                    <option value="other">Other Inquiry</option>
-                  </select>
+                  />
 
                   <textarea 
                     placeholder="Tell us about your project or requirements... *"
