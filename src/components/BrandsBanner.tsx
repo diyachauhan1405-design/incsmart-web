@@ -1,8 +1,74 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { TrendingUp, Shield, Calendar, MapPin } from "lucide-react";
 
+const MARQUEE_DURATION_S = 25;
+
 export default function BrandsBanner() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const offsetRef = useRef(0);
+  const velocityRef = useRef(0);
+  const targetVelocityRef = useRef(0);
+  const loopWidthRef = useRef(0);
+  const lastTimeRef = useRef<number | null>(null);
+  const rafRef = useRef<number | undefined>(undefined);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const measure = () => {
+      loopWidthRef.current = track.scrollWidth / 2;
+      if (targetVelocityRef.current > 0) {
+        targetVelocityRef.current = loopWidthRef.current / (MARQUEE_DURATION_S * 1000);
+      }
+    };
+
+    const tick = (time: number) => {
+      if (lastTimeRef.current === null) {
+        lastTimeRef.current = time;
+      }
+
+      const delta = Math.min(time - lastTimeRef.current, 32);
+      lastTimeRef.current = time;
+
+      const smoothing = 1 - Math.exp(-delta / 450);
+      velocityRef.current += (targetVelocityRef.current - velocityRef.current) * smoothing;
+
+      offsetRef.current -= velocityRef.current * delta;
+
+      const loopWidth = loopWidthRef.current;
+      if (loopWidth > 0) {
+        if (offsetRef.current <= -loopWidth) offsetRef.current += loopWidth;
+        if (offsetRef.current > 0) offsetRef.current -= loopWidth;
+        track.style.transform = `translate3d(${offsetRef.current}px, 0, 0)`;
+      }
+
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    measure();
+    targetVelocityRef.current = loopWidthRef.current / (MARQUEE_DURATION_S * 1000);
+    velocityRef.current = targetVelocityRef.current;
+    rafRef.current = requestAnimationFrame(tick);
+
+    window.addEventListener("resize", measure);
+
+    return () => {
+      window.removeEventListener("resize", measure);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
+  const pauseMarquee = () => {
+    targetVelocityRef.current = 0;
+  };
+
+  const resumeMarquee = () => {
+    targetVelocityRef.current = loopWidthRef.current / (MARQUEE_DURATION_S * 1000);
+  };
+
   const brandsList = [
     {
       name: "PVR INOX",
@@ -213,11 +279,15 @@ export default function BrandsBanner() {
         </div>
 
         {/* Infinite scrolling marquee wrapper */}
-        <div className="relative w-full overflow-hidden mb-6 sm:mb-16 py-2 sm:py-4 mask-gradient">
+        <div
+          className="relative w-full overflow-hidden mb-6 sm:mb-16 py-2 sm:py-4 mask-gradient"
+          onMouseEnter={pauseMarquee}
+          onMouseLeave={resumeMarquee}
+        >
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#07111D] to-transparent z-20 pointer-events-none"></div>
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#07111D] to-transparent z-20 pointer-events-none"></div>
           
-          <div className="flex w-max animate-marquee space-x-6 sm:space-x-12">
+          <div ref={trackRef} className="flex w-max space-x-6 sm:space-x-12 will-change-transform">
             {/* First list loop */}
             {brandsList.map((brand, idx) => (
               <div key={`brand-1-${idx}`} className="flex-shrink-0 bg-[#081325]/30 border border-white/5 rounded-xl sm:rounded-2xl hover:border-brand-blue/30 transition-all duration-300">

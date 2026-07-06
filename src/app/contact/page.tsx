@@ -159,7 +159,7 @@ export default function ContactPage() {
                 <h4 className="text-sm font-bold text-white font-heading">Head Office</h4>
                 <p className="text-xs text-slate-400 mt-2 leading-relaxed">
                   INCSMART Technologies Pvt. Ltd.<br />
-                  305, The Landmark, Near Swaminarayan Temple, Mota Varachha, Surat, Gujarat 394101, India
+                  E-202, GIDC Rd, SECTOR-26, Sector 26, Gandhinagar, Gujarat 382028
                 </p>
               </div>
 
