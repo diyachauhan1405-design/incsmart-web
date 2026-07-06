@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function FAQsPage() {
-  redirect("/about");
+export default function AboutFaqsPage() {
+  redirect("/faqs");
 }

@@ -41,7 +41,7 @@ export default function Footer() {
   const resourceLinks = [
     { label: "Case Studies", href: "#case-studies" },
     { label: "Brochures", href: "#brochures" },
-    { label: "FAQs", href: "#faqs" },
+    { label: "FAQs", href: "/faqs" },
     { label: "Support", href: "#support" }
   ];
 
