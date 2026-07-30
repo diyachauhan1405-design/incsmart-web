@@ -27,8 +27,8 @@ export default function FAQSection() {
 
   const faqs: FAQItem[] = [
     {
-      question: "How does INCSMART reduce energy consumption?",
-      answer: "INCSMART uses intelligent IoT sensors and AI-driven analytics to monitor and optimize HVAC, lighting, and equipment performance in real time, helping organizations achieve up to 20% average energy savings.",
+      question: "How does IncSmart reduce energy consumption?",
+      answer: "IncSmart uses intelligent IoT sensors and AI-driven analytics to monitor and optimize HVAC, lighting, and equipment performance in real time, helping organizations achieve up to 20% average energy savings.",
       icon: Zap,
       iconColor: "text-blue-400",
       iconBg: "bg-blue-500/10 border-blue-500/20"
@@ -63,7 +63,7 @@ export default function FAQSection() {
     },
     {
       question: "Is the platform scalable for multiple locations?",
-      answer: "Absolutely. The INCSMART platform is cloud-native and highly scalable. You can monitor and manage a single facility or coordinate operations across hundreds of pan-India locations from a single dashboard.",
+      answer: "Absolutely. The IncSmart platform is cloud-native and highly scalable. You can monitor and manage a single facility or coordinate operations across hundreds of pan-India locations from a single dashboard.",
       icon: Layers,
       iconColor: "text-amber-400",
       iconBg: "bg-amber-500/10 border-amber-500/20"

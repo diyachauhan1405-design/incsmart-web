@@ -112,7 +112,7 @@ export default function ContactPage() {
                   <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                   <Image 
                     src={cloudDiagram} 
-                    alt="INCSMART Contact Connection Overview Diagram" 
+                    alt="IncSmart Contact Connection Overview Diagram" 
                     fill 
                     className="object-contain opacity-90 group-hover:scale-[1.01] transition-transform duration-500"
                     priority
@@ -158,36 +158,54 @@ export default function ContactPage() {
                 <MapPin className="w-8 h-8 text-brand-blue mb-4" />
                 <h4 className="text-sm font-bold text-white font-heading">Head Office</h4>
                 <p className="text-xs text-slate-400 mt-2 leading-relaxed">
-                  INCSMART Technologies Pvt. Ltd.<br />
+                  IncSmart Technologies Pvt. Ltd.<br />
                   E-202, GIDC Rd, SECTOR-26, Sector 26, Gandhinagar, Gujarat 382028
                 </p>
               </div>
 
               <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-6 flex flex-col items-center text-center">
-                <Phone className="w-8 h-8 text-brand-lime mb-4" />
-                <h4 className="text-sm font-bold text-white font-heading">Phone</h4>
-                <p className="text-xs text-slate-400 mt-2 leading-relaxed">
-                  +91 89800 01836<br />
-                  +91 63588 20335
-                </p>
+                <div className="w-10 h-10 rounded-full bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center mb-4 text-brand-blue text-xs font-bold font-heading">
+                  VP
+                </div>
+                <h4 className="text-sm font-bold text-white font-heading">Viral Patel</h4>
+                <p className="text-[10px] text-[#06B6D4] font-medium mt-0.5">Founder & CEO</p>
+                <div className="mt-3 space-y-1.5 text-xs text-slate-400">
+                  <a href="tel:+919837896176" className="hover:text-white transition-colors block">
+                    📞 +91 98378 96176
+                  </a>
+                  <a href="mailto:viral.patel@incsmart.in" className="hover:text-white transition-colors block break-all">
+                    ✉️ viral.patel@incsmart.in
+                  </a>
+                </div>
               </div>
 
               <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-6 flex flex-col items-center text-center">
-                <Mail className="w-8 h-8 text-brand-cyan mb-4" />
-                <h4 className="text-sm font-bold text-white font-heading">Email</h4>
-                <p className="text-xs text-slate-400 mt-2 leading-relaxed">
-                  info@incsmart.in<br />
-                  sales@incsmart.in
-                </p>
+                <div className="w-10 h-10 rounded-full bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center mb-4 text-brand-blue text-xs font-bold font-heading">
+                  BP
+                </div>
+                <h4 className="text-sm font-bold text-white font-heading">Bhaumik Patel</h4>
+                <p className="text-[10px] text-[#06B6D4] font-medium mt-0.5">Founder & MD</p>
+                <div className="mt-3 space-y-1.5 text-xs text-slate-400">
+                  <a href="tel:+917984186121" className="hover:text-white transition-colors block">
+                    📞 +91 79841 86121
+                  </a>
+                  <a href="mailto:bhaumikpatel@incsmart.in" className="hover:text-white transition-colors block break-all">
+                    ✉️ bhaumikpatel@incsmart.in
+                  </a>
+                </div>
               </div>
 
               <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-6 flex flex-col items-center text-center">
-                <Clock className="w-8 h-8 text-purple-400 mb-4" />
-                <h4 className="text-sm font-bold text-white font-heading">Business Hours</h4>
-                <p className="text-xs text-slate-400 mt-2 leading-relaxed">
-                  Mon - Sat: 9:00 AM - 6:00 PM<br />
-                  Sunday: Closed
-                </p>
+                <div className="w-10 h-10 rounded-full bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center mb-4 text-brand-blue text-xs font-bold font-heading">
+                  PP
+                </div>
+                <h4 className="text-sm font-bold text-white font-heading">Prit Patel</h4>
+                <p className="text-[10px] text-[#06B6D4] font-medium mt-0.5">Managing Director</p>
+                <div className="mt-3 space-y-1.5 text-xs text-slate-400">
+                  <a href="tel:+919274040750" className="hover:text-white transition-colors block">
+                    📞 +91 92740 40750
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -347,7 +365,7 @@ export default function ContactPage() {
                     Your Infrastructure?
                   </h2>
                   <p className="text-sm text-slate-400 leading-relaxed">
-                    Partner with INCSMART and experience the power of intelligent infrastructure, automation, and real-time insights.
+                    Partner with IncSmart and experience the power of intelligent infrastructure, automation, and real-time insights.
                   </p>
                 </div>
 

@@ -9,27 +9,27 @@ import Footer from "@/components/Footer";
 
 const faqCategories = [
   {
-    title: "About INCSMART",
+    title: "About IncSmart",
     faqs: [
       {
-        question: "What is INCSMART and what does the company do?",
+        question: "What is IncSmart and what does the company do?",
         answer:
-          "INCSMART is an Industrial IoT and automation company founded in 2017. We deliver end-to-end solutions that help organizations monitor, optimize, and automate their operations through connected sensors, cloud platforms, AI analytics, and intelligent automation — transforming traditional infrastructure into smart, sustainable ecosystems.",
+          "IncSmart is an Industrial IoT and automation company founded in 2017. We deliver end-to-end solutions that help organizations monitor, optimize, and automate their operations through connected sensors, cloud platforms, AI analytics, and intelligent automation — transforming traditional infrastructure into smart, sustainable ecosystems.",
       },
       {
-        question: "Which industries does INCSMART serve?",
+        question: "Which industries does IncSmart serve?",
         answer:
           "We serve manufacturing, railways, hospitals, hotels, solar plants, commercial buildings, education campuses, and retail & malls. Our solutions are tailored to each industry's unique operational requirements, from HVAC optimization in cinemas to remote infrastructure monitoring for railways.",
       },
       {
-        question: "Where are INCSMART offices located?",
+        question: "Where are IncSmart offices located?",
         answer:
           "Our head office is in Gandhinagar, Gujarat (E-202, GIDC Rd, SECTOR-26, Sector 26). We deploy solutions pan-India and support clients across multiple geographical locations from a unified cloud platform.",
       },
       {
-        question: "What makes INCSMART different from other IoT providers?",
+        question: "What makes IncSmart different from other IoT providers?",
         answer:
-          "INCSMART combines deep industry expertise with a scalable, secure cloud-native platform, 24×7 NOC monitoring, and proven results — 120+ projects delivered, 20% average energy savings, and 99.9% platform availability. We offer customized, end-to-end solutions rather than off-the-shelf products.",
+          "IncSmart combines deep industry expertise with a scalable, secure cloud-native platform, 24×7 NOC monitoring, and proven results — 120+ projects delivered, 20% average energy savings, and 99.9% platform availability. We offer customized, end-to-end solutions rather than off-the-shelf products.",
       },
     ],
   },
@@ -37,12 +37,12 @@ const faqCategories = [
     title: "Solutions & Technology",
     faqs: [
       {
-        question: "What IoT solutions does INCSMART offer?",
+        question: "What IoT solutions does IncSmart offer?",
         answer:
           "Our core solutions include Industrial IoT & Automation, HVAC Optimization, Energy Management, Building Management Systems (BMS), and Fire Monitoring. Each solution covers the full stack — from sensors and edge gateways to cloud analytics, dashboards, and automation.",
       },
       {
-        question: "How does INCSMART reduce energy consumption?",
+        question: "How does IncSmart reduce energy consumption?",
         answer:
           "Through intelligent HVAC automation, real-time demand-load management, power factor correction, and scheduling optimizations that align utility consumption with actual requirements. Clients typically achieve around 20% average energy savings.",
       },
@@ -57,7 +57,7 @@ const faqCategories = [
           "Yes. Our cloud-native BMS and Industrial IoT architecture aggregates telemetry from multiple sites — factories, hospitals, hotels, or retail outlets — into a single unified control dashboard with role-based access and centralized reporting.",
       },
       {
-        question: "How secure is the INCSMART cloud platform?",
+        question: "How secure is the IncSmart cloud platform?",
         answer:
           "Our platform is built with enterprise-grade security including encrypted data transmission, secure device authentication, role-based access controls, and continuous monitoring. We maintain 99.9% platform availability with redundant cloud infrastructure.",
       },
@@ -97,12 +97,12 @@ const faqCategories = [
           "You can book a demo through our Contact page, call us at +91 97118 88111, or email info@incsmart.in. Our team will schedule a consultation to understand your requirements and walk you through relevant solutions.",
       },
       {
-        question: "What information should I prepare before contacting INCSMART?",
+        question: "What information should I prepare before contacting IncSmart?",
         answer:
           "Helpful details include your facility type and size, current systems (BMS, HVAC, energy meters), primary pain points (high energy bills, downtime, manual monitoring), and number of locations. This helps us recommend the most relevant solution quickly.",
       },
       {
-        question: "Does INCSMART work with enterprise clients like PVR, Indian Railways, and Taj Hotels?",
+        question: "Does IncSmart work with enterprise clients like PVR, Indian Railways, and Taj Hotels?",
         answer:
           "Yes. We have delivered 120+ projects for leading organizations including PVR INOX, Indian Railways, UltraTech Cement, Taj Hotels & Resorts, Adani Energy Solutions, and Amul — across HVAC optimization, industrial automation, smart energy management, and remote monitoring.",
       },
@@ -139,7 +139,7 @@ export default function FaqsPage() {
             </h1>
 
             <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl mx-auto">
-              Find answers about INCSMART&apos;s IoT solutions, deployment process, support, and
+              Find answers about IncSmart&apos;s IoT solutions, deployment process, support, and
               how we help industries build smarter, more efficient infrastructure.
             </p>
           </div>

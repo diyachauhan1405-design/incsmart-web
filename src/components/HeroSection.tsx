@@ -73,7 +73,7 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
 
               {/* Description */}
               <p className="text-sm sm:text-base text-slate-400 max-w-xl leading-relaxed">
-                INCSMART delivers intelligent IoT solutions that optimize energy, 
+                IncSmart delivers intelligent IoT solutions that optimize energy, 
                 automate operations, and create connected, efficient, and sustainable environments.
               </p>
 
@@ -147,7 +147,7 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
                 <div className="relative w-full h-full">
                   <Image
                     src={heroTablet}
-                    alt="INCSMART Live Overview Dashboard"
+                    alt="IncSmart Live Overview Dashboard"
                     fill
                     sizes="(max-width: 1024px) 100vw, 55vw"
                     className="object-contain object-center opacity-95 group-hover/hero-img:scale-[1.01] transition-transform duration-500"
@@ -272,7 +272,7 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
               <div className="relative w-full aspect-[3/2]">
                 <Image
                   src={factoryRender}
-                  alt="INCSMART IoT Cloud Factory Render"
+                  alt="IncSmart IoT Cloud Factory Render"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-contain object-center"

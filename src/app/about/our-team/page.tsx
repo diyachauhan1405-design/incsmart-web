@@ -31,7 +31,8 @@ import {
   ChevronRight,
   Phone,
   Rocket,
-  Cloud
+  Cloud,
+  Mail
 } from "lucide-react";
 
 import Header from "@/components/Header";
@@ -48,7 +49,7 @@ const journeySteps = [
     year: "2017",
     label: "Company Founded",
     description:
-      "INCSMART was established in Surat, Gujarat with a vision to transform traditional infrastructure through Industrial IoT.",
+      "IncSmart was established in Surat, Gujarat with a vision to transform traditional infrastructure through Industrial IoT.",
     icon: Rocket,
   },
   {
@@ -137,7 +138,7 @@ export default function OurTeamPage() {
                 <div className="flex items-center space-x-3">
                   <span className="w-8 h-[1.5px] bg-[#06B6D4]"></span>
                   <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
-                    ABOUT INCSMART
+                    ABOUT IncSmart
                   </span>
                 </div>
 
@@ -148,7 +149,7 @@ export default function OurTeamPage() {
                 </h1>
 
                 <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-                  Since 2017, INCSMART has been helping industries transform traditional infrastructure into intelligent, connected, and sustainable ecosystems through Industrial IoT, AI-powered analytics, and automation.
+                  Since 2017, IncSmart has been helping industries transform traditional infrastructure into intelligent, connected, and sustainable ecosystems through Industrial IoT, AI-powered analytics, and automation.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
@@ -175,6 +176,182 @@ export default function OurTeamPage() {
           </div>
         </section>
 
+        {/* MEET OUR TEAM SECTION */}
+        <section className="py-20 bg-[#07111D] border-b border-white/5 relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-blue/5 rounded-full blur-[120px] pointer-events-none"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+              <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
+                EXECUTIVE LEADERSHIP
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-heading">
+                Meet Our Team
+              </h2>
+              <p className="text-sm text-slate-400 mt-3 max-w-xl mx-auto">
+                The visionary minds driving innovation, engineering excellence, and smart infrastructure solutions at IncSmart.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Viral Patel */}
+              <div className="group bg-[#0b1a2d]/55 border border-white/5 hover:border-brand-blue/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.12)]">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-20 h-20 rounded-full bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center mb-5 text-brand-blue text-xl font-bold font-heading">
+                    VP
+                  </div>
+                  <h3 className="text-lg font-bold text-white font-heading">Viral Patel</h3>
+                  <p className="text-xs text-[#06B6D4] font-medium mt-1 mb-6">Founder & CEO</p>
+                  
+                  <div className="w-full space-y-3 pt-4 border-t border-white/5 text-left">
+                    <a href="tel:+919837896176" className="flex items-center gap-3 text-xs text-slate-400 hover:text-white transition-colors">
+                      <Phone className="w-4 h-4 text-[#06B6D4] shrink-0" />
+                      <span>+91 98378 96176</span>
+                    </a>
+                    <a href="mailto:viral.patel@incsmart.in" className="flex items-center gap-3 text-xs text-slate-400 hover:text-white transition-colors break-all">
+                      <Mail className="w-4 h-4 text-[#06B6D4] shrink-0" />
+                      <span>viral.patel@incsmart.in</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bhaumik Patel */}
+              <div className="group bg-[#0b1a2d]/55 border border-white/5 hover:border-brand-blue/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.12)]">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-20 h-20 rounded-full bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center mb-5 text-brand-blue text-xl font-bold font-heading">
+                    BP
+                  </div>
+                  <h3 className="text-lg font-bold text-white font-heading">Bhaumik Patel</h3>
+                  <p className="text-xs text-[#06B6D4] font-medium mt-1 mb-6">Founder & Managing Director (MD)</p>
+                  
+                  <div className="w-full space-y-3 pt-4 border-t border-white/5 text-left">
+                    <a href="tel:+917984186121" className="flex items-center gap-3 text-xs text-slate-400 hover:text-white transition-colors">
+                      <Phone className="w-4 h-4 text-[#06B6D4] shrink-0" />
+                      <span>+91 79841 86121</span>
+                    </a>
+                    <a href="mailto:bhaumikpatel@incsmart.in" className="flex items-center gap-3 text-xs text-slate-400 hover:text-white transition-colors break-all">
+                      <Mail className="w-4 h-4 text-[#06B6D4] shrink-0" />
+                      <span>bhaumikpatel@incsmart.in</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Prit Patel */}
+              <div className="group bg-[#0b1a2d]/55 border border-white/5 hover:border-brand-blue/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.12)]">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-20 h-20 rounded-full bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center mb-5 text-brand-blue text-xl font-bold font-heading">
+                    PP
+                  </div>
+                  <h3 className="text-lg font-bold text-white font-heading">Prit Patel</h3>
+                  <p className="text-xs text-[#06B6D4] font-medium mt-1 mb-6">Managing Director (MD)</p>
+                  
+                  <div className="w-full space-y-3 pt-4 border-t border-white/5 text-left">
+                    <a href="tel:+919274040750" className="flex items-center gap-3 text-xs text-slate-400 hover:text-white transition-colors">
+                      <Phone className="w-4 h-4 text-[#06B6D4] shrink-0" />
+                      <span>+91 92740 40750</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TECHNICAL SERVICE & SUPPORT SECTION */}
+        <section className="py-20 bg-[#081325]/30 border-b border-white/5 relative">
+          <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+              <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
+                ENGINEERING HELP DESK
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-heading">
+                Technical Service & Support
+              </h2>
+              <p className="text-sm text-slate-400 mt-3 max-w-2xl mx-auto">
+                For system deployments, hardware troubleshooting, and ongoing IoT monitoring, our engineering desk is ready to assist.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
+              {/* Dharmendra Jadav */}
+              <div className="bg-[#0b1a2d]/45 border border-white/5 rounded-2xl p-5 hover:border-brand-blue/20 transition-all duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue text-xs font-bold shrink-0">
+                    DJ
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white font-heading">Dharmendra Jadav</h4>
+                    <p className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mt-0.5">Support Engineer</p>
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-white/5">
+                  <a href="tel:+919824962067" className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-white transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-[#06B6D4]" />
+                    <span>+91 98249 62067</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Mayank Sagar */}
+              <div className="bg-[#0b1a2d]/45 border border-white/5 rounded-2xl p-5 hover:border-brand-blue/20 transition-all duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue text-xs font-bold shrink-0">
+                    MS
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white font-heading">Mayank Sagar</h4>
+                    <p className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mt-0.5">Support Engineer</p>
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-white/5">
+                  <a href="tel:+917043690021" className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-white transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-[#06B6D4]" />
+                    <span>+91 70436 90021</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Chirag Barot */}
+              <div className="bg-[#0b1a2d]/45 border border-white/5 rounded-2xl p-5 hover:border-brand-blue/20 transition-all duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue text-xs font-bold shrink-0">
+                    CB
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white font-heading">Chirag Barot</h4>
+                    <p className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mt-0.5">Support Engineer</p>
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-white/5">
+                  <a href="tel:+919316436699" className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-white transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-[#06B6D4]" />
+                    <span>+91 93164 36699</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Central Support Email Callout */}
+            <div className="bg-[#0b1a2d]/60 border border-white/10 rounded-2xl p-6 max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left hover:border-brand-blue/20 transition-colors shadow-[0_4px_30px_rgba(0,0,0,0.2)]">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center text-brand-cyan">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white">Central Support Email</h4>
+                  <p className="text-xs text-slate-400 mt-0.5">Reach out to our core operations team</p>
+                </div>
+              </div>
+              <a href="mailto:service@incsmart.in" className="text-xs font-bold text-brand-cyan hover:text-white transition-colors break-all">
+                service@incsmart.in
+              </a>
+            </div>
+
+          </div>
+        </section>
+
         {/* WHO WE ARE */}
         <section className="py-20 bg-[#081325]/25 border-b border-white/5 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -185,7 +362,7 @@ export default function OurTeamPage() {
                 <div className="relative w-full aspect-square rounded-3xl overflow-hidden group">
                   <Image 
                     src={factoryRender} 
-                    alt="INCSMART Smart Infrastructure Architecture" 
+                    alt="IncSmart Smart Infrastructure Architecture" 
                     fill 
                     className="object-contain group-hover:scale-[1.02] transition-transform duration-500"
                   />
@@ -202,7 +379,7 @@ export default function OurTeamPage() {
                     Building Smarter Infrastructure Across India
                   </h2>
                   <p className="text-sm text-slate-400 mt-4 leading-relaxed">
-                    INCSMART is an Industrial IoT and automation company delivering end-to-end solutions that help organizations monitor, optimize, and automate their operations. We empower industries with real-time visibility, intelligent analytics, and sustainable technologies to improve efficiency and reduce operational costs.
+                    IncSmart is an Industrial IoT and automation company delivering end-to-end solutions that help organizations monitor, optimize, and automate their operations. We empower industries with real-time visibility, intelligent analytics, and sustainable technologies to improve efficiency and reduce operational costs.
                   </p>
                 </div>
 
@@ -324,7 +501,7 @@ export default function OurTeamPage() {
               <div className="lg:col-span-6 flex flex-col space-y-6">
                 <div>
                   <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
-                    WHY CHOOSE INCSMART?
+                    WHY CHOOSE IncSmart?
                   </span>
                   <h3 className="text-xl font-bold text-white mt-1 font-heading">Our Competitive Edge</h3>
                 </div>
@@ -491,7 +668,7 @@ export default function OurTeamPage() {
                     Smarter Infrastructure?
                   </h2>
                   <p className="text-sm text-slate-400 leading-relaxed">
-                    Partner with INCSMART to transform your facilities through intelligent automation, energy optimization, and real-time monitoring.
+                    Partner with IncSmart to transform your facilities through intelligent automation, energy optimization, and real-time monitoring.
                   </p>
                 </div>
 

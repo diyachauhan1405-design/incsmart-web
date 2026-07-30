@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "INCSMART — Smart Infrastructure Solutions",
+  title: "IncSmart — Smart Infrastructure Solutions",
   description: "Intelligent IoT, energy optimization, and automation solutions for industries across India.",
 };
 

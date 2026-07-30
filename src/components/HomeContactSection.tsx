@@ -56,7 +56,7 @@ export default function HomeContactSection() {
           {/* Left — WhatsApp & Call */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20INCSMART%2C%20I%20would%20like%20to%20know%20more%20about%20your%20solutions.`}
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20IncSmart%2C%20I%20would%20like%20to%20know%20more%20about%20your%20solutions.`}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-5 bg-[#0b1a2d]/55 border border-white/5 hover:border-emerald-500/40 rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(16,185,129,0.12)] cursor-pointer"

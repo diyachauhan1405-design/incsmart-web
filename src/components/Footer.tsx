@@ -55,14 +55,14 @@ export default function Footer() {
           <div className="lg:col-span-3 flex flex-col space-y-4">
             <Link href="/" className="inline-flex items-center space-x-1.5 select-none">
               <span className="text-xl font-black text-white tracking-tight font-heading">
-                INC<span className="text-[#06B6D4]">SMART</span>
+                Inc<span className="text-[#06B6D4]">Smart</span>
               </span>
             </Link>
             <p className="text-[10px] font-black uppercase text-slate-500 tracking-wider">
               Smart Infrastructure. Smarter Future.
             </p>
             <p className="text-xs text-slate-400 leading-relaxed">
-              INCSMART delivers intelligent IoT solutions that optimize energy, 
+              IncSmart delivers intelligent IoT solutions that optimize energy, 
               automate operations, and create connected, efficient, and 
               sustainable environments.
             </p>
@@ -202,7 +202,7 @@ export default function Footer() {
         {/* Bottom copyright / policy row */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-slate-500">
           <div>
-            &copy; {currentYear} INCSMART Technologies Pvt. Ltd. All rights reserved.
+            &copy; {currentYear} IncSmart Technologies Pvt. Ltd. All rights reserved.
           </div>
           <div className="flex items-center space-x-4">
             <Link href="#privacy-policy" className="hover:text-slate-400 transition-colors">

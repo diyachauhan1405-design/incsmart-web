@@ -38,7 +38,7 @@ export default function LandingPage() {
         {/* Projects Showcase Section */}
         <ProjectsSection />
 
-        {/* Why Choose Incsmart & Testimonials */}
+        {/* Why Choose IncSmart & Testimonials */}
         <WhyChooseSection />
 
         {/* FAQs Accordion Section */}

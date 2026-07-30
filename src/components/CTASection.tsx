@@ -66,7 +66,7 @@ export default function CTASection() {
 
             {/* Description */}
             <p className="text-sm sm:text-base text-slate-400 max-w-xl leading-relaxed">
-              Partner with INCSMART and unlock the full potential of
+              Partner with IncSmart and unlock the full potential of
               intelligent automation, real-time monitoring, and energy optimization.
             </p>
 

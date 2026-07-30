@@ -71,7 +71,7 @@ export default function WhyChooseSection() {
 
   const testimonials: TestimonialItem[] = [
     {
-      quote: "INCSMART helped us reduce our HVAC energy consumption by 20% while improving overall comfort for our guests.",
+      quote: "IncSmart helped us reduce our HVAC energy consumption by 20% while improving overall comfort for our guests.",
       author: "Facility Head",
       role: "PVR INOX",
       stars: 5,
@@ -85,7 +85,7 @@ export default function WhyChooseSection() {
       )
     },
     {
-      quote: "The remote monitoring solution by INCSMART has improved reliability and response time across our assets.",
+      quote: "The remote monitoring solution by IncSmart has improved reliability and response time across our assets.",
       author: "Chief Engineer",
       role: "Western Railway",
       stars: 5,
@@ -103,7 +103,7 @@ export default function WhyChooseSection() {
       )
     },
     {
-      quote: "INCSMART's IoT platform gives us real-time visibility and helps us optimize our operations efficiently.",
+      quote: "IncSmart's IoT platform gives us real-time visibility and helps us optimize our operations efficiently.",
       author: "Plant Manager",
       role: "UltraTech Cement",
       stars: 5,
@@ -143,14 +143,14 @@ export default function WhyChooseSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* ========================================================
-            WHY CHOOSE INCSMART SECTION
+            WHY CHOOSE IncSmart SECTION
             ======================================================== */}
         
         {/* Section Header */}
         <div className="flex items-center justify-center space-x-3 mb-4">
           <span className="w-8 h-[1.5px] bg-[#06B6D4]"></span>
           <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
-            WHY CHOOSE INCSMART
+            WHY CHOOSE IncSmart
           </span>
           <span className="w-8 h-[1.5px] bg-gradient-to-r from-[#06B6D4] to-transparent"></span>
         </div>
@@ -177,7 +177,7 @@ export default function WhyChooseSection() {
               <div className="relative w-full h-full">
                 <Image
                   src={cloudDiagram}
-                  alt="INCSMART Cloud Architecture Network Map"
+                  alt="IncSmart Cloud Architecture Network Map"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-contain object-center opacity-90 group-hover/diagram:opacity-100 group-hover/diagram:scale-[1.01] transition-all duration-500"

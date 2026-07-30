@@ -34,7 +34,7 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo-main.png"
-                alt="INCSMART Logo"
+                alt="IncSmart Logo"
                 width={180}
                 height={50}
                 className="h-10 w-auto object-contain"

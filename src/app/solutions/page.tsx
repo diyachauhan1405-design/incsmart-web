@@ -231,7 +231,7 @@ const projectCards = [
 ];
 
 const faqs = [
-  { question: "How does INCSMART reduce energy consumption?", answer: "Through intelligent HVAC automation, real-time demand-load management, power factor correction, and scheduling optimizations that align utility consumption with actual requirements." },
+  { question: "How does IncSmart reduce energy consumption?", answer: "Through intelligent HVAC automation, real-time demand-load management, power factor correction, and scheduling optimizations that align utility consumption with actual requirements." },
   { question: "Can your solutions integrate with our existing systems?", answer: "Yes, our Edge Gateways support standard industrial and building protocols including BACnet, Modbus, MQTT, and OPC-UA for seamless integration." },
   { question: "What is the typical ROI period for your solutions?", answer: "Depending on utility rates and baseline efficiency, most clients see full return on investment (ROI) within 12 to 18 months." },
   { question: "Do you provide 24×7 support and monitoring?", answer: "Absolutely. Our Network Operations Center (NOC) operates 24x7 to monitor alerts, perform predictive diagnostics, and ensure maximum system uptime." },
@@ -299,7 +299,7 @@ export default function SolutionsPage() {
               <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden flex items-center justify-center">
                 <Image 
                   src={cloudDiagram} 
-                  alt="INCSMART Cloud Architecture diagram" 
+                  alt="IncSmart Cloud Architecture diagram" 
                   fill 
                   className="object-cover opacity-90 group-hover:scale-[1.01] transition-transform duration-700"
                   priority
@@ -634,12 +634,12 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* 6. WHY CHOOSE INCSMART */}
+        {/* 6. WHY CHOOSE IncSmart */}
         <section className="py-20 bg-gradient-to-b from-[#081325] to-[#07111D] relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
-                WHY CHOOSE INCSMART?
+                WHY CHOOSE IncSmart?
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2 font-heading">
                 Decades of Engineering Excellence
