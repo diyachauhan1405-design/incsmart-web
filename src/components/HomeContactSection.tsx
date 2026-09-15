@@ -103,7 +103,7 @@ export default function HomeContactSection() {
                 <div>
                   <p className="text-[10px] text-slate-500 uppercase font-bold">Head Office</p>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    305, The Landmark, Mota Varachha, Surat, Gujarat 394101
+                    E-202, GIDC Rd, Sector 26, Gandhinagar, Gujarat 382028
                   </p>
                 </div>
               </div>

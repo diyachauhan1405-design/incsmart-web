@@ -159,7 +159,7 @@ export default function ContactPage() {
                 <h4 className="text-sm font-bold text-white font-heading">Head Office</h4>
                 <p className="text-xs text-slate-400 mt-2 leading-relaxed">
                   IncSmart Technologies Pvt. Ltd.<br />
-                  E-202, GIDC Rd, SECTOR-26, Sector 26, Gandhinagar, Gujarat 382028
+                  E-202, GIDC Rd, Sector 26, Gandhinagar, Gujarat 382028
                 </p>
               </div>
 
@@ -299,8 +299,8 @@ export default function ContactPage() {
               <div className="lg:col-span-6">
                 <IndiaMap
                   locations={storeLocations}
-                  title="Our Offices"
-                  subtitle="We have a strong presence to serve you better."
+                  title="Pan-India Deployments"
+                  subtitle="Headquartered in Gandhinagar with active service & deployments across India."
                 />
               </div>
 
@@ -371,7 +371,9 @@ export default function ContactPage() {
 
                 <div className="flex-shrink-0 w-full lg:w-auto">
                   <a
-                    href="tel:+918980001836"
+                    href="https://wa.me/919711888111?text=Hello%20IncSmart%20Team%2C%20I%20would%20like%20to%20discuss%20your%20IoT%20and%20automation%20solutions%20and%20schedule%20a%20consultation.%20Please%20connect%20with%20me%20regarding%20the%20same."
+                    target="_blank"
+                    rel="noreferrer"
                     className="bg-brand-blue hover:bg-blue-600 active:scale-95 text-white rounded-lg px-8 py-4 text-xs font-bold transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Book a Consultation</span>

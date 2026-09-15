@@ -6,11 +6,7 @@ import {
   Settings, 
   Cloud, 
   Monitor, 
-  TrendingUp,
-  ShieldCheck,
-  Leaf,
-  Clock,
-  Bell
+  TrendingUp
 } from "lucide-react";
 
 interface ProcessStep {
@@ -81,34 +77,6 @@ export default function ProcessSection() {
     }
   ];
 
-  const features = [
-    {
-      title: "Lower Costs",
-      description: "Reduce energy bills and operational costs.",
-      icon: ShieldCheck,
-      colorClass: "text-blue-400 bg-blue-500/10 border-blue-500/20"
-    },
-    {
-      title: "Sustainable Impact",
-      description: "Lower carbon footprint and a greener future.",
-      icon: Leaf,
-      colorClass: "text-brand-lime bg-brand-lime/10 border-brand-lime/20"
-    },
-    {
-      title: "Real-Time Visibility",
-      description: "Make faster, smarter decisions with live data.",
-      icon: Clock,
-      colorClass: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",
-      badge: "24"
-    },
-    {
-      title: "Predictive Intelligence",
-      description: "Prevent downtime and stay ahead of issues.",
-      icon: Bell,
-      colorClass: "text-purple-400 bg-purple-500/10 border-purple-500/20"
-    }
-  ];
-
   return (
     <section className="bg-[#07111D] py-20 border-t border-white/5 relative z-10 overflow-hidden">
       {/* Background Glows */}
@@ -149,113 +117,37 @@ export default function ProcessSection() {
           </p>
         </div>
 
-        {/* Flowchart Layout */}
-        <div className="flex flex-col xl:flex-row items-stretch justify-between gap-8 xl:gap-0 mb-16 relative">
-          
+        {/* Flowchart Layout with uniform cards and connectors */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 relative">
           {steps.map((step, idx) => {
             const Icon = step.icon;
-            const isLast = idx === steps.length - 1;
             return (
-              <div key={step.number} className="flex-1 flex flex-col xl:flex-row items-stretch xl:items-start group/step">
-                
-                {/* Step Item Content */}
-                <div className="flex-grow flex flex-col items-center text-center px-4 relative">
-                  
-                  {/* Glowing Circular Icon Container */}
-                  <div className={`w-16 h-16 rounded-full border flex items-center justify-center relative transition-all duration-500 ${step.bgGlow} ${step.glowColor} group-hover/step:scale-110`}>
-                    <Icon className={`w-7 h-7 ${step.iconColor}`} />
-                    
-                    {/* Pulsing Outer Ring */}
-                    <div className="absolute inset-0 rounded-full border border-white/5 animate-ping opacity-25"></div>
-                  </div>
-
-                  {/* Step Number Badge */}
-                  <div className="mt-4 px-2 py-0.5 rounded-full border border-white/10 bg-[#081325] text-[10px] font-bold text-slate-400 tracking-wider">
-                    {step.number}
-                  </div>
-
-                  {/* Step Title */}
-                  <h3 className="mt-4 text-sm sm:text-base font-bold text-white tracking-tight">
-                    {step.title}
-                  </h3>
-
-                  {/* Step Description */}
-                  <p className="mt-2 text-xs text-slate-400 max-w-[200px] leading-relaxed">
-                    {step.description}
-                  </p>
+              <div 
+                key={step.number} 
+                className="bg-[#081325]/50 border border-white/5 rounded-2xl p-5 flex flex-col items-center text-center hover:border-brand-cyan/30 hover:bg-[#0c1a2d]/60 transition-all duration-300 group/step relative h-full"
+              >
+                {/* Step Number Badge */}
+                <div className="absolute top-3 right-3 px-2 py-0.5 rounded-full border border-white/10 bg-white/5 text-[9px] font-bold text-slate-400 tracking-wider">
+                  {step.number}
                 </div>
 
-                {/* Animated Arrow Connector (Desktop only) */}
-                {!isLast && (
-                  <div className="hidden xl:flex items-center justify-center w-12 mx-2 relative top-8">
-                    <svg className="w-12 h-6 overflow-visible" viewBox="0 0 48 24" fill="none">
-                      <path
-                        d="M 2 12 H 44"
-                        stroke={`url(#arrow-grad-${idx})`}
-                        strokeWidth="2"
-                        className="animate-flow-dash"
-                      />
-                      <path
-                        d="M 39 7 L 44 12 L 39 17"
-                        stroke={idx % 2 === 0 ? "#06B6D4" : "#84CC16"}
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <circle r="3.5" fill={idx % 2 === 0 ? "#06B6D4" : "#84CC16"}>
-                        <animateMotion
-                          dur="2s"
-                          repeatCount="indefinite"
-                          path="M 2 12 H 44"
-                          begin={`${idx * 0.3}s`}
-                        />
-                      </circle>
-                      <defs>
-                        <linearGradient id={`arrow-grad-${idx}`} x1="0" y1="0" x2="1" y2="0">
-                          <stop offset="0%" stopColor={idx % 2 === 0 ? "#06B6D4" : "#84CC16"} stopOpacity="0.2" />
-                          <stop offset="100%" stopColor={idx % 2 === 0 ? "#84CC16" : "#06B6D4"} />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </div>
-                )}
+                {/* Glowing Circular Icon Container - strictly uniform size */}
+                <div className={`w-14 h-14 rounded-2xl border flex items-center justify-center relative mb-4 transition-transform duration-300 group-hover/step:scale-105 ${step.bgGlow} ${step.glowColor}`}>
+                  <Icon className={`w-6 h-6 ${step.iconColor}`} />
+                </div>
 
+                {/* Step Title - uniform min height */}
+                <h3 className="text-sm font-bold text-white tracking-tight mb-2 min-h-[40px] flex items-center justify-center">
+                  {step.title}
+                </h3>
+
+                {/* Step Description */}
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             );
           })}
-
-        </div>
-
-        {/* Bottom Horizontal Card Bar */}
-        <div className="w-full bg-[#081325]/40 border border-white/10 rounded-2xl p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 items-center divide-y md:divide-y-0 lg:divide-x divide-white/5 divide-solid">
-            
-            {features.map((feat, idx) => {
-              const FeatIcon = feat.icon;
-              return (
-                <div 
-                  key={feat.title} 
-                  className={`flex items-start space-x-4 p-2 ${
-                    idx > 0 ? "pt-6 md:pt-2 lg:pt-0 lg:pl-8" : ""
-                  }`}
-                >
-                  <div className={`flex-shrink-0 w-11 h-11 rounded-xl border flex items-center justify-center relative ${feat.colorClass}`}>
-                    <FeatIcon className="h-5.5 w-5.5" />
-                    {feat.badge && (
-                      <span className="absolute -top-1 -right-1.5 px-1 bg-cyan-500 text-[7px] font-black text-slate-900 rounded-sm">
-                        {feat.badge}
-                      </span>
-                    )}
-                  </div>
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-white">{feat.title}</h4>
-                    <p className="text-[11px] text-slate-400 leading-normal mt-0.5">{feat.description}</p>
-                  </div>
-                </div>
-              );
-            })}
-
-          </div>
         </div>
 
       </div>

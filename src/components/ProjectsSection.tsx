@@ -167,7 +167,8 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section className="bg-[#07111D] py-20 border-t border-white/5 relative z-10 overflow-hidden">
+    <section id="projects" className="bg-[#07111D] py-20 border-t border-white/5 relative z-10 overflow-hidden scroll-mt-20">
+      <div id="case-studies" className="scroll-mt-20"></div>
       {/* Background Ambience Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-brand-cyan/5 rounded-full blur-[160px] pointer-events-none"></div>
 
@@ -188,7 +189,7 @@ export default function ProjectsSection() {
             <span className="text-gradient-cyan-lime font-bold">Trusted by Industry Leaders.</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-            Explore how INCASMART has helped enterprises improve energy efficiency,
+            Explore how IncSmart has helped enterprises improve energy efficiency,
             automate operations, and build intelligent infrastructure across India.
           </p>
         </div>

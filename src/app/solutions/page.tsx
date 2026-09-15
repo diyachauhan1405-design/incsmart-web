@@ -97,7 +97,7 @@ const solutionsData = {
       "Intelligent Alerts & Notifications"
     ],
     benefits: [
-      "Up to 20% Energy Savings",
+      "Up to 15% Energy Savings",
       "Lower Carbon Footprint",
       "Improved Comfort",
       "Extended Equipment Life"
@@ -587,49 +587,29 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* 5. SUCCESS STORIES */}
-        <section className="py-20 border-b border-white/5 bg-[#081325]/35 relative">
+        {/* 5. PROJECTS CTA PER SECTION 24 & 27 OF BRIEF */}
+        <section className="py-16 border-b border-white/5 bg-[#081325]/35 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
-              <div>
-                <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
-                  SUCCESS STORIES
+            <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-[#0b1a2d] to-[#081325] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+              <div className="space-y-2 text-center md:text-left">
+                <span className="text-[10px] font-bold tracking-[0.25em] text-brand-cyan uppercase">
+                  VERIFIED IMPLEMENTATIONS
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2 font-heading">
-                  Measurable Operational Impact
+                <h2 className="text-xl sm:text-2xl font-bold text-white font-heading">
+                  See How We Deploy These Solutions in the Real World
                 </h2>
+                <p className="text-xs sm:text-sm text-slate-400 max-w-xl">
+                  Explore delivered implementations across PVR INOX, Western Railway, UltraTech Cement, and healthcare facilities.
+                </p>
               </div>
-              <Link href="#contact" className="text-xs font-bold text-brand-blue hover:underline flex items-center gap-1 mt-4 sm:mt-0">
-                <span>View All Projects</span>
-                <ArrowRight className="h-3 w-3" />
-              </Link>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {projectCards.map((proj, i) => (
-                <div key={i} className="bg-[#0b1a2d]/65 border border-white/5 rounded-2xl overflow-hidden hover:border-brand-blue/35 hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
-                  <div className="relative h-48 w-full">
-                    <Image
-                      src={proj.imageUrl}
-                      alt={proj.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 25vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-3 left-3 bg-[#081325]/85 border border-white/10 rounded-full px-3 py-1 text-[9px] font-bold tracking-wider text-slate-300">
-                      {proj.title}
-                    </div>
-                  </div>
-                  <div className="p-5 flex flex-col space-y-2">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
-                      {proj.category}
-                    </span>
-                    <div className="text-xs font-extrabold text-brand-lime pt-1">
-                      {proj.metric}
-                    </div>
-                  </div>
-                </div>
-              ))}
+              <Link
+                href="/projects"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full text-xs font-bold text-slate-900 bg-gradient-to-r from-brand-lime to-brand-cyan hover:opacity-95 active:scale-95 transition-all shadow-md flex-shrink-0"
+              >
+                <span>Explore Our Projects</span>
+                <ArrowRight className="w-3.5 h-3.5 ml-2" />
+              </Link>
             </div>
           </div>
         </section>

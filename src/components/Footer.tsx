@@ -11,37 +11,23 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const solutionLinks = [
-    { label: "Industrial IoT", href: "#industrial-iot" },
-    { label: "HVAC Optimization", href: "#hvac-optimization" },
-    { label: "Energy Management", href: "#energy-management" },
-    { label: "Building Management", href: "#building-management" },
-    { label: "Fire Monitoring", href: "#fire-monitoring" }
-  ];
-
-  const industryLinks = [
-    { label: "Manufacturing", href: "#manufacturing" },
-    { label: "Commercial Buildings", href: "#commercial-buildings" },
-    { label: "Railways", href: "#railways" },
-    { label: "Hospitals", href: "#hospitals" },
-    { label: "Hotels", href: "#hotels" },
-    { label: "Solar Plants", href: "#solar-plants" },
-    { label: "Education", href: "#education" },
-    { label: "Retail & Malls", href: "#retail-&-malls" }
+    { label: "Industrial IoT & Automation", href: "/solutions#iot" },
+    { label: "HVAC Optimization", href: "/solutions#hvac" },
+    { label: "Energy Management", href: "/solutions#energy" },
+    { label: "Building Management System", href: "/solutions#bms" },
+    { label: "Fire/Hydrant Monitoring", href: "/solutions#fire" }
   ];
 
   const companyLinks = [
-    { label: "About Us", href: "#about-us" },
-    { label: "Our Process", href: "#our-process" },
-    { label: "Projects", href: "#projects" },
-    { label: "Careers", href: "#careers" },
-    { label: "Blog", href: "#blog" }
+    { label: "About Us", href: "/about/our-team" },
+    { label: "Projects", href: "/projects" },
+    { label: "Case Studies", href: "/case-studies" },
+    { label: "Careers", href: "/careers" }
   ];
 
   const resourceLinks = [
-    { label: "Case Studies", href: "#case-studies" },
-    { label: "Brochures", href: "#brochures" },
-    { label: "FAQs", href: "/faqs" },
-    { label: "Support", href: "#support" }
+    { label: "FAQ", href: "/faqs" },
+    { label: "Client Reviews", href: "/reviews" }
   ];
 
   return (
@@ -115,86 +101,79 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Link columns — equal spacing on desktop */}
-          <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 xl:gap-x-10 gap-y-8">
-          {/* Solutions */}
-          <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Solutions</h4>
-            <ul className="space-y-2.5">
-              {solutionLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-xs text-slate-400 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Link columns — 4 clean columns per Section 34 */}
+          <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 xl:gap-x-10 gap-y-8">
+            {/* Solutions */}
+            <div className="flex flex-col gap-4">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Solutions</h4>
+              <ul className="space-y-2.5">
+                {solutionLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="text-xs text-slate-400 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Industries */}
-          <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Industries</h4>
-            <ul className="space-y-2.5">
-              {industryLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-xs text-slate-400 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Company */}
+            <div className="flex flex-col gap-4">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Company</h4>
+              <ul className="space-y-2.5">
+                {companyLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="text-xs text-slate-400 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Company */}
-          <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Company</h4>
-            <ul className="space-y-2.5">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-xs text-slate-400 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Resources */}
+            <div className="flex flex-col gap-4">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Resources</h4>
+              <ul className="space-y-2.5">
+                {resourceLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="text-xs text-slate-400 hover:text-white transition-colors whitespace-nowrap">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Resources */}
-          <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Resources</h4>
-            <ul className="space-y-2.5">
-              {resourceLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-xs text-slate-400 hover:text-white transition-colors whitespace-nowrap">
-                    {link.label}
-                  </Link>
+            {/* Contact */}
+            <div className="flex flex-col gap-4">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Contact</h4>
+              <ul className="space-y-2.5">
+                <li className="flex items-center gap-2.5 text-xs text-slate-400">
+                  <Phone className="h-3.5 w-3.5 text-[#06B6D4] shrink-0" />
+                  <a 
+                    href="https://wa.me/919711888111?text=Hello%20IncSmart%20Team%2C%20I%20would%20like%20to%20discuss%20your%20IoT%20and%20automation%20solutions%20and%20schedule%20a%20consultation.%20Please%20connect%20with%20me%20regarding%20the%20same." 
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    +91 97118 88111
+                  </a>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Us */}
-          <div className="flex flex-col gap-4 col-span-2 sm:col-span-1">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Contact Us</h4>
-            <ul className="space-y-2.5">
-              <li className="flex items-center gap-2.5 text-xs text-slate-400">
-                <Phone className="h-3.5 w-3.5 text-[#06B6D4] shrink-0" />
-                <a href="tel:+919711888111" className="hover:text-white transition-colors">
-                  +91 97118 88111
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5 text-xs text-slate-400">
-                <Mail className="h-3.5 w-3.5 text-[#06B6D4] shrink-0" />
-                <a href="mailto:info@incsmart.in" className="hover:text-white transition-colors break-all">
-                  info@incsmart.in
-                </a>
-              </li>
-              <li className="flex items-start gap-2.5 text-xs text-slate-400">
-                <MapPin className="h-3.5 w-3.5 text-[#06B6D4] shrink-0 mt-0.5" />
-                <span className="leading-relaxed">Ahmedabad, Gujarat, India</span>
-              </li>
-            </ul>
-          </div>
+                <li className="flex items-center gap-2.5 text-xs text-slate-400">
+                  <Mail className="h-3.5 w-3.5 text-[#06B6D4] shrink-0" />
+                  <a href="mailto:contact@incsmart.in" className="hover:text-white transition-colors break-all">
+                    contact@incsmart.in
+                  </a>
+                </li>
+                <li className="flex items-start gap-2.5 text-xs text-slate-400">
+                  <MapPin className="h-3.5 w-3.5 text-[#06B6D4] shrink-0 mt-0.5" />
+                  <span className="leading-relaxed">
+                    E-202, GIDC Rd, Sector 26, Gandhinagar, Gujarat 382028
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
 
         </div>

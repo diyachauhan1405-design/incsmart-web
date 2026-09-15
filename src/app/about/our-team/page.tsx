@@ -32,13 +32,15 @@ import {
   Phone,
   Rocket,
   Cloud,
-  Mail
+  Mail,
+  MessageSquare
 } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import IndiaMap from "@/components/IndiaMap";
 import OurJourneyTimeline from "@/components/OurJourneyTimeline";
+import IndustriesSection from "@/components/IndustriesSection";
 import { megaCityLocations } from "@/data/storeLocations";
 
 // Graphic resources
@@ -275,26 +277,7 @@ export default function OurTeamPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
-              {/* Dharmendra Jadav */}
-              <div className="bg-[#0b1a2d]/45 border border-white/5 rounded-2xl p-5 hover:border-brand-blue/20 transition-all duration-300">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue text-xs font-bold shrink-0">
-                    DJ
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white font-heading">Dharmendra Jadav</h4>
-                    <p className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mt-0.5">Support Engineer</p>
-                  </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-white/5">
-                  <a href="tel:+919824962067" className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-white transition-colors">
-                    <Phone className="w-3.5 h-3.5 text-[#06B6D4]" />
-                    <span>+91 98249 62067</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Mayank Sagar */}
+              {/* 1. Mayank Sagar */}
               <div className="bg-[#0b1a2d]/45 border border-white/5 rounded-2xl p-5 hover:border-brand-blue/20 transition-all duration-300">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue text-xs font-bold shrink-0">
@@ -313,7 +296,7 @@ export default function OurTeamPage() {
                 </div>
               </div>
 
-              {/* Chirag Barot */}
+              {/* 2. Chirag Barot */}
               <div className="bg-[#0b1a2d]/45 border border-white/5 rounded-2xl p-5 hover:border-brand-blue/20 transition-all duration-300">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue text-xs font-bold shrink-0">
@@ -328,6 +311,25 @@ export default function OurTeamPage() {
                   <a href="tel:+919316436699" className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-white transition-colors">
                     <Phone className="w-3.5 h-3.5 text-[#06B6D4]" />
                     <span>+91 93164 36699</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* 3. Dharmendra Jadav */}
+              <div className="bg-[#0b1a2d]/45 border border-white/5 rounded-2xl p-5 hover:border-brand-blue/20 transition-all duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue text-xs font-bold shrink-0">
+                    DJ
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white font-heading">Dharmendra Jadav</h4>
+                    <p className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mt-0.5">Support Engineer</p>
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-white/5">
+                  <a href="tel:+919824962067" className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-white transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-[#06B6D4]" />
+                    <span>+91 98249 62067</span>
                   </a>
                 </div>
               </div>
@@ -352,67 +354,8 @@ export default function OurTeamPage() {
           </div>
         </section>
 
-        {/* WHO WE ARE */}
-        <section className="py-20 bg-[#081325]/25 border-b border-white/5 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              
-              {/* Left Column Isometric Building */}
-              <div className="lg:col-span-5 relative flex justify-center">
-                <div className="relative w-full aspect-square rounded-3xl overflow-hidden group">
-                  <Image 
-                    src={factoryRender} 
-                    alt="IncSmart Smart Infrastructure Architecture" 
-                    fill 
-                    className="object-contain group-hover:scale-[1.02] transition-transform duration-500"
-                  />
-                </div>
-              </div>
-
-              {/* Right Column details */}
-              <div className="lg:col-span-7 flex flex-col space-y-6">
-                <div>
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
-                    WHO WE ARE
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2 font-heading">
-                    Building Smarter Infrastructure Across India
-                  </h2>
-                  <p className="text-sm text-slate-400 mt-4 leading-relaxed">
-                    IncSmart is an Industrial IoT and automation company delivering end-to-end solutions that help organizations monitor, optimize, and automate their operations. We empower industries with real-time visibility, intelligent analytics, and sustainable technologies to improve efficiency and reduce operational costs.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/5">
-                  <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-4 text-center">
-                    <Briefcase className="w-5 h-5 text-brand-blue mx-auto mb-2" />
-                    <div className="text-xl font-bold font-heading text-white">120+</div>
-                    <div className="text-[8px] text-slate-500 font-bold uppercase mt-1">Projects Delivered</div>
-                  </div>
-
-                  <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-4 text-center">
-                    <TrendingUp className="w-5 h-5 text-brand-lime mx-auto mb-2" />
-                    <div className="text-xl font-bold font-heading text-white">20%</div>
-                    <div className="text-[8px] text-slate-500 font-bold uppercase mt-1">Average Energy Savings</div>
-                  </div>
-
-                  <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-4 text-center">
-                    <Activity className="w-5 h-5 text-brand-cyan mx-auto mb-2" />
-                    <div className="text-xl font-bold font-heading text-white">24×7</div>
-                    <div className="text-[8px] text-slate-500 font-bold uppercase mt-1">Real-time Monitoring</div>
-                  </div>
-
-                  <div className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-4 text-center">
-                    <Building className="w-5 h-5 text-purple-400 mx-auto mb-2" />
-                    <div className="text-xl font-bold font-heading text-white">8+</div>
-                    <div className="text-[8px] text-slate-500 font-bold uppercase mt-1">Industries Served</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
+        {/* INDUSTRIES WE SERVE PER SECTION 19 & 20 OF BRIEF */}
+        <IndustriesSection />
 
         {/* OUR JOURNEY & VISION/MISSION */}
         <section className="py-20 bg-[#07111D] relative border-b border-white/5 overflow-hidden">
@@ -674,10 +617,12 @@ export default function OurTeamPage() {
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                   <a
-                    href="tel:+919711888111"
+                    href="https://wa.me/919711888111?text=Hello%20IncSmart%20Team%2C%20I%20would%20like%20to%20discuss%20your%20IoT%20and%20automation%20solutions%20and%20schedule%20a%20consultation.%20Please%20connect%20with%20me%20regarding%20the%20same."
+                    target="_blank"
+                    rel="noreferrer"
                     className="bg-brand-blue hover:bg-blue-600 active:scale-95 text-white rounded-lg px-6 py-3.5 text-xs font-bold transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <Phone className="w-4 h-4" />
+                    <MessageSquare className="w-4 h-4 text-emerald-400" />
                     <span>Book a Consultation</span>
                   </a>
                   <a

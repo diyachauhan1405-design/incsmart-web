@@ -36,7 +36,7 @@ export default function SolutionsSection() {
       id: "iot",
       title: "Industrial IoT & Automation",
       description: "Connect machines, sensors, and industrial assets into one intelligent platform for real-time monitoring and control.",
-      learnMoreUrl: "#iot",
+      learnMoreUrl: "/solutions#iot",
       icon: Network,
       iconBgColor: "bg-blue-500/10 border-blue-500/20",
       iconColor: "text-blue-400",
@@ -48,9 +48,9 @@ export default function SolutionsSection() {
     {
       id: "hvac",
       title: "HVAC Optimization",
-      description: "Improve HVAC performance with smart automation and reduce energy consumption by up to 20%.",
-      highlightText: "20%",
-      learnMoreUrl: "#hvac",
+      description: "Improve HVAC performance with smart automation and reduce energy consumption by up to 15%.",
+      highlightText: "15%",
+      learnMoreUrl: "/solutions#hvac",
       icon: Wind,
       iconBgColor: "bg-cyan-500/10 border-cyan-500/20",
       iconColor: "text-cyan-400",
@@ -63,7 +63,7 @@ export default function SolutionsSection() {
       id: "energy",
       title: "Energy Management",
       description: "Track power usage, monitor equipment, and optimize energy efficiency through intelligent analytics.",
-      learnMoreUrl: "#energy",
+      learnMoreUrl: "/solutions#energy",
       icon: Zap,
       iconBgColor: "bg-emerald-500/10 border-emerald-500/20",
       iconColor: "text-emerald-400",
@@ -76,7 +76,7 @@ export default function SolutionsSection() {
       id: "bms",
       title: "Building Management System",
       description: "Manage lighting, occupancy, HVAC, and electrical systems from a single centralized dashboard.",
-      learnMoreUrl: "#bms",
+      learnMoreUrl: "/solutions#bms",
       icon: Building2,
       iconBgColor: "bg-indigo-500/10 border-indigo-500/20",
       iconColor: "text-indigo-400",
@@ -89,7 +89,7 @@ export default function SolutionsSection() {
       id: "fire",
       title: "Hydrant & Sprinkler Monitoring",
       description: "Monitor pipeline pressure, pump health, and fire safety infrastructure with continuous IoT supervision.",
-      learnMoreUrl: "#fire",
+      learnMoreUrl: "/solutions#fire",
       icon: Flame,
       iconBgColor: "bg-rose-500/10 border-rose-500/20",
       iconColor: "text-rose-400",
@@ -128,7 +128,7 @@ export default function SolutionsSection() {
               </h2>
               <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-xl">
                 From Industrial IoT and HVAC optimization to energy management and smart building automation,{" "}
-                <span className="text-[#06B6D4] font-semibold">INCASMART</span> delivers connected solutions that 
+                <span className="text-[#06B6D4] font-semibold">IncSmart</span> delivers connected solutions that 
                 improve efficiency, reduce operating costs, and provide real-time visibility.
               </p>
             </div>

@@ -1,4 +1,4 @@
-export type StoreType = "head-office" | "regional" | "store";
+export type StoreType = "head-office" | "deployment" | "regional" | "store";
 
 export interface StoreLocation {
   id: string;
@@ -18,25 +18,25 @@ export interface StoreLocation {
 /** Add or edit locations here to update map pins across the site */
 export const storeLocations: StoreLocation[] = [
   {
-    id: "surat",
-    name: "Surat",
-    city: "Surat",
+    id: "gandhinagar",
+    name: "Gandhinagar",
+    city: "Gandhinagar",
     state: "Gujarat",
     role: "Head Office",
     type: "head-office",
-    lat: 21.1702,
-    lng: 72.8311,
+    lat: 23.2156,
+    lng: 72.6369,
     address:
-      "305, The Landmark, Near Swaminarayan Temple, Mota Varachha, Surat, Gujarat 394101",
-    phone: "+91 89800 01836",
+      "E-202, GIDC Rd, Sector 26, Gandhinagar, Gujarat 382028",
+    phone: "+91 97118 88111",
   },
   {
     id: "mumbai",
     name: "Mumbai",
     city: "Mumbai",
     state: "Maharashtra",
-    role: "Regional Office",
-    type: "regional",
+    role: "Active Deployment",
+    type: "deployment",
     lat: 19.076,
     lng: 72.8777,
   },
@@ -45,8 +45,8 @@ export const storeLocations: StoreLocation[] = [
     name: "New Delhi",
     city: "New Delhi",
     state: "Delhi",
-    role: "Regional Office",
-    type: "regional",
+    role: "Active Deployment",
+    type: "deployment",
     lat: 28.6139,
     lng: 77.209,
   },
@@ -55,8 +55,8 @@ export const storeLocations: StoreLocation[] = [
     name: "Bengaluru",
     city: "Bengaluru",
     state: "Karnataka",
-    role: "Regional Office",
-    type: "regional",
+    role: "Active Deployment",
+    type: "deployment",
     lat: 12.9716,
     lng: 77.5946,
   },
@@ -174,6 +174,11 @@ export const storeTypeConfig: Record<
     label: "Head Office",
     color: "#A855F7",
     ring: "rgba(168, 85, 247, 0.4)",
+  },
+  deployment: {
+    label: "Active Deployment",
+    color: "#00E5FF",
+    ring: "rgba(0, 229, 255, 0.4)",
   },
   regional: {
     label: "Regional Office",

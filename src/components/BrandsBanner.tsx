@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { TrendingUp, Shield, Calendar, MapPin } from "lucide-react";
 
 const MARQUEE_DURATION_S = 25;
 
@@ -273,7 +272,7 @@ export default function BrandsBanner() {
           </h2>
           <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-3xl mx-auto">
             From manufacturing plants and commercial buildings to railways and energy infrastructure, 
-            organizations across India trust INCASMART to deliver intelligent IoT automation, 
+            organizations across India trust IncSmart to deliver intelligent IoT automation, 
             energy optimization, and sustainable infrastructure solutions.
           </p>
         </div>
@@ -300,57 +299,6 @@ export default function BrandsBanner() {
                 {brand.content}
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Bottom Key Metrics Panel */}
-        <div className="w-full bg-[#081325]/50 border border-white/10 rounded-2xl p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 items-center divide-y divide-white/5 lg:divide-y-0 lg:divide-x divide-solid">
-            
-            {/* Metric 1 */}
-            <div className="flex items-center space-x-4 p-2 lg:p-0">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-lime/10 border border-brand-lime/20 flex items-center justify-center text-brand-lime shadow-[0_0_15px_rgba(132,204,22,0.1)]">
-                <TrendingUp className="h-5 w-5" />
-              </div>
-              <div>
-                <div className="text-2xl md:text-3xl font-extrabold text-brand-lime font-heading">20%</div>
-                <div className="text-[10px] md:text-xs font-semibold text-slate-400 tracking-wider">Energy Savings</div>
-              </div>
-            </div>
-
-            {/* Metric 2 */}
-            <div className="flex items-center space-x-4 p-2 pt-6 lg:pt-0 lg:pl-8">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center text-brand-cyan shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                <Shield className="h-5 w-5" />
-              </div>
-              <div>
-                <div className="text-xl md:text-2xl font-extrabold text-white font-heading leading-tight">Startup India</div>
-                <div className="text-[10px] md:text-xs font-semibold text-slate-400 tracking-wider">Recognized</div>
-              </div>
-            </div>
-
-            {/* Metric 3 */}
-            <div className="flex items-center space-x-4 p-2 pt-6 lg:pt-0 lg:pl-8">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-lime/10 border border-brand-lime/20 flex items-center justify-center text-brand-lime shadow-[0_0_15px_rgba(132,204,22,0.1)]">
-                <Calendar className="h-5 w-5" />
-              </div>
-              <div>
-                <div className="text-2xl md:text-3xl font-extrabold text-brand-lime font-heading">2017</div>
-                <div className="text-[10px] md:text-xs font-semibold text-slate-400 tracking-wider">Since</div>
-              </div>
-            </div>
-
-            {/* Metric 4 */}
-            <div className="flex items-center space-x-4 p-2 pt-6 lg:pt-0 lg:pl-8">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center text-brand-cyan shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                <MapPin className="h-5 w-5" />
-              </div>
-              <div>
-                <div className="text-xl md:text-2xl font-extrabold text-white font-heading leading-tight">Pan-India</div>
-                <div className="text-[10px] md:text-xs font-semibold text-slate-400 tracking-wider">Deployments</div>
-              </div>
-            </div>
-
           </div>
         </div>
 

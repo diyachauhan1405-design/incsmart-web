@@ -221,70 +221,95 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
               </Link>
             </div>
 
-            {/* Bottom 4 Badges/Specs */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-3 gap-x-4 pt-4 border-t border-white/5">
-              <div className="flex items-center space-x-2.5">
-                <div className="flex-shrink-0 p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/10">
-                  <Award className="h-3.5 w-3.5 text-brand-cyan" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-semibold text-white">Startup India</h4>
-                  <p className="text-[9px] text-slate-500">Recognized</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-2.5">
-                <div className="flex-shrink-0 p-2.5 rounded-lg bg-brand-lime/10 border border-brand-lime/10">
-                  <Calendar className="h-3.5 w-3.5 text-brand-lime" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-semibold text-white">Since</h4>
-                  <p className="text-[9px] text-slate-500">2017</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-2.5">
-                <div className="flex-shrink-0 p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/10">
-                  <TrendingUp className="h-3.5 w-3.5 text-emerald-400" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-semibold text-white">Up to 20%</h4>
-                  <p className="text-[9px] text-slate-500">Energy Savings</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-2.5">
-                <div className="flex-shrink-0 p-2.5 rounded-lg bg-brand-blue/10 border border-brand-blue/10">
-                  <Globe className="h-3.5 w-3.5 text-brand-blue" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-semibold text-white">Pan India</h4>
-                  <p className="text-[9px] text-slate-500">Deployments</p>
-                </div>
-              </div>
+            {/* Quick action badges */}
+            <div className="flex flex-wrap items-center gap-2.5 pt-2 text-xs text-slate-400">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[11px] font-medium text-slate-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-lime mr-2 animate-pulse"></span>
+                Enterprise IoT
+              </span>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[11px] font-medium text-slate-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan mr-2 animate-pulse"></span>
+                24×7 Cloud NOC
+              </span>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[11px] font-medium text-slate-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mr-2 animate-pulse"></span>
+                AI Analytics
+              </span>
             </div>
 
           </div>
 
-          {/* Right Column - Factory + Telemetry */}
-          <div className="lg:col-span-7 relative flex items-center justify-center lg:pt-0">
-            <div className="relative w-full max-w-4xl mx-auto">
-              <div className="relative w-full aspect-[3/2]">
-                <Image
-                  src={factoryRender}
-                  alt="IncSmart IoT Cloud Factory Render"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain object-center"
-                  priority
+          {/* Right Column - Animated Factory + Telemetry side-by-side */}
+          <div className="lg:col-span-7 flex flex-col xl:flex-row items-center gap-6 justify-center lg:pt-0">
+            {/* Visual Container with animated IoT overlays */}
+            <div className="relative w-full max-w-xl aspect-[4/3] rounded-3xl border border-white/10 bg-[#081325]/40 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] group/canvas backdrop-blur-md">
+              <div className="absolute inset-0 bg-grid-pattern opacity-15"></div>
+
+              {/* Main Factory Render */}
+              <Image
+                src={factoryRender}
+                alt="IncSmart IoT Connected Factory Infrastructure"
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-contain object-center scale-[1.03] transition-transform duration-700"
+                priority
+              />
+
+              {/* Subtle Animated Data Flow Lines & Pulsing Nodes Overlay */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none z-20">
+                <defs>
+                  <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#06B6D4" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#84CC16" stopOpacity="0.8" />
+                  </linearGradient>
+                </defs>
+                {/* Connection line from substation to cloud */}
+                <path
+                  d="M 120 220 Q 220 180, 320 130 T 460 90"
+                  fill="none"
+                  stroke="url(#streamGrad)"
+                  strokeWidth="2"
+                  strokeDasharray="6 4"
+                  className="animate-flow-dash opacity-70"
                 />
-                <div className="absolute top-[14%] right-[2%] w-[310px] hidden lg:block z-30 transform hover:scale-[1.02] transition-transform duration-300">
-                  <TelemetryDashboard savingsVal={savingsVal} powerVal={powerVal} />
-                </div>
+                <path
+                  d="M 160 300 Q 280 260, 380 240"
+                  fill="none"
+                  stroke="#3B82F6"
+                  strokeWidth="1.5"
+                  strokeDasharray="4 4"
+                  className="animate-flow-dash opacity-60"
+                />
+              </svg>
+
+              {/* Dynamic Beacon 1: Smart HVAC Node */}
+              <div className="absolute top-[28%] left-[34%] z-20 hidden sm:flex items-center space-x-1.5 px-2 py-1 rounded-full bg-[#081325]/90 border border-brand-cyan/40 backdrop-blur-md text-[9px] font-bold text-slate-200 shadow-[0_0_12px_rgba(6,182,212,0.3)] animate-float">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-ping"></span>
+                <span>HVAC Chiller #1 Opt.</span>
               </div>
-              <div className="w-full mt-4 px-4 flex justify-center lg:hidden">
-                <TelemetryDashboard savingsVal={savingsVal} powerVal={powerVal} />
+
+              {/* Dynamic Beacon 2: Moving Rail / Train Transit Marker */}
+              <div className="absolute bottom-[22%] left-[16%] z-20 hidden sm:flex items-center space-x-1.5 px-2 py-1 rounded-full bg-[#081325]/90 border border-brand-lime/40 backdrop-blur-md text-[9px] font-bold text-slate-200 shadow-[0_0_12px_rgba(132,204,22,0.3)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-lime animate-pulse"></span>
+                <span>Rail Traction Monitored</span>
               </div>
+
+              {/* Dynamic Beacon 3: Substation Power Telemetry */}
+              <div className="absolute top-[52%] right-[18%] z-20 hidden sm:flex items-center space-x-1.5 px-2 py-1 rounded-full bg-[#081325]/90 border border-blue-500/40 backdrop-blur-md text-[9px] font-bold text-slate-200 shadow-[0_0_12px_rgba(59,130,246,0.3)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                <span>Substation: 98% Normal</span>
+              </div>
+
+              {/* Live Operating Status Badge */}
+              <div className="absolute bottom-3 right-3 z-20 flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-[#06101E]/90 border border-white/10 text-[9px] font-semibold text-slate-300">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Live System Active</span>
+              </div>
+            </div>
+
+            {/* Repositioned Live Overview Dashboard - Placed cleanly beside/below without blocking image */}
+            <div className="w-full xl:w-[280px] flex-shrink-0">
+              <TelemetryDashboard savingsVal={savingsVal} powerVal={powerVal} />
             </div>
           </div>
 

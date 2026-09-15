@@ -170,16 +170,27 @@ export default function IndustriesSection() {
 
                   {/* Explore Button */}
                   <Link 
-                    href={`#${ind.title.toLowerCase().replace(/\s+/g, '-')}`}
+                    href="/projects"
                     className="inline-flex items-center text-[10px] font-bold text-[#06B6D4] uppercase tracking-wider group/btn"
                   >
-                    <span>Explore</span>
+                    <span>View Projects</span>
                     <ArrowRight className="h-3 w-3 ml-1 group-hover/btn:translate-x-1.5 transition-transform" />
                   </Link>
                 </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Industry CTA per Section 20.1 of brief */}
+        <div className="mt-14 text-center">
+          <Link
+            href="/projects"
+            className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-xs font-bold text-slate-900 bg-gradient-to-r from-brand-lime to-brand-cyan hover:opacity-95 active:scale-95 transition-all shadow-lg hover:shadow-brand-cyan/20 group"
+          >
+            <span>Explore Our Projects</span>
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
         </div>
 
       </div>

@@ -4,12 +4,10 @@ import Header from "./Header";
 import HeroSection from "./HeroSection";
 import BrandsBanner from "./BrandsBanner";
 import SolutionsSection from "./SolutionsSection";
-import ProcessSection from "./ProcessSection";
-import IndustriesSection from "./IndustriesSection";
-import ProjectsSection from "./ProjectsSection";
 import WhyChooseSection from "./WhyChooseSection";
-import FAQSection from "./FAQSection";
-import HomeContactSection from "./HomeContactSection";
+import AchievementsSection from "./AchievementsSection";
+import ProcessSection from "./ProcessSection";
+import HomeCTASection from "./HomeCTASection";
 import Footer from "./Footer";
 
 export default function LandingPage() {
@@ -18,37 +16,31 @@ export default function LandingPage() {
       {/* Navigation Header */}
       <Header />
       
-      {/* Main Content Area */}
+      {/* Main Content Area - Exact 7 sections per Section 8 of brief */}
       <main className="flex-grow">
-        {/* Hero Section */}
+        {/* Section 1: Hero / Landing Section */}
         <HeroSection isLoggedIn={false} />
         
-        {/* Brands Trust Banner */}
+        {/* Section 2: Our Clients / Trusted By */}
         <BrandsBanner />
 
-        {/* Intelligent Solutions Section */}
+        {/* Section 3: What IncSmart Does / Main Solutions */}
         <SolutionsSection />
 
-        {/* Work Process Section */}
-        <ProcessSection />
-
-        {/* Industries We Serve Section */}
-        <IndustriesSection />
-
-        {/* Projects Showcase Section */}
-        <ProjectsSection />
-
-        {/* Why Choose IncSmart & Testimonials */}
+        {/* Section 4: Why Choose IncSmart */}
         <WhyChooseSection />
 
-        {/* FAQs Accordion Section */}
-        <FAQSection />
+        {/* Section 5: Achievements / Key Numbers */}
+        <AchievementsSection />
 
-        {/* Contact Us — home page only */}
-        <HomeContactSection />
+        {/* Section 6: Uniform Our Process */}
+        <ProcessSection />
+
+        {/* Section 7: Compact CTA */}
+        <HomeCTASection />
       </main>
 
-      {/* Footer Section */}
+      {/* Section 8: Footer */}
       <Footer />
     </div>
   );

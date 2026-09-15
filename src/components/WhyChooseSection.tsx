@@ -7,8 +7,7 @@ import {
   Settings, 
   LayoutGrid, 
   ShieldCheck, 
-  MapPin, 
-  Star
+  MapPin
 } from "lucide-react";
 import cloudDiagram from "../../public/cloud-diagram.png";
 
@@ -17,16 +16,6 @@ interface DifferentiatorItem {
   description: string;
   icon: React.ComponentType<any>;
   themeClass: string;
-}
-
-interface TestimonialItem {
-  quote: string;
-  author: string;
-  role: string;
-  stars: number;
-  company: string;
-  logo: React.ReactNode;
-  themeColor: string;
 }
 
 export default function WhyChooseSection() {
@@ -66,71 +55,6 @@ export default function WhyChooseSection() {
       description: "Trusted by leading enterprises across India with scalable and future-ready solutions.",
       icon: MapPin,
       themeClass: "text-amber-400 bg-amber-500/10 border-amber-500/20"
-    }
-  ];
-
-  const testimonials: TestimonialItem[] = [
-    {
-      quote: "IncSmart helped us reduce our HVAC energy consumption by 20% while improving overall comfort for our guests.",
-      author: "Facility Head",
-      role: "PVR INOX",
-      stars: 5,
-      company: "PVR INOX",
-      themeColor: "group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]",
-      logo: (
-        <div className="flex items-center text-xs font-black tracking-tight text-white select-none">
-          <span>PVR</span>
-          <span className="font-light text-slate-300 ml-0.5">INOX</span>
-        </div>
-      )
-    },
-    {
-      quote: "The remote monitoring solution by IncSmart has improved reliability and response time across our assets.",
-      author: "Chief Engineer",
-      role: "Western Railway",
-      stars: 5,
-      company: "Western Railway",
-      themeColor: "group-hover:border-blue-500/30 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.15)]",
-      logo: (
-        <div className="flex items-center space-x-1 select-none">
-          <svg className="w-5 h-5 text-red-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="6">
-            <circle cx="50" cy="50" r="42" strokeDasharray="3,3" />
-            <circle cx="50" cy="50" r="28" />
-            <path d="M50,15 L50,85 M15,50 L85,50" />
-          </svg>
-          <span className="text-[9px] font-black text-slate-200 uppercase leading-none tracking-tight">WESTERN RY</span>
-        </div>
-      )
-    },
-    {
-      quote: "IncSmart's IoT platform gives us real-time visibility and helps us optimize our operations efficiently.",
-      author: "Plant Manager",
-      role: "UltraTech Cement",
-      stars: 5,
-      company: "UltraTech Cement",
-      themeColor: "group-hover:border-emerald-500/30 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.15)]",
-      logo: (
-        <div className="flex flex-col items-center select-none leading-none">
-          <span className="text-[9px] font-black italic tracking-tighter bg-gradient-to-r from-slate-200 to-slate-400 text-slate-950 px-1 py-0.5 rounded-sm">
-            UltraTech
-          </span>
-          <span className="text-[6px] tracking-widest font-extrabold text-slate-300 mt-0.5">CEMENT</span>
-        </div>
-      )
-    },
-    {
-      quote: "Their energy management system has helped us improve efficiency and ensure a safer environment.",
-      author: "Engineering Head",
-      role: "Global Hospital",
-      stars: 5,
-      company: "Global Hospital",
-      themeColor: "group-hover:border-purple-500/30 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]",
-      logo: (
-        <div className="flex items-center space-x-1 text-xs font-black tracking-tight text-white select-none">
-          <span className="text-cyan-400 font-bold text-sm">+</span>
-          <span className="text-[9px] tracking-wide text-slate-200 font-black">GLOBAL HOSPITALS</span>
-        </div>
-      )
     }
   ];
 
@@ -212,54 +136,6 @@ export default function WhyChooseSection() {
             })}
           </div>
 
-        </div>
-
-        {/* ========================================================
-            WHAT OUR CLIENTS SAY SECTION
-            ======================================================== */}
-        
-        {/* Section Tagline */}
-        <div className="flex items-center justify-center space-x-3 mb-4">
-          <span className="w-8 h-[1.5px] bg-[#06B6D4]"></span>
-          <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
-            WHAT OUR CLIENTS SAY
-          </span>
-          <span className="w-8 h-[1.5px] bg-gradient-to-r from-[#06B6D4] to-transparent"></span>
-        </div>
-
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonials.map((test) => (
-            <div 
-              key={test.company}
-              className={`p-6 rounded-2xl border border-white/5 bg-[#081325]/40 flex flex-col justify-between min-h-[260px] group transition-all duration-300 ${test.themeColor}`}
-            >
-              <div>
-                {/* 5-Star Rating */}
-                <div className="flex items-center space-x-1 text-amber-400 mb-4 select-none">
-                  {[...Array(test.stars)].map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-amber-400 stroke-none" />
-                  ))}
-                </div>
-
-                {/* Quote */}
-                <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed italic">
-                  "{test.quote}"
-                </p>
-              </div>
-
-              {/* Reviewer & Logo */}
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
-                <div>
-                  <h4 className="text-[11px] font-bold text-white tracking-tight">{test.author}</h4>
-                  <p className="text-[9px] text-slate-500 font-semibold mt-0.5">{test.role}</p>
-                </div>
-                <div className="flex-shrink-0 filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-300">
-                  {test.logo}
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
 
       </div>
