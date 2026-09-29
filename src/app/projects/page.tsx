@@ -21,6 +21,20 @@ import Footer from "@/components/Footer";
 
 const projectsList = [
   {
+    id: "rajhans-cinemas",
+    title: "Rajhans Cinemas",
+    industry: "Cinema Exhibition & Entertainment",
+    location: "Gujarat, India",
+    icon: Film,
+    challenge: "High HVAC energy expenditure, erratic hall temperatures, and high manual staff adjustments during varying movie screenings.",
+    solution: "Deployed IoT multi-sensor telemetry and automated smart damper controllers modulating HVAC based on real-time occupancy and showtimes.",
+    scope: "Multi-week comprehensive energy audit across active auditoriums with 10,000+ admits tracked.",
+    technology: ["Edge IoT Gateways", "Smart Damper Actuators", "Real-Time Telemetry", "Occupancy Scheduling"],
+    outcome: "Achieved 18.74% verified energy reduction per admit, 79% drop in manual interventions, and ₹851,545 annual projected savings.",
+    imageUrl: "/rajhans-cinemas-auditorium.jpg",
+    caseStudyId: "rajhans-cinemas"
+  },
+  {
     id: "pvr-inox",
     title: "PVR INOX Multiplexes",
     industry: "Commercial Entertainment & Malls",
@@ -192,7 +206,7 @@ export default function ProjectsPage() {
                         </div>
 
                         <Link
-                          href={`/case-studies#${project.caseStudyId}`}
+                          href={`/case-studies/${project.caseStudyId}`}
                           className="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-bold text-slate-900 bg-gradient-to-r from-brand-lime to-brand-cyan hover:opacity-95 active:scale-95 transition-all shadow-md group/btn self-start sm:self-auto"
                         >
                           <span>View Case Study</span>

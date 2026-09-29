@@ -39,6 +39,24 @@ export default function ProjectsSection() {
 
   const projects: ProjectItem[] = [
     {
+      id: "rajhans-cinemas",
+      title: "Rajhans Cinemas",
+      subtitle: "IoT HVAC Optimization & Climate Control",
+      description: "Deployed IoT sensors and autonomous controls to modulate HVAC by showtimes and occupancy, generating ₹8.51L+ annual savings.",
+      benefits: [
+        "18.74% Energy Reduction per Admit",
+        "79% Reduction in Manual Interventions",
+        "₹851,545 Annual Savings Per Location"
+      ],
+      imageUrl: "/rajhans-cinemas-auditorium.jpg",
+      icon: Film,
+      savingValue: "18.7%",
+      savingLabel: "Energy Reduction per Ticket Admit",
+      chartLabel: "HVAC Efficiency",
+      efficiencyValue: "18.7%",
+      efficiencyData: [11, 13, 14, 16, 17, 18.7]
+    },
+    {
       id: "pvr-inox",
       title: "PVR INOX",
       subtitle: "HVAC Energy Optimization",
@@ -361,7 +379,7 @@ export default function ProjectsSection() {
               {/* CTA Button */}
               <div className="mt-8 pt-4 border-t border-white/5">
                 <Link
-                  href={`#case-${currentProject.id}`}
+                  href={`/case-studies/${currentProject.id}`}
                   className="inline-flex items-center justify-center pl-6 pr-2.5 py-2.5 rounded-full text-xs font-bold text-white border border-white/10 hover:border-brand-cyan/50 hover:bg-white/5 transition-all group active:scale-95 cursor-pointer"
                 >
                   <span className="mr-3">View Case Study</span>
