@@ -201,3 +201,27 @@ body {
   }
 }
 
+/* Global responsive safeguards */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent text overflow on small viewports */
+h1, h2, h3, h4, h5, h6, p, span, a {
+  overflow-wrap: break-word;
+}
+
+/* Fluid responsive media defaults */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth horizontal scroll on touch devices */
+.responsive-scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+

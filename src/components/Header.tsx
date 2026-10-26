@@ -127,7 +127,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-4 lg:space-x-6 xl:space-x-8 items-center ml-auto mr-4 lg:mr-8">
+          <nav className="hidden lg:flex space-x-4 xl:space-x-8 items-center ml-auto mr-4 lg:mr-8">
             {navItems.map((item) => {
               if (item.isDropdown && item.dropdownItems) {
                 return (
@@ -207,7 +207,7 @@ export default function Header() {
           </nav>
 
           {/* Desktop Right Side CTA */}
-          <div className="hidden md:flex items-center flex-shrink-0">
+          <div className="hidden lg:flex items-center flex-shrink-0">
             <Link
               href="/contact"
               className="relative inline-flex items-center justify-between pl-5 pr-2 py-2.5 rounded-full text-xs font-bold text-slate-900 bg-gradient-to-r from-brand-lime to-brand-cyan hover:opacity-95 active:scale-95 transition-all shadow-lg hover:shadow-brand-cyan/20 group cursor-pointer"
@@ -220,10 +220,11 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center">
+          <div className="flex lg:hidden items-center">
             <button
               onClick={() => (isOpen ? closeMobileMenu() : setIsOpen(true))}
-              className="text-slate-400 hover:text-white p-2 rounded-lg focus:outline-none"
+              className="text-slate-400 hover:text-white p-2 rounded-lg focus:outline-none cursor-pointer"
+              aria-label="Toggle Navigation Menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -235,11 +236,11 @@ export default function Header() {
       {isOpen && (
         <>
           <div
-            className="md:hidden fixed inset-0 top-20 z-40 bg-black/60 backdrop-blur-sm"
+            className="lg:hidden fixed inset-0 top-20 z-40 bg-black/60 backdrop-blur-sm"
             onClick={closeMobileMenu}
             aria-hidden="true"
           />
-          <div className="md:hidden fixed inset-x-0 top-20 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto px-3 py-1.5 animate-in fade-in slide-in-from-top-5 duration-200">
+          <div className="lg:hidden fixed inset-x-0 top-20 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto px-3 py-1.5 animate-in fade-in slide-in-from-top-5 duration-200">
             <div className="bg-[#0b1a2d] border border-white/10 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.5)] p-4 text-slate-200 flex flex-col">
               <nav className="flex flex-col text-sm font-semibold text-slate-200">
                 {navItems.map((item) => {
