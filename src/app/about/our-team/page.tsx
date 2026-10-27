@@ -33,7 +33,12 @@ import {
   Rocket,
   Cloud,
   Mail,
-  MessageSquare
+  MessageSquare,
+  Sliders,
+  ShieldCheck,
+  Headphones,
+  MapPin,
+  Sparkles
 } from "lucide-react";
 
 import Header from "@/components/Header";
@@ -43,8 +48,6 @@ import OurJourneyTimeline from "@/components/OurJourneyTimeline";
 import IndustriesSection from "@/components/IndustriesSection";
 import { megaCityLocations } from "@/data/storeLocations";
 
-// Graphic resources
-import factoryRender from "../../../../public/factory-render.png";
 
 const journeySteps = [
   {
@@ -85,12 +88,129 @@ const journeySteps = [
 ];
 
 const coreValues = [
-  { title: "Innovation", icon: Lightbulb, color: "text-blue-400" },
-  { title: "Integrity", icon: Shield, color: "text-emerald-400" },
-  { title: "Reliability", icon: CheckCircle, color: "text-amber-400" },
-  { title: "Sustainability", icon: Sun, color: "text-brand-lime" },
-  { title: "Customer Success", icon: Users, color: "text-purple-400" },
-  { title: "Continuous Improvement", icon: TrendingUp, color: "text-rose-400" }
+  { 
+    title: "Innovation", 
+    tag: "Future-Ready",
+    desc: "Pioneering industrial IoT telemetry, smart edge processors, and cloud algorithms.",
+    icon: Lightbulb, 
+    color: "text-cyan-400",
+    glow: "hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.2)]",
+    iconBg: "bg-cyan-500/10 border-cyan-500/25 text-cyan-400",
+    badgeBg: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20"
+  },
+  { 
+    title: "Integrity", 
+    tag: "Truth-in-Data",
+    desc: "100% auditable sensor telemetry and verifiable, transparent energy metrics.",
+    icon: Shield, 
+    color: "text-emerald-400",
+    glow: "hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.2)]",
+    iconBg: "bg-emerald-500/10 border-emerald-500/25 text-emerald-400",
+    badgeBg: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20"
+  },
+  { 
+    title: "Reliability", 
+    tag: "99.9% Uptime",
+    desc: "Industrial-grade hardware engineered for continuous failover in harsh environments.",
+    icon: CheckCircle, 
+    color: "text-amber-400",
+    glow: "hover:border-amber-500/50 hover:shadow-[0_0_25px_rgba(245,158,11,0.2)]",
+    iconBg: "bg-amber-500/10 border-amber-500/25 text-amber-400",
+    badgeBg: "bg-amber-500/10 text-amber-300 border-amber-500/20"
+  },
+  { 
+    title: "Sustainability", 
+    tag: "Decarbonize",
+    desc: "Real, measurable kWh reduction directly lowering corporate carbon footprints.",
+    icon: Sun, 
+    color: "text-brand-lime",
+    glow: "hover:border-lime-500/50 hover:shadow-[0_0_25px_rgba(132,204,22,0.2)]",
+    iconBg: "bg-lime-500/10 border-lime-500/25 text-brand-lime",
+    badgeBg: "bg-lime-500/10 text-lime-300 border-lime-500/20"
+  },
+  { 
+    title: "Customer Success", 
+    tag: "Client First",
+    desc: "Dedicated engineering partnership from audit through lifetime operational tuning.",
+    icon: Users, 
+    color: "text-purple-400",
+    glow: "hover:border-purple-500/50 hover:shadow-[0_0_25px_rgba(168,85,247,0.2)]",
+    iconBg: "bg-purple-500/10 border-purple-500/25 text-purple-400",
+    badgeBg: "bg-purple-500/10 text-purple-300 border-purple-500/20"
+  },
+  { 
+    title: "Continuous Improvement", 
+    tag: "Adaptive AI",
+    desc: "Self-refining machine learning models continuously calibrating to load variations.",
+    icon: TrendingUp, 
+    color: "text-rose-400",
+    glow: "hover:border-rose-500/50 hover:shadow-[0_0_25px_rgba(244,63,94,0.2)]",
+    iconBg: "bg-rose-500/10 border-rose-500/25 text-rose-400",
+    badgeBg: "bg-rose-500/10 text-rose-300 border-rose-500/20"
+  }
+];
+
+const competitiveEdges = [
+  {
+    title: "Industry Expertise",
+    metric: "20+ Yrs Exp",
+    desc: "Deep multi-sector IoT mastery across heavy rail, cement, multiplexes & healthcare.",
+    icon: Briefcase,
+    color: "text-cyan-400",
+    glow: "hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.2)]",
+    iconBg: "bg-cyan-500/10 border-cyan-500/25 text-cyan-400",
+    badgeBg: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20"
+  },
+  {
+    title: "Customized Solutions",
+    metric: "100% Bespoke",
+    desc: "Hardware, firmware & cloud dashboards calibrated to your specific machinery & protocols.",
+    icon: Sliders,
+    color: "text-brand-lime",
+    glow: "hover:border-lime-500/50 hover:shadow-[0_0_25px_rgba(132,204,22,0.2)]",
+    iconBg: "bg-lime-500/10 border-lime-500/25 text-brand-lime",
+    badgeBg: "bg-lime-500/10 text-lime-300 border-lime-500/20"
+  },
+  {
+    title: "Scalable & Secure Platform",
+    metric: "Enterprise SLA",
+    desc: "End-to-end encrypted telemetry ingestion with zero-trust cloud data pipelines.",
+    icon: ShieldCheck,
+    color: "text-blue-400",
+    glow: "hover:border-blue-500/50 hover:shadow-[0_0_25px_rgba(59,130,246,0.2)]",
+    iconBg: "bg-blue-500/10 border-blue-500/25 text-blue-400",
+    badgeBg: "bg-blue-500/10 text-blue-300 border-blue-500/20"
+  },
+  {
+    title: "24×7 NOC Support",
+    metric: "< 15m Response",
+    desc: "Dedicated round-the-clock telemetry surveillance with instant proactive fault dispatch.",
+    icon: Headphones,
+    color: "text-emerald-400",
+    glow: "hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.2)]",
+    iconBg: "bg-emerald-500/10 border-emerald-500/25 text-emerald-400",
+    badgeBg: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20"
+  },
+  {
+    title: "AI-Driven Analytics",
+    metric: "Self-Optimizing",
+    desc: "Continuous wet-bulb enthalpy tuning, vibration alerts, and automated load-shedding.",
+    icon: Activity,
+    color: "text-amber-400",
+    glow: "hover:border-amber-500/50 hover:shadow-[0_0_25px_rgba(245,158,11,0.2)]",
+    iconBg: "bg-amber-500/10 border-amber-500/25 text-amber-400",
+    badgeBg: "bg-amber-500/10 text-amber-300 border-amber-500/20"
+  },
+  {
+    title: "Pan India Deployment",
+    metric: "12+ States",
+    desc: "Rapid turnkey rollout across 12+ states with nationwide field engineering support.",
+    icon: MapPin,
+    color: "text-purple-400",
+    glow: "hover:border-purple-500/50 hover:shadow-[0_0_25px_rgba(168,85,247,0.2)]",
+    iconBg: "bg-purple-500/10 border-purple-500/25 text-purple-400",
+    badgeBg: "bg-purple-500/10 text-purple-300 border-purple-500/20"
+  }
 ];
 
 const platformSteps = [
@@ -414,71 +534,101 @@ export default function OurTeamPage() {
         </section>
 
         {/* CORE VALUES & WHY CHOOSE US */}
-        <section className="py-20 bg-[#081325]/25 relative border-b border-white/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <section className="py-20 md:py-28 bg-[#081325]/30 relative border-b border-white/5 overflow-hidden">
+          {/* Background Ambient Lighting */}
+          <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[320px] bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute top-1/2 right-1/4 translate-x-1/2 -translate-y-1/2 w-[500px] h-[320px] bg-brand-blue/5 rounded-full blur-[140px] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
               
-              {/* Core Values grid */}
+              {/* Left Column: What We Stand For (Core Values) */}
               <div className="lg:col-span-6 flex flex-col space-y-6">
                 <div>
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
-                    CORE VALUES
-                  </span>
-                  <h3 className="text-xl font-bold text-white mt-1 font-heading">What We Stand For</h3>
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-300 text-[10px] font-bold tracking-[0.2em] uppercase mb-2">
+                    <Sparkles className="w-3 h-3 text-cyan-400" />
+                    <span>CORE VALUES</span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
+                    What We Stand For
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-400 mt-2 max-w-lg leading-relaxed">
+                    Our foundational engineering principles that guide how we design hardware, write telemetry algorithms, and serve our enterprise partners.
+                  </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {coreValues.map((val, i) => {
                     const Icon = val.icon;
                     return (
-                      <div key={i} className="bg-[#0b1a2d]/55 border border-white/5 rounded-2xl p-5 flex items-center space-x-4 hover:border-brand-blue/30 transition-all">
-                        <Icon className={`w-5 h-5 ${val.color} flex-shrink-0`} />
-                        <span className="text-xs font-bold text-slate-200">{val.title}</span>
+                      <div 
+                        key={i} 
+                        className={`group relative p-4 rounded-2xl bg-gradient-to-br from-[#0b1a2d]/90 via-[#081527]/90 to-[#07111e]/90 border border-white/10 ${val.glow} transition-all duration-300 flex flex-col justify-between`}
+                      >
+                        <div>
+                          <div className="flex items-center justify-between gap-2 mb-3">
+                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center border ${val.iconBg}`}>
+                              <Icon className="w-4 h-4" />
+                            </div>
+                            <span className={`text-[9px] font-mono font-semibold px-2 py-0.5 rounded-full border ${val.badgeBg}`}>
+                              {val.tag}
+                            </span>
+                          </div>
+                          <h4 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors font-heading">
+                            {val.title}
+                          </h4>
+                          <p className="text-[11px] text-slate-400 mt-1.5 leading-relaxed">
+                            {val.desc}
+                          </p>
+                        </div>
                       </div>
                     );
                   })}
                 </div>
               </div>
 
-              {/* Why Choose us bullet columns */}
+              {/* Right Column: Our Competitive Edge */}
               <div className="lg:col-span-6 flex flex-col space-y-6">
                 <div>
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
-                    WHY CHOOSE IncSmart?
-                  </span>
-                  <h3 className="text-xl font-bold text-white mt-1 font-heading">Our Competitive Edge</h3>
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-blue-500/30 bg-blue-950/40 text-blue-300 text-[10px] font-bold tracking-[0.2em] uppercase mb-2">
+                    <Award className="w-3 h-3 text-blue-400" />
+                    <span>WHY CHOOSE INCSMART?</span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
+                    Our Competitive Edge
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-400 mt-2 max-w-lg leading-relaxed">
+                    Proven operational advantages that differentiate IncSmart from generic automation vendors and unverified software dashboards.
+                  </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-2 text-xs text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-brand-blue flex-shrink-0" />
-                      <span>Industry Expertise</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-xs text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-brand-blue flex-shrink-0" />
-                      <span>Customized Solutions</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-xs text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-brand-blue flex-shrink-0" />
-                      <span>Scalable & Secure Platform</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-2 text-xs text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-brand-blue flex-shrink-0" />
-                      <span>24×7 Support</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-xs text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-brand-blue flex-shrink-0" />
-                      <span>AI-Driven Analytics</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-xs text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-brand-blue flex-shrink-0" />
-                      <span>Pan India Deployment</span>
-                    </div>
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  {competitiveEdges.map((edge, i) => {
+                    const Icon = edge.icon;
+                    return (
+                      <div 
+                        key={i} 
+                        className={`group relative p-4 rounded-2xl bg-gradient-to-br from-[#0c1f36]/90 via-[#09182a]/90 to-[#07111d]/90 border border-white/10 ${edge.glow} transition-all duration-300 flex flex-col justify-between`}
+                      >
+                        <div>
+                          <div className="flex items-center justify-between gap-2 mb-3">
+                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center border ${edge.iconBg}`}>
+                              <Icon className="w-4 h-4" />
+                            </div>
+                            <span className={`text-[9px] font-mono font-bold px-2 py-0.5 rounded-full border ${edge.badgeBg}`}>
+                              {edge.metric}
+                            </span>
+                          </div>
+                          <h4 className="text-sm font-bold text-white group-hover:text-brand-cyan transition-colors font-heading">
+                            {edge.title}
+                          </h4>
+                          <p className="text-[11px] text-slate-400 mt-1.5 leading-relaxed">
+                            {edge.desc}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 

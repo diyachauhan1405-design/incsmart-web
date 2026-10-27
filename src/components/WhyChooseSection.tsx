@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { 
   Zap, 
   Monitor, 
@@ -9,7 +8,6 @@ import {
   ShieldCheck, 
   MapPin
 } from "lucide-react";
-import cloudDiagram from "../../public/cloud-diagram.png";
 
 interface DifferentiatorItem {
   title: string;
@@ -59,7 +57,7 @@ export default function WhyChooseSection() {
   ];
 
   return (
-    <section className="bg-[#07111D] py-20 border-t border-white/5 relative z-10 overflow-hidden">
+    <section id="why-choose" className="bg-[#07111D] py-20 border-t border-white/5 relative z-10 overflow-hidden">
       {/* Background ambient glows */}
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-[150px] pointer-events-none"></div>
       <div className="absolute bottom-1/3 right-1/4 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-brand-lime/5 rounded-full blur-[150px] pointer-events-none"></div>
@@ -93,20 +91,27 @@ export default function WhyChooseSection() {
         {/* Main Grid: Diagram vs Differentiators */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16">
           
-          {/* Left Column: Cloud Diagram Visual */}
+          {/* Left Column: Cloud Architecture Video Animation Visual */}
           <div className="lg:col-span-6 relative flex items-center justify-center">
-            <div className="relative w-full aspect-square max-w-[480px] rounded-3xl border border-white/5 bg-[#081325]/25 p-3 overflow-hidden group/diagram">
-              <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
+            <div id="why-choose-video-container" className="relative w-full aspect-[848/478] max-w-[560px] rounded-3xl border border-cyan-500/25 bg-[#081325]/80 overflow-hidden group/diagram shadow-[0_0_50px_rgba(6,182,212,0.12)]">
+              <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none z-10"></div>
               
-              <div className="relative w-full h-full">
-                <Image
-                  src={cloudDiagram}
-                  alt="IncSmart Cloud Architecture Network Map"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-contain object-center opacity-90 group-hover/diagram:opacity-100 group-hover/diagram:scale-[1.01] transition-all duration-500"
-                  priority
+              <div className="relative w-full h-full select-none">
+                <video
+                  src="/cloud-animation.mp4"
+                  poster="/cloud-diagram.png"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls={false}
+                  disablePictureInPicture
+                  disableRemotePlayback
+                  className="w-full h-full object-contain pointer-events-none select-none block"
                 />
+
+                {/* Subtle ambient inner vignette */}
+                <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10 shadow-[inset_0_0_30px_rgba(7,17,29,0.6)] z-10" />
               </div>
             </div>
           </div>

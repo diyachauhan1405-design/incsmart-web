@@ -59,7 +59,7 @@ const projectsList = [
     scope: "18 traction substations equipped with real-time GSM/Ethernet failover telemetry.",
     technology: ["Rugged Edge Gateways", "Modbus RTU", "Cellular Failover", "Predictive NOC Alerts"],
     outcome: "Reduced substation downtime by 15% and enabled instantaneous predictive failure notifications to ground teams.",
-    imageUrl: "https://images.unsplash.com/photo-1541417904950-b855846fe074?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/western-railway-substation.jpg",
     caseStudyId: "western-railway"
   },
   {
@@ -199,18 +199,18 @@ export default function ProjectsPage() {
                       </div>
 
                       {/* Outcome Bar & CTA */}
-                      <div className="pt-4 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div className="flex items-center space-x-2 text-xs font-semibold text-brand-lime">
-                          <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
-                          <span>{project.outcome}</span>
+                      <div className="pt-4 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+                        <div className="flex items-start sm:items-center space-x-2 text-xs font-semibold text-brand-lime flex-1 min-w-0">
+                          <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5 sm:mt-0" />
+                          <span className="leading-relaxed">{project.outcome}</span>
                         </div>
 
                         <Link
                           href={`/case-studies/${project.caseStudyId}`}
-                          className="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-bold text-slate-900 bg-gradient-to-r from-brand-lime to-brand-cyan hover:opacity-95 active:scale-95 transition-all shadow-md group/btn self-start sm:self-auto"
+                          className="inline-flex items-center justify-center w-auto self-start sm:self-auto flex-shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-bold text-slate-900 bg-gradient-to-r from-brand-lime to-brand-cyan hover:opacity-95 active:scale-95 transition-all shadow-md group/btn"
                         >
-                          <span>View Case Study</span>
-                          <ArrowRight className="w-3 h-3 ml-1.5 group-hover/btn:translate-x-0.5 transition-transform" />
+                          <span className="whitespace-nowrap">View Case Study</span>
+                          <ArrowRight className="w-3 h-3 ml-2 group-hover/btn:translate-x-0.5 transition-transform flex-shrink-0" />
                         </Link>
                       </div>
 

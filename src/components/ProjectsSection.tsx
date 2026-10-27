@@ -84,7 +84,7 @@ export default function ProjectsSection() {
         "Predictive Failure Analytics",
         "Enhanced Operational Safety"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1541417904950-b855846fe074?auto=format&fit=crop&w=800&q=80",
+      imageUrl: "/western-railway-substation.jpg",
       icon: Train,
       savingValue: "15%",
       savingLabel: "Reduction in Substation Downtime",
@@ -380,10 +380,10 @@ export default function ProjectsSection() {
               <div className="mt-8 pt-4 border-t border-white/5">
                 <Link
                   href={`/case-studies/${currentProject.id}`}
-                  className="inline-flex items-center justify-center pl-6 pr-2.5 py-2.5 rounded-full text-xs font-bold text-white border border-white/10 hover:border-brand-cyan/50 hover:bg-white/5 transition-all group active:scale-95 cursor-pointer"
+                  className="inline-flex items-center justify-center w-auto flex-shrink-0 whitespace-nowrap pl-6 pr-2.5 py-2.5 rounded-full text-xs font-bold text-white border border-white/10 hover:border-brand-cyan/50 hover:bg-white/5 transition-all group active:scale-95 cursor-pointer"
                 >
-                  <span className="mr-3">View Case Study</span>
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/5 text-white border border-white/10 group-hover:translate-x-0.5 transition-transform duration-200">
+                  <span className="mr-3 whitespace-nowrap">View Case Study</span>
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/5 text-white border border-white/10 group-hover:translate-x-0.5 transition-transform duration-200 flex-shrink-0">
                     <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </Link>

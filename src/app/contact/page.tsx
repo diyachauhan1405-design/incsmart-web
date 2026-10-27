@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { 
   Phone, 
@@ -108,32 +107,24 @@ export default function ContactPage() {
 
               {/* Right Column Visual layout */}
               <div className="lg:col-span-7 relative flex justify-center">
-                <div className="relative w-full aspect-[4/3] rounded-3xl border border-white/5 bg-[#081325]/30 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden group">
-                  <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                  <Image 
-                    src={cloudDiagram} 
-                    alt="IncSmart Contact Connection Overview Diagram" 
-                    fill 
-                    className="object-contain opacity-90 group-hover:scale-[1.01] transition-transform duration-500"
-                    priority
+                <div className="relative w-full aspect-[848/478] rounded-3xl border border-cyan-500/25 bg-[#081325]/80 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden group">
+                  <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none z-10"></div>
+                  
+                  <video
+                    src="/contact-animation.mp4"
+                    poster="/cloud-diagram.png"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls={false}
+                    disablePictureInPicture
+                    disableRemotePlayback
+                    className="w-full h-full object-contain pointer-events-none select-none block"
                   />
 
-                  {/* Hotspots matching the diagram */}
-                  <div className="absolute top-[8%] left-[55%] bg-[#081325]/90 border border-white/10 rounded-full px-3 py-1.5 text-[8px] font-bold text-slate-300 backdrop-blur-md hidden md:block">
-                    IoT Solutions
-                  </div>
-                  <div className="absolute top-[12%] right-[10%] bg-[#081325]/90 border border-white/10 rounded-full px-3 py-1.5 text-[8px] font-bold text-slate-300 backdrop-blur-md hidden md:block">
-                    Energy Optimization
-                  </div>
-                  <div className="absolute top-[38%] left-[45%] bg-[#081325]/90 border border-white/10 rounded-full px-3 py-1.5 text-[8px] font-bold text-slate-300 backdrop-blur-md hidden md:block">
-                    Real-time Monitor
-                  </div>
-                  <div className="absolute top-[42%] right-[6%] bg-[#081325]/90 border border-white/10 rounded-full px-3 py-1.5 text-[8px] font-bold text-slate-300 backdrop-blur-md hidden md:block">
-                    Smart Automation
-                  </div>
-                  <div className="absolute bottom-[10%] left-[60%] bg-[#081325]/90 border border-white/10 rounded-full px-3 py-1.5 text-[8px] font-bold text-slate-300 backdrop-blur-md hidden md:block">
-                    24x7 Support
-                  </div>
+                  {/* Subtle ambient inner vignette */}
+                  <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10 shadow-[inset_0_0_30px_rgba(7,17,29,0.6)] z-10" />
                 </div>
               </div>
 

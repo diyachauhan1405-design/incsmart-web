@@ -13,7 +13,6 @@ import {
   Briefcase,
   Play
 } from "lucide-react";
-import factoryRender from "../../public/factory-render.png";
 import heroTablet from "../../public/hero-tablet.png";
 
 interface HeroSectionProps {
@@ -239,76 +238,39 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
 
           </div>
 
-          {/* Right Column - Animated Factory + Telemetry side-by-side */}
-          <div className="lg:col-span-7 flex flex-col xl:flex-row items-center gap-6 justify-center lg:pt-0">
-            {/* Visual Container with animated IoT overlays */}
-            <div className="relative w-full max-w-xl aspect-[4/3] rounded-3xl border border-white/10 bg-[#081325]/40 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] group/canvas backdrop-blur-md">
+          {/* Right Column - Enlarged Animated Factory + Telemetry */}
+          <div className="lg:col-span-7 flex flex-col items-center justify-center lg:pt-0 w-full space-y-4">
+            {/* Visual Container with animated IoT video - Full width 16:9 aspect ratio */}
+            <div className="relative w-full aspect-video rounded-3xl border border-white/10 bg-[#081325]/40 overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.6)] group/canvas backdrop-blur-md">
               <div className="absolute inset-0 bg-grid-pattern opacity-15"></div>
 
-              {/* Main Factory Render */}
-              <Image
-                src={factoryRender}
-                alt="IncSmart IoT Connected Factory Infrastructure"
-                fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-contain object-center scale-[1.03] transition-transform duration-700"
-                priority
+              {/* Main Factory Animated Video (Integrated as seamless moving animation / GIF) */}
+              <video
+                src="/factory-animation.mp4"
+                poster="/factory-render.png"
+                autoPlay
+                loop
+                muted
+                playsInline
+                disablePictureInPicture
+                disableRemotePlayback
+                controls={false}
+                className="w-full h-full object-cover object-center pointer-events-none select-none"
               />
 
-              {/* Subtle Animated Data Flow Lines & Pulsing Nodes Overlay */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none z-20">
-                <defs>
-                  <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#06B6D4" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#84CC16" stopOpacity="0.8" />
-                  </linearGradient>
-                </defs>
-                {/* Connection line from substation to cloud */}
-                <path
-                  d="M 120 220 Q 220 180, 320 130 T 460 90"
-                  fill="none"
-                  stroke="url(#streamGrad)"
-                  strokeWidth="2"
-                  strokeDasharray="6 4"
-                  className="animate-flow-dash opacity-70"
-                />
-                <path
-                  d="M 160 300 Q 280 260, 380 240"
-                  fill="none"
-                  stroke="#3B82F6"
-                  strokeWidth="1.5"
-                  strokeDasharray="4 4"
-                  className="animate-flow-dash opacity-60"
-                />
-              </svg>
-
-              {/* Dynamic Beacon 1: Smart HVAC Node */}
-              <div className="absolute top-[28%] left-[34%] z-20 hidden sm:flex items-center space-x-1.5 px-2 py-1 rounded-full bg-[#081325]/90 border border-brand-cyan/40 backdrop-blur-md text-[9px] font-bold text-slate-200 shadow-[0_0_12px_rgba(6,182,212,0.3)] animate-float">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-ping"></span>
-                <span>HVAC Chiller #1 Opt.</span>
-              </div>
-
-              {/* Dynamic Beacon 2: Moving Rail / Train Transit Marker */}
-              <div className="absolute bottom-[22%] left-[16%] z-20 hidden sm:flex items-center space-x-1.5 px-2 py-1 rounded-full bg-[#081325]/90 border border-brand-lime/40 backdrop-blur-md text-[9px] font-bold text-slate-200 shadow-[0_0_12px_rgba(132,204,22,0.3)]">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-lime animate-pulse"></span>
-                <span>Rail Traction Monitored</span>
-              </div>
-
-              {/* Dynamic Beacon 3: Substation Power Telemetry */}
-              <div className="absolute top-[52%] right-[18%] z-20 hidden sm:flex items-center space-x-1.5 px-2 py-1 rounded-full bg-[#081325]/90 border border-blue-500/40 backdrop-blur-md text-[9px] font-bold text-slate-200 shadow-[0_0_12px_rgba(59,130,246,0.3)]">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                <span>Substation: 98% Normal</span>
-              </div>
+              {/* Seamless Edge Blending Vignette */}
+              <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-t from-[#081325]/35 via-transparent to-[#081325]/15" />
+              <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-r from-[#081325]/15 via-transparent to-[#081325]/15" />
 
               {/* Live Operating Status Badge */}
-              <div className="absolute bottom-3 right-3 z-20 flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-[#06101E]/90 border border-white/10 text-[9px] font-semibold text-slate-300">
+              <div className="absolute bottom-3 right-3 z-20 flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-[#06101E]/80 border border-white/10 text-[9px] font-semibold text-slate-300 backdrop-blur-md shadow-md">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span>Live System Active</span>
               </div>
             </div>
 
-            {/* Repositioned Live Overview Dashboard - Placed cleanly beside/below without blocking image */}
-            <div className="w-full xl:w-[280px] flex-shrink-0">
+            {/* Repositioned Live Overview Dashboard - Full-width strip underneath the enlarged video */}
+            <div className="w-full">
               <TelemetryDashboard savingsVal={savingsVal} powerVal={powerVal} />
             </div>
           </div>
@@ -326,21 +288,27 @@ interface TelemetryProps {
 
 function TelemetryDashboard({ savingsVal, powerVal }: TelemetryProps) {
   return (
-    <div className="w-full bg-[#081325]/85 border border-white/10 rounded-2xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md">
-      <div className="flex items-center space-x-2 mb-3">
-        <span className="w-2 h-2 rounded-full bg-brand-lime animate-pulse shadow-[0_0_8px_#84CC16]"></span>
-        <span className="text-[9px] font-extrabold tracking-wider text-slate-400 uppercase">
-          LIVE OVERVIEW
+    <div className="w-full bg-[#081325]/85 border border-white/10 rounded-2xl p-3.5 sm:p-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md">
+      <div className="flex items-center justify-between mb-2.5">
+        <div className="flex items-center space-x-2">
+          <span className="w-2 h-2 rounded-full bg-brand-lime animate-pulse shadow-[0_0_8px_#84CC16]"></span>
+          <span className="text-[9px] font-extrabold tracking-wider text-slate-400 uppercase">
+            LIVE TELEMETRY OVERVIEW
+          </span>
+        </div>
+        <span className="text-[8px] font-mono text-cyan-400/80 px-2 py-0.5 rounded-full bg-cyan-950/40 border border-cyan-500/20">
+          Real-time Ingest
         </span>
       </div>
 
-      <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-        <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-cyan/20 transition-all duration-300 min-h-[105px]">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
+        {/* Metric 1: Energy Savings */}
+        <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-lime/20 transition-all duration-300 min-h-[95px]">
           <div>
             <span className="text-[9px] text-slate-400 font-semibold tracking-wider">Energy Savings</span>
             <div className="text-xl font-bold text-brand-lime mt-0.5 font-heading">{savingsVal}%</div>
           </div>
-          <div className="h-6 my-1 relative">
+          <div className="h-5 my-1 relative">
             <svg className="w-full h-full" viewBox="0 0 100 30" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="chart-grad-green" x1="0" y1="0" x2="0" y2="1">
@@ -361,7 +329,7 @@ function TelemetryDashboard({ savingsVal, powerVal }: TelemetryProps) {
               />
             </svg>
           </div>
-          <div className="flex items-center text-[8px] text-slate-400 mt-0.5 select-none">
+          <div className="flex items-center text-[8px] text-slate-400 select-none">
             <span className="text-brand-lime font-bold mr-1 flex items-center">
               ▲ 18%
             </span>
@@ -369,14 +337,15 @@ function TelemetryDashboard({ savingsVal, powerVal }: TelemetryProps) {
           </div>
         </div>
 
-        <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-cyan/20 transition-all duration-300 min-h-[105px]">
+        {/* Metric 2: Power Consumption */}
+        <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-cyan/20 transition-all duration-300 min-h-[95px]">
           <div>
-            <span className="text-[9px] text-slate-400 font-semibold tracking-wider">Power Consumption</span>
+            <span className="text-[9px] text-slate-400 font-semibold tracking-wider">Power Demand</span>
             <div className="text-xl font-bold text-brand-cyan mt-0.5 font-heading">
               {powerVal} <span className="text-[8px] text-slate-400 font-normal">kW</span>
             </div>
           </div>
-          <div className="h-6 my-1 relative">
+          <div className="h-5 my-1 relative">
             <svg className="w-full h-full" viewBox="0 0 100 30" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="chart-grad-blue" x1="0" y1="0" x2="0" y2="1">
@@ -397,33 +366,41 @@ function TelemetryDashboard({ savingsVal, powerVal }: TelemetryProps) {
               />
             </svg>
           </div>
-          <div className="flex items-center text-[8px] text-slate-400 mt-0.5 select-none">
+          <div className="flex items-center text-[8px] text-slate-400 select-none">
             <span className="w-1 h-1 rounded-full bg-brand-cyan mr-1 animate-pulse shadow-[0_0_6px_#06B6D4]"></span>
-            <span>Live</span>
+            <span>Continuous Ingest</span>
           </div>
         </div>
 
-        <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-cyan/20 transition-all duration-300 min-h-[75px]">
+        {/* Metric 3: HVAC Health */}
+        <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-lime/20 transition-all duration-300 min-h-[95px]">
           <div>
             <span className="text-[9px] text-slate-400 font-semibold tracking-wider">HVAC Health</span>
             <div className="text-xl font-bold text-brand-lime mt-0.5 font-heading">98%</div>
           </div>
-          <div className="flex items-center text-[8px] text-slate-400 mt-2 select-none">
-            <span className="w-1 h-1 rounded-full bg-brand-lime mr-1 animate-pulse"></span>
-            <span>Healthy</span>
+          <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden my-2">
+            <div className="bg-gradient-to-r from-emerald-500 to-brand-lime h-full rounded-full w-[98%]" />
+          </div>
+          <div className="flex items-center text-[8px] text-slate-400 select-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-lime mr-1 animate-pulse"></span>
+            <span>Chillers Calibrated</span>
           </div>
         </div>
 
-        <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-cyan/20 transition-all duration-300 min-h-[75px]">
+        {/* Metric 4: Carbon Reduction */}
+        <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-cyan/20 transition-all duration-300 min-h-[95px]">
           <div>
             <span className="text-[9px] text-slate-400 font-semibold tracking-wider">Carbon Reduction</span>
-            <div className="text-xl font-bold text-brand-lime mt-0.5 font-heading">18%</div>
+            <div className="text-xl font-bold text-brand-cyan mt-0.5 font-heading">18%</div>
           </div>
-          <div className="flex items-center text-[8px] text-slate-400 mt-2 select-none">
-            <span className="text-brand-lime font-bold mr-1 flex items-center">
+          <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden my-2">
+            <div className="bg-gradient-to-r from-cyan-500 to-teal-400 h-full rounded-full w-[78%]" />
+          </div>
+          <div className="flex items-center text-[8px] text-slate-400 select-none">
+            <span className="text-brand-cyan font-bold mr-1 flex items-center">
               ▲ 15%
             </span>
-            <span>vs Last Month</span>
+            <span>vs Baseline</span>
           </div>
         </div>
       </div>

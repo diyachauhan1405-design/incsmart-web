@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { 
   Network, 
@@ -11,7 +10,6 @@ import {
   Flame, 
   ArrowRight
 } from "lucide-react";
-import solutionsDiagram from "../../public/solutions-diagram.png";
 
 interface SolutionItem {
   id: string;
@@ -42,7 +40,7 @@ export default function SolutionsSection() {
       iconColor: "text-blue-400",
       borderColor: "hover:border-blue-500/30",
       glowColor: "shadow-[0_0_20px_rgba(59,130,246,0.15)] border-blue-500/40",
-      hotspotCoords: { top: "30%", left: "30%" },
+      hotspotCoords: { top: "32%", left: "33%" },
       hotspotName: "IoT"
     },
     {
@@ -56,7 +54,7 @@ export default function SolutionsSection() {
       iconColor: "text-cyan-400",
       borderColor: "hover:border-cyan-500/30",
       glowColor: "shadow-[0_0_20px_rgba(6,182,212,0.15)] border-cyan-500/40",
-      hotspotCoords: { top: "22%", left: "70%" },
+      hotspotCoords: { top: "25%", left: "74.5%" },
       hotspotName: "HVAC"
     },
     {
@@ -69,7 +67,7 @@ export default function SolutionsSection() {
       iconColor: "text-emerald-400",
       borderColor: "hover:border-emerald-500/30",
       glowColor: "shadow-[0_0_20px_rgba(16,185,129,0.15)] border-emerald-500/40",
-      hotspotCoords: { top: "67%", left: "70%" },
+      hotspotCoords: { top: "75%", left: "75%" },
       hotspotName: "ENERGY"
     },
     {
@@ -82,7 +80,7 @@ export default function SolutionsSection() {
       iconColor: "text-indigo-400",
       borderColor: "hover:border-indigo-500/30",
       glowColor: "shadow-[0_0_20px_rgba(99,102,241,0.15)] border-indigo-500/40",
-      hotspotCoords: { top: "37%", left: "70%" },
+      hotspotCoords: { top: "39%", left: "74.5%" },
       hotspotName: "BMS"
     },
     {
@@ -95,13 +93,13 @@ export default function SolutionsSection() {
       iconColor: "text-rose-400",
       borderColor: "hover:border-rose-500/30",
       glowColor: "shadow-[0_0_20px_rgba(244,63,94,0.15)] border-rose-500/40",
-      hotspotCoords: { top: "62%", left: "30%" },
+      hotspotCoords: { top: "73%", left: "29%" },
       hotspotName: "FIRE SAFETY"
     }
   ];
 
   return (
-    <section className="bg-[#07111D] py-20 border-t border-white/5 relative z-10 overflow-hidden">
+    <section id="solutions" className="bg-[#07111D] py-20 border-t border-white/5 relative z-10 overflow-hidden">
       {/* Dynamic background glows */}
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-cyan/5 rounded-full blur-[140px] pointer-events-none"></div>
       <div className="absolute bottom-1/3 right-1/4 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] bg-brand-lime/5 rounded-full blur-[140px] pointer-events-none"></div>
@@ -133,55 +131,52 @@ export default function SolutionsSection() {
               </p>
             </div>
 
-            {/* Isometric Building Graphic Container */}
-            <div className="relative w-full aspect-[7/4] rounded-2xl border border-white/5 bg-[#081325]/30 overflow-hidden group/graphic mt-4">
-              <div className="absolute inset-0 bg-grid-pattern opacity-40"></div>
-              
-              {/* Graphic Asset Render */}
-              <div className="relative w-full h-full">
-                <Image
-                  src={solutionsDiagram}
-                  alt="Smarter Infrastructure solutions overview"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="object-cover opacity-85 group-hover/graphic:opacity-100 transition-opacity duration-500"
+            {/* Responsive Solutions Video Graphic Card */}
+            <div 
+              id="solutions-graphic-container" 
+              className="relative w-full rounded-2xl sm:rounded-3xl border border-cyan-500/25 bg-[#081325]/80 overflow-hidden group/graphic mt-4 shadow-[0_0_50px_rgba(6,182,212,0.12)]"
+            >
+              {/* Aspect ratio matching the video dimensions (848/478) so card fits the video exactly without cutting any side */}
+              <div className="relative w-full aspect-[848/478] overflow-hidden">
+                <video
+                  src="/solutions-animation.mp4"
+                  poster="/solutions-diagram.png"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls={false}
+                  disablePictureInPicture
+                  disableRemotePlayback
+                  className="w-full h-full object-contain pointer-events-none select-none block"
                 />
 
-                {/* Hotspots Overlay */}
-                {solutions.map((sol) => {
-                  const isActive = activeId === sol.id;
-                  const Icon = sol.icon;
-                  return (
-                    <div
-                      key={sol.id}
-                      style={{ top: sol.hotspotCoords.top, left: sol.hotspotCoords.left }}
-                      className="absolute z-20 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer flex flex-col items-center group/hotspot transition-all duration-300"
-                      onMouseEnter={() => setActiveId(sol.id)}
-                      onMouseLeave={() => setActiveId(null)}
-                    >
-                      {/* Connection Line & Floating Label (Only visible on hover/active) */}
-                      <div className={`flex flex-col items-center transition-all duration-300 ${isActive ? 'scale-100 opacity-100' : 'scale-90 opacity-80'}`}>
-                        {/* Icon/Circle Button */}
-                        <div className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
-                          isActive 
-                            ? 'bg-[#081325] border-white scale-110 shadow-[0_0_15px_rgba(255,255,255,0.4)]' 
-                            : 'bg-[#081325]/90 border-white/20 hover:border-white/50'
-                        }`}>
-                          <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-slate-400'}`} />
-                        </div>
-                        
-                        {/* Label Badge */}
-                        <div className={`mt-1.5 px-2 py-0.5 rounded text-[8px] font-bold tracking-wider uppercase border transition-all duration-300 text-center max-w-[72px] sm:max-w-none sm:whitespace-nowrap ${
-                          isActive
-                            ? 'bg-white text-[#07111D] border-white'
-                            : 'bg-[#081325]/95 text-slate-400 border-white/10'
-                        }`}>
-                          {sol.hotspotName}
+                {/* Subtle ambient inner vignette */}
+                <div className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl ring-1 ring-inset ring-white/10 shadow-[inset_0_0_25px_rgba(7,17,29,0.5)] z-10" />
+
+                {/* Interactive Quadrant Highlights on Hover */}
+                <div className="absolute inset-0 pointer-events-none z-20">
+                  {solutions.map((sol) => {
+                    const isActive = activeId === sol.id;
+                    return (
+                      <div
+                        key={sol.id}
+                        style={{ top: sol.hotspotCoords.top, left: sol.hotspotCoords.left }}
+                        className="absolute transform -translate-x-1/2 -translate-y-1/2 pointer-events-auto cursor-pointer"
+                        onMouseEnter={() => setActiveId(sol.id)}
+                        onMouseLeave={() => setActiveId(null)}
+                      >
+                        {/* Active Beacon Target Ring */}
+                        <div className={`relative flex items-center justify-center transition-all duration-300 ${isActive ? 'opacity-100 scale-110' : 'opacity-0 scale-75'}`}>
+                          <span className="absolute w-10 h-10 rounded-full bg-cyan-400/30 animate-ping" />
+                          <span className="w-7 h-7 rounded-full border-2 border-cyan-400 bg-[#081325]/90 backdrop-blur-md shadow-[0_0_20px_rgba(6,182,212,0.8)] flex items-center justify-center">
+                            <span className="w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(103,232,249,1)]" />
+                          </span>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

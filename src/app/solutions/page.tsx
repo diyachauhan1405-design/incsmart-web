@@ -13,29 +13,19 @@ import {
   TrendingUp,
   Shield,
   Briefcase,
-  Globe,
   Plus,
   Minus,
   Activity,
-  Tv,
-  Cpu,
   Star,
   CheckCircle,
   HelpCircle,
-  Factory,
-  Train,
-  Hospital,
-  Building,
-  Home,
-  Sun,
-  GraduationCap,
-  ShoppingBag,
   ExternalLink,
   Phone
 } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TelemetryFlowSection from "@/components/TelemetryFlowSection";
 
 // Hero graphics/diagram references
 import cloudDiagram from "../../../public/cloud-diagram.png";
@@ -183,26 +173,6 @@ const solutionsData = {
   }
 };
 
-const techPlatformSteps = [
-  { name: "Smart Sensors & Devices", icon: Cpu },
-  { name: "Edge Gateway & Connectivity", icon: Network },
-  { name: "Cloud Infrastructure", icon: Globe },
-  { name: "AI & Analytics Engine", icon: Activity },
-  { name: "Unified Dashboard & Insights", icon: Tv },
-  { name: "Automation & Control", icon: Zap }
-];
-
-const industriesList = [
-  { title: "Manufacturing", icon: Factory },
-  { title: "Railways", icon: Train },
-  { title: "Hospitals", icon: Hospital },
-  { title: "Commercial Buildings", icon: Building },
-  { title: "Hotels", icon: Home },
-  { title: "Solar Plants", icon: Sun },
-  { title: "Education", icon: GraduationCap },
-  { title: "Retail & Malls", icon: ShoppingBag }
-];
-
 const projectCards = [
   {
     title: "PVR INOX",
@@ -214,7 +184,7 @@ const projectCards = [
     title: "Western Railway",
     category: "Remote Infrastructure Monitoring",
     metric: "24×7 Monitoring",
-    imageUrl: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=400&q=80"
+    imageUrl: "/western-railway-substation.jpg"
   },
   {
     title: "UltraTech Cement",
@@ -519,73 +489,7 @@ export default function SolutionsPage() {
         </section>
 
         {/* 3. TECHNOLOGY PLATFORM FLOW */}
-        <section className="py-20 relative bg-gradient-to-b from-[#07111D] to-[#081325]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
-                OUR TECHNOLOGY PLATFORM
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2 font-heading">
-                End-to-End Smart Telemetry Flow
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 relative">
-              {techPlatformSteps.map((step, i) => {
-                const Icon = step.icon;
-                return (
-                  <div key={i} className="flex flex-col items-center text-center relative group">
-                    <div className="w-16 h-16 rounded-full bg-brand-blue/5 border border-brand-blue/20 flex items-center justify-center relative z-20 group-hover:border-brand-blue/60 group-hover:bg-brand-blue/10 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.35)] transition-all duration-300 cursor-pointer">
-                      <Icon className="h-6 w-6 text-brand-blue group-hover:text-white transition-colors" />
-                    </div>
-                    <span className="text-[9px] font-bold text-[#3B82F6] mt-4 uppercase tracking-widest">
-                      Step 0{i + 1}
-                    </span>
-                    <h4 className="text-xs font-bold text-slate-200 mt-1 max-w-[120px] leading-relaxed group-hover:text-white transition-colors">
-                      {step.name}
-                    </h4>
-
-                    {i < 5 && (
-                      <div className="hidden lg:block absolute top-8 left-[70%] w-[60%] h-[2px] bg-gradient-to-r from-brand-blue/25 to-brand-blue/5 z-0 pointer-events-none">
-                        <div className="absolute right-0 -top-1 w-2.5 h-2.5 border-t-2 border-r-2 border-brand-blue/35 transform rotate-45"></div>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* 4. INDUSTRIES WE SERVE */}
-        <section className="py-20 bg-[#081325]/25 border-y border-white/5 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
-                INDUSTRIES WE SERVE
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2 font-heading">
-                Tailored IoT Architectures Across Sectors
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-8 gap-3 sm:gap-4">
-              {industriesList.map((ind, i) => {
-                const Icon = ind.icon;
-                return (
-                  <div key={i} className="bg-[#0b1a2d]/55 border border-white/5 hover:border-brand-blue/30 rounded-2xl p-5 flex flex-col items-center justify-center text-center transition-all duration-300 group cursor-pointer">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-3 group-hover:border-brand-blue/30 group-hover:scale-105 transition-all">
-                      <Icon className="w-5 h-5 text-brand-blue" />
-                    </div>
-                    <span className="text-xs font-semibold text-slate-300 group-hover:text-white transition-colors">
-                      {ind.title}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+        <TelemetryFlowSection />
 
         {/* 5. PROJECTS CTA PER SECTION 24 & 27 OF BRIEF */}
         <section className="py-16 border-b border-white/5 bg-[#081325]/35 relative">

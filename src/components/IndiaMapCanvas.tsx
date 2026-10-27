@@ -1,34 +1,42 @@
 "use client";
 
 import { useEffect, useMemo } from "react";
-import { MapContainer, TileLayer, Marker, Tooltip, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Tooltip, GeoJSON, useMap } from "react-leaflet";
 import L from "leaflet";
 import { StoreLocation, storeTypeConfig } from "@/data/storeLocations";
+import indiaGeoData from "../../public/geo/india.json";
 
+// High-performance dark canvas basemap with zero API key requirement and zero watermarks
 const DARK_TILE_URL =
-  "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
+  "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}";
 
 const DARK_TILE_ATTRIBUTION =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
+  '&copy; <a href="https://www.esri.com/">Esri</a> &copy; OpenStreetMap';
 
 /** Geographic extent of India — SW & NE corners */
-const INDIA_SW: [number, number] = [6.4, 67.5];
-const INDIA_NE: [number, number] = [37.3, 97.8];
+const INDIA_SW: [number, number] = [6.8, 68.0];
+const INDIA_NE: [number, number] = [37.2, 97.5];
 
-/** Padded bounds so the full country is visible with neighbouring regions at the edges */
+/** Padded bounds so the full country is visible with balanced margins */
 function getFullIndiaBounds() {
-  return L.latLngBounds(INDIA_SW, INDIA_NE).pad(0.12);
+  return L.latLngBounds(INDIA_SW, INDIA_NE).pad(0.08);
 }
 
-function FitFullIndiaView() {
+function FitFullIndiaView({ compact }: { compact: boolean }) {
   const map = useMap();
 
   useEffect(() => {
-    map.fitBounds(getFullIndiaBounds(), {
-      padding: [20, 20],
-      animate: false,
-    });
-  }, [map]);
+    // Invalidate size once layout stabilizes so pins are never clustered
+    const timer = setTimeout(() => {
+      map.invalidateSize();
+      map.fitBounds(getFullIndiaBounds(), {
+        padding: compact ? [15, 15] : [25, 25],
+        animate: false,
+      });
+    }, 150);
+
+    return () => clearTimeout(timer);
+  }, [map, compact]);
 
   return null;
 }
@@ -70,8 +78,9 @@ export default function IndiaMapCanvas({
 
   return (
     <MapContainer
-      bounds={indiaBounds}
-      boundsOptions={{ padding: [20, 20] }}
+      center={[22.5, 79.5]}
+      zoom={compact ? 4 : 4.5}
+      zoomSnap={0.1}
       scrollWheelZoom={false}
       zoomControl={!compact}
       attributionControl={false}
@@ -79,7 +88,21 @@ export default function IndiaMapCanvas({
       style={{ background: "#081325" }}
     >
       <TileLayer url={DARK_TILE_URL} attribution={DARK_TILE_ATTRIBUTION} />
-      <FitFullIndiaView />
+      
+      {/* Visual outline and subtle fill for the territory of India */}
+      <GeoJSON
+        data={indiaGeoData as any}
+        style={{
+          fillColor: "#00E5FF",
+          fillOpacity: 0.05,
+          color: "#00E5FF",
+          weight: 1.6,
+          opacity: 0.75,
+          dashArray: "4, 6",
+        }}
+      />
+
+      <FitFullIndiaView compact={compact} />
 
       {locations.map((loc) => {
         const cfg = storeTypeConfig[loc.type];

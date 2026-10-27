@@ -498,7 +498,7 @@ export const caseStudiesList: CaseStudyData[] = [
     client: "Western Railway (Indian Railways)",
     industry: "Rail Transit & Critical Infrastructure",
     location: "Western Zone, India",
-    heroImage: "https://images.unsplash.com/photo-1541417904950-b855846fe074?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/western-railway-substation.jpg",
     provider: "INCSMART TECHNOLOGIES LLP",
     energyRate: "Grid Tariff",
     conservativeBuffer: "Mission Critical Rail Standard",
