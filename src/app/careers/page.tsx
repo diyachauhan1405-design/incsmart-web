@@ -152,11 +152,11 @@ export default function CareersPage() {
           {/* Perks Grid */}
           <div className="mb-20">
             <div className="text-center mb-10">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
                 WHY WORK WITH US
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mt-2 font-heading">
-                Life & Growth at IncSmart
+              <h2 className="text-[1.65rem] sm:text-3xl lg:text-4xl font-bold text-white mt-2 font-heading leading-tight">
+                Life &amp; Growth at IncSmart
               </h2>
             </div>
 
@@ -183,10 +183,10 @@ export default function CareersPage() {
           <div className="mb-20">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
               <div>
-                <span className="text-[10px] font-bold tracking-[0.2em] text-brand-lime uppercase">
+                <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-brand-lime uppercase">
                   CURRENT OPENINGS
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white mt-2 font-heading">
+                <h2 className="text-[1.65rem] sm:text-3xl lg:text-4xl font-bold text-white mt-2 font-heading leading-tight">
                   Find Your Role
                 </h2>
               </div>
@@ -257,10 +257,10 @@ export default function CareersPage() {
             <div className="max-w-3xl mx-auto">
               
               <div className="text-center mb-8">
-                <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] font-bold text-brand-cyan uppercase tracking-widest mb-3">
+                <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[11px] sm:text-xs font-bold text-cyan-400 uppercase tracking-wider sm:tracking-widest mb-3">
                   Quick Application
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white font-heading">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-heading">
                   Submit Your Candidate Profile
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-400 mt-2">

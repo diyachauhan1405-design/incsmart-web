@@ -61,15 +61,15 @@ export default function AchievementsSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex items-center justify-center space-x-3 mb-3">
-          <span className="w-8 h-[1.5px] bg-[#06B6D4]"></span>
-          <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+          <span className="w-8 h-[1.5px] bg-cyan-400"></span>
+          <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
             KEY ACHIEVEMENTS
           </span>
-          <span className="w-8 h-[1.5px] bg-gradient-to-r from-[#06B6D4] to-transparent"></span>
+          <span className="w-8 h-[1.5px] bg-gradient-to-r from-cyan-400 to-transparent"></span>
         </div>
 
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-heading">
+          <h2 className="text-[1.65rem] sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-heading leading-tight">
             Proven Track Record. <span className="text-gradient-cyan-lime font-bold">Measurable Impact.</span>
           </h2>
         </div>

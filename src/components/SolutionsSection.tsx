@@ -40,7 +40,7 @@ export default function SolutionsSection() {
       iconColor: "text-blue-400",
       borderColor: "hover:border-blue-500/30",
       glowColor: "shadow-[0_0_20px_rgba(59,130,246,0.15)] border-blue-500/40",
-      hotspotCoords: { top: "32%", left: "33%" },
+      hotspotCoords: { top: "32%", left: "25.3%" },
       hotspotName: "IoT"
     },
     {
@@ -54,7 +54,7 @@ export default function SolutionsSection() {
       iconColor: "text-cyan-400",
       borderColor: "hover:border-cyan-500/30",
       glowColor: "shadow-[0_0_20px_rgba(6,182,212,0.15)] border-cyan-500/40",
-      hotspotCoords: { top: "25%", left: "74.5%" },
+      hotspotCoords: { top: "25%", left: "72.2%" },
       hotspotName: "HVAC"
     },
     {
@@ -67,7 +67,7 @@ export default function SolutionsSection() {
       iconColor: "text-emerald-400",
       borderColor: "hover:border-emerald-500/30",
       glowColor: "shadow-[0_0_20px_rgba(16,185,129,0.15)] border-emerald-500/40",
-      hotspotCoords: { top: "75%", left: "75%" },
+      hotspotCoords: { top: "75%", left: "72.8%" },
       hotspotName: "ENERGY"
     },
     {
@@ -80,7 +80,7 @@ export default function SolutionsSection() {
       iconColor: "text-indigo-400",
       borderColor: "hover:border-indigo-500/30",
       glowColor: "shadow-[0_0_20px_rgba(99,102,241,0.15)] border-indigo-500/40",
-      hotspotCoords: { top: "39%", left: "74.5%" },
+      hotspotCoords: { top: "39%", left: "72.2%" },
       hotspotName: "BMS"
     },
     {
@@ -93,7 +93,7 @@ export default function SolutionsSection() {
       iconColor: "text-rose-400",
       borderColor: "hover:border-rose-500/30",
       glowColor: "shadow-[0_0_20px_rgba(244,63,94,0.15)] border-rose-500/40",
-      hotspotCoords: { top: "73%", left: "29%" },
+      hotspotCoords: { top: "73%", left: "20.8%" },
       hotspotName: "FIRE SAFETY"
     }
   ];
@@ -108,11 +108,11 @@ export default function SolutionsSection() {
         
         {/* Section Header (Mobile & layout reference alignment) */}
         <div className="flex items-center space-x-3 mb-4">
-          <span className="w-8 h-[1.5px] bg-[#06B6D4]"></span>
-          <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+          <span className="w-8 h-[1.5px] bg-cyan-400"></span>
+          <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
             OUR SOLUTIONS
           </span>
-          <span className="w-8 h-[1.5px] bg-gradient-to-r from-[#06B6D4] to-transparent"></span>
+          <span className="w-8 h-[1.5px] bg-gradient-to-r from-cyan-400 to-transparent"></span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -136,8 +136,8 @@ export default function SolutionsSection() {
               id="solutions-graphic-container" 
               className="relative w-full rounded-2xl sm:rounded-3xl border border-cyan-500/25 bg-[#081325]/80 overflow-hidden group/graphic mt-4 shadow-[0_0_50px_rgba(6,182,212,0.12)]"
             >
-              {/* Aspect ratio matching the video dimensions (848/478) so card fits the video exactly without cutting any side */}
-              <div className="relative w-full aspect-[848/478] overflow-hidden">
+              {/* Aspect ratio matching the cropped video dimensions (750/478) so the video fills the frame edge-to-edge */}
+              <div className="relative w-full aspect-[750/478] overflow-hidden">
                 <video
                   src="/solutions-animation.mp4"
                   poster="/solutions-diagram.png"
@@ -148,7 +148,7 @@ export default function SolutionsSection() {
                   controls={false}
                   disablePictureInPicture
                   disableRemotePlayback
-                  className="w-full h-full object-contain pointer-events-none select-none block"
+                  className="w-full h-full object-cover object-center pointer-events-none select-none block"
                 />
 
                 {/* Subtle ambient inner vignette */}

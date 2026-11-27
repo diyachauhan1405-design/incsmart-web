@@ -501,11 +501,11 @@ Contact IncSmart: +91 97118 88111 | info@incsmart.in`;
             {/* Section Header */}
             <div className="text-center max-w-2xl mx-auto mb-10">
               <div className="flex items-center justify-center space-x-3 mb-4">
-                <span className="w-8 h-[1.5px] bg-[#06B6D4]" />
-                <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+                <span className="w-6 sm:w-8 h-[1.5px] bg-cyan-400" />
+                <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
                   Frequently Asked Questions
                 </span>
-                <span className="w-8 h-[1.5px] bg-[#06B6D4]" />
+                <span className="w-6 sm:w-8 h-[1.5px] bg-cyan-400" />
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-heading tracking-tight">
                 Got Questions? We Have Answers.
@@ -615,12 +615,12 @@ Contact IncSmart: +91 97118 88111 | info@incsmart.in`;
               <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
                 <div className="flex flex-col space-y-3 max-w-2xl text-left">
                   <div className="flex items-center space-x-3">
-                    <span className="w-8 h-[2px] bg-[#06B6D4]" />
-                    <span className="text-[10px] font-bold tracking-[0.2em] text-cyan-400 uppercase">
+                    <span className="w-8 h-[2px] bg-cyan-400" />
+                    <span className="text-[11px] sm:text-xs font-bold tracking-[0.14em] sm:tracking-[0.2em] text-cyan-400 uppercase">
                       Ready to upgrade your building?
                     </span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading leading-tight">
                     Unlock Measurable Savings with an Energy Audit
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">

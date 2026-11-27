@@ -78,8 +78,8 @@ export default function ContactPage() {
               {/* Left Column content */}
               <div className="lg:col-span-5 flex flex-col space-y-6">
                 <div className="flex items-center space-x-3">
-                  <span className="w-8 h-[1.5px] bg-[#06B6D4]"></span>
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+                  <span className="w-8 h-[1.5px] bg-cyan-400"></span>
+                  <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
                     CONTACT US
                   </span>
                 </div>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                     controls={false}
                     disablePictureInPicture
                     disableRemotePlayback
-                    className="w-full h-full object-contain pointer-events-none select-none block"
+                    className="w-full h-full object-cover object-center pointer-events-none select-none block"
                   />
 
                   {/* Subtle ambient inner vignette */}
@@ -136,8 +136,8 @@ export default function ContactPage() {
         <section className="py-20 bg-[#081325]/25 border-b border-white/5 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
-                We're Here to Help
+              <h2 className="text-[1.65rem] sm:text-3xl lg:text-4xl font-extrabold text-white font-heading leading-tight">
+                We&apos;re Here to Help
               </h2>
               <p className="text-sm text-slate-400 mt-2">
                 Reach out to us through any of the channels below or fill out the form and our team will get back to you shortly.
@@ -347,12 +347,12 @@ export default function ContactPage() {
               <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
                 <div className="flex flex-col space-y-4 max-w-2xl text-left">
                   <div className="flex items-center space-x-3">
-                    <span className="w-8 h-[2px] bg-[#3b82f6]"></span>
-                    <span className="text-[10px] font-bold tracking-[0.2em] text-brand-blue uppercase">
+                    <span className="w-8 h-[2px] bg-blue-400"></span>
+                    <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-blue-400 uppercase">
                       Ready to Transform
                     </span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading">
                     Your Infrastructure?
                   </h2>
                   <p className="text-sm text-slate-400 leading-relaxed">

@@ -51,11 +51,11 @@ export default function CTASection() {
             
             {/* Tagline */}
             <div className="flex items-center space-x-3">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
                 READY TO GET STARTED?
               </span>
-              <span className="w-8 h-[1.5px] bg-[#06B6D4]"></span>
-              <span className="w-8 h-[1.5px] bg-gradient-to-r from-[#06B6D4] to-transparent"></span>
+              <span className="w-8 h-[1.5px] bg-cyan-400"></span>
+              <span className="w-8 h-[1.5px] bg-gradient-to-r from-cyan-400 to-transparent"></span>
             </div>
 
             {/* Heading */}

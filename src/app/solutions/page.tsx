@@ -233,11 +233,11 @@ export default function SolutionsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             
             <div className="flex items-center justify-center space-x-3 mb-4">
-              <span className="w-8 h-[1.5px] bg-[#06B6D4]"></span>
-              <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+              <span className="w-8 h-[1.5px] bg-cyan-400"></span>
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
                 OUR SOLUTIONS
               </span>
-              <span className="w-8 h-[1.5px] bg-[#06B6D4]"></span>
+              <span className="w-8 h-[1.5px] bg-cyan-400"></span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6 font-heading">
@@ -495,10 +495,10 @@ export default function SolutionsPage() {
         <section className="py-20 border-t border-white/5 bg-gradient-to-b from-[#081325] to-[#07111D] relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.18em] sm:tracking-[0.24em] text-cyan-400 uppercase">
                 WHY CHOOSE IncSmart?
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2 font-heading">
+              <h2 className="text-[1.65rem] sm:text-3xl lg:text-4xl font-extrabold text-white mt-2 font-heading leading-tight">
                 Decade of Engineering Excellence
               </h2>
             </div>
@@ -551,10 +551,10 @@ export default function SolutionsPage() {
         <section className="py-20 border-t border-white/5 bg-[#081325]/25 relative">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
             <div className="text-center mb-12">
-              <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.18em] sm:tracking-[0.24em] text-cyan-400 uppercase">
                 FREQUENTLY ASKED QUESTIONS
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2 font-heading">
+              <h2 className="text-[1.65rem] sm:text-3xl lg:text-4xl font-extrabold text-white mt-2 font-heading leading-tight">
                 Any Questions? We Got You Covered
               </h2>
             </div>
@@ -598,12 +598,12 @@ export default function SolutionsPage() {
               <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
                 <div className="flex flex-col space-y-4 max-w-2xl text-left">
                   <div className="flex items-center space-x-3">
-                    <span className="w-8 h-[2px] bg-brand-blue"></span>
-                    <span className="text-[10px] font-bold tracking-[0.2em] text-brand-blue uppercase">
+                    <span className="w-8 h-[2px] bg-blue-400"></span>
+                    <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-blue-400 uppercase">
                       Ready to Build
                     </span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading">
                     Smarter Infrastructure?
                   </h2>
                   <p className="text-sm text-slate-400 leading-relaxed">

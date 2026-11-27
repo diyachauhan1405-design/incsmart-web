@@ -126,12 +126,12 @@ export default function TelemetryFlowSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-300 text-[10px] font-bold tracking-[0.25em] uppercase mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-300 text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.22em] uppercase mb-4 shadow-sm">
             <Sparkles className="w-3 h-3 text-cyan-400 animate-pulse" />
             <span>OUR TECHNOLOGY PLATFORM</span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight font-heading leading-tight">
+          <h2 className="text-[1.7rem] sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight font-heading leading-tight">
             End-to-End <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400">Smart Telemetry Flow</span>
           </h2>
           

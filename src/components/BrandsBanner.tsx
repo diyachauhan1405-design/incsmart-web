@@ -210,12 +210,12 @@ export default function BrandsBanner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Tagline */}
-        <div className="flex items-center justify-center space-x-4 mb-4 sm:mb-6">
-          <span className="w-10 h-[1.5px] bg-gradient-to-r from-brand-lime to-transparent"></span>
-          <span className="text-[10px] font-bold tracking-[0.25em] text-[#06B6D4] uppercase">
+        <div className="flex items-center justify-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+          <span className="w-6 sm:w-10 h-[1.5px] bg-gradient-to-r from-brand-lime to-transparent"></span>
+          <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.22em] text-cyan-400 uppercase text-center">
             TRUSTED BY LEADING ENTERPRISES
           </span>
-          <span className="w-10 h-[1.5px] bg-gradient-to-l from-brand-blue to-transparent"></span>
+          <span className="w-6 sm:w-10 h-[1.5px] bg-gradient-to-l from-brand-blue to-transparent"></span>
         </div>
 
         {/* Section Heading & Subtitle */}

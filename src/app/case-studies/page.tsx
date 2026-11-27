@@ -1,32 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { 
-  FileText, 
-  TrendingUp, 
-  Zap, 
-  ShieldCheck, 
-  Clock, 
-  CheckCircle2, 
-  ArrowRight,
-  BarChart3,
-  Layers,
-  Cpu,
-  IndianRupee,
-  Film,
-  Building2,
-  Sparkles,
-  ArrowUpRight,
-  Filter
-} from "lucide-react";
+import { FileText, ArrowRight, ChevronDown } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { caseStudiesList, CaseStudyData } from "@/data/caseStudiesData";
+import { caseStudyGroups } from "@/data/caseStudiesData";
 
 export default function CaseStudiesPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({});
 
   const categories = [
     { id: "all", label: "All Case Studies" },
@@ -35,13 +18,14 @@ export default function CaseStudiesPage() {
     { id: "industrial", label: "Heavy Manufacturing" },
   ];
 
-  const filteredStudies = caseStudiesList.filter((s) => {
+  const filteredGroups = caseStudyGroups.filter((group) => {
     if (selectedCategory === "all") return true;
-    if (selectedCategory === "cinema") return s.slug === "rajhans-cinemas" || s.slug === "pvr-inox";
-    if (selectedCategory === "infrastructure") return s.slug === "western-railway";
-    if (selectedCategory === "industrial") return s.slug === "ultratech-cement";
-    return true;
+    return group.category === selectedCategory;
   });
+
+  const toggleGroup = (id: string) => {
+    setExpandedGroups((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
 
   return (
     <div className="min-h-screen bg-[#07111D] flex flex-col text-slate-100">
@@ -77,7 +61,7 @@ export default function CaseStudiesPage() {
           {/* Filter Categories */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pt-4">
             <div>
-              <h2 className="text-xl font-bold text-white font-heading">
+              <h2 className="text-xl sm:text-2xl font-bold text-white font-heading">
                 All Enterprise Deployments
               </h2>
               <p className="text-xs text-slate-400">
@@ -102,79 +86,74 @@ export default function CaseStudiesPage() {
             </div>
           </div>
 
-          {/* Case Studies Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {filteredStudies.map((study) => (
-              <Link
-                key={study.id}
-                href={`/case-studies/${study.slug}`}
-                className="rounded-3xl border border-white/10 bg-[#081325]/60 hover:bg-[#081325]/90 hover:border-brand-cyan/40 backdrop-blur-xl overflow-hidden transition-all duration-300 flex flex-col group shadow-lg hover:shadow-2xl hover:shadow-cyan-500/10 cursor-pointer"
-              >
-                {/* Card Image Banner */}
-                <div className="relative h-48 w-full overflow-hidden">
-                  <Image
-                    src={study.heroImage}
-                    alt={study.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover opacity-70 group-hover:scale-105 group-hover:opacity-90 transition-all duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#081325] via-[#081325]/40 to-transparent"></div>
-
-                  <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-[#07111D]/80 backdrop-blur-md text-brand-cyan border border-brand-cyan/30">
-                      {study.client}
-                    </span>
-                    {study.featured && (
-                      <span className="px-2 py-0.5 rounded-full text-[9px] font-black bg-brand-lime text-black uppercase tracking-wider">
-                        Featured
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="absolute bottom-3 left-4 right-4 z-10 flex items-center justify-between text-[11px] text-slate-300">
-                    <span>{study.industry}</span>
-                    <span className="text-white font-medium">{study.location}</span>
-                  </div>
-                </div>
-
-                {/* Card Body */}
-                <div className="p-6 flex-grow flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-brand-cyan transition-colors mb-2.5 font-heading line-clamp-2">
-                      {study.title}
+          {/* Case Studies Parent-Child Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 items-start">
+            {filteredGroups.map((group) => {
+              const isExpanded = !!expandedGroups[group.id];
+              return (
+                <div
+                  key={group.id}
+                  className={`rounded-3xl border bg-[#081325]/60 backdrop-blur-xl overflow-hidden transition-all duration-300 shadow-lg ${
+                    isExpanded
+                      ? "border-brand-cyan/40 bg-[#081325]/90 shadow-2xl shadow-cyan-500/10"
+                      : "border-white/10 hover:border-brand-cyan/30 hover:bg-[#081325]/80"
+                  }`}
+                >
+                  {/* Parent Trigger — displays parent case study name only */}
+                  <button
+                    type="button"
+                    onClick={() => toggleGroup(group.id)}
+                    aria-expanded={isExpanded}
+                    aria-controls={`case-study-children-${group.id}`}
+                    className="w-full p-6 flex items-center justify-between gap-4 text-left cursor-pointer touch-manipulation min-h-[72px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/60 rounded-3xl group"
+                  >
+                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-brand-cyan transition-colors font-heading">
+                      {group.name}
                     </h3>
-                    <p className="text-xs text-slate-400 line-clamp-3 leading-relaxed mb-6">
-                      {study.subtitle}
-                    </p>
-                  </div>
+                    <span
+                      className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-200 ${
+                        isExpanded
+                          ? "bg-brand-cyan text-[#07111D] rotate-180"
+                          : "bg-white/5 text-slate-300 group-hover:bg-white/10"
+                      }`}
+                    >
+                      <ChevronDown className="w-4 h-4" />
+                    </span>
+                  </button>
 
-                  <div>
-                    {/* Metrics 2x2 Grid */}
-                    <div className="grid grid-cols-2 gap-2 p-3 rounded-xl bg-[#060D17]/80 border border-white/5 mb-4">
-                      {study.metrics.slice(0, 2).map((m, idx) => (
-                        <div key={idx} className="p-1">
-                          <span className="text-[10px] text-slate-400 block truncate">{m.label}</span>
-                          <span className={`text-base font-extrabold font-heading ${m.accent || "text-brand-lime"}`}>
-                            {m.value}
+                  {/* Nested Child Case Studies */}
+                  {isExpanded && (
+                    <div
+                      id={`case-study-children-${group.id}`}
+                      className="px-4 pb-4 pt-3 border-t border-white/10 space-y-2.5 max-h-[420px] overflow-y-auto"
+                    >
+                      {group.children.map((child, idx) => (
+                        <Link
+                          key={child.id}
+                          href={`/case-studies/${child.slug}`}
+                          className="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-[#060D17]/80 border border-white/5 hover:border-brand-cyan/40 hover:bg-[#0b1729] transition-all duration-200 group/child cursor-pointer touch-manipulation"
+                        >
+                          <div className="min-w-0">
+                            <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-400 block">
+                              Case Study {idx + 1}
+                            </span>
+                            <div className="text-sm font-bold text-white group-hover/child:text-brand-cyan transition-colors font-heading truncate mt-0.5">
+                              {child.client}
+                            </div>
+                            <p className="text-xs text-slate-400 line-clamp-2 mt-0.5 leading-relaxed">
+                              {child.title}
+                            </p>
+                          </div>
+                          <span className="w-7 h-7 rounded-full bg-white/5 group-hover/child:bg-brand-cyan group-hover/child:text-[#07111D] flex items-center justify-center flex-shrink-0 transition-all">
+                            <ArrowRight className="w-3.5 h-3.5 group-hover/child:translate-x-0.5 transition-transform" />
                           </span>
-                        </div>
+                        </Link>
                       ))}
                     </div>
-
-                    {/* Bottom Link indicator */}
-                    <div className="flex items-center justify-between pt-3 border-t border-white/5 text-xs">
-                      <span className="text-slate-400 group-hover:text-slate-200 transition-colors">
-                        View Complete Case Study
-                      </span>
-                      <span className="w-7 h-7 rounded-full bg-white/5 group-hover:bg-brand-cyan group-hover:text-[#07111D] flex items-center justify-center transition-all">
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                      </span>
-                    </div>
-                  </div>
+                  )}
                 </div>
-              </Link>
-            ))}
+              );
+            })}
           </div>
 
           {/* Facility Energy Audit Banner */}

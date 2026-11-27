@@ -5,7 +5,6 @@ import Link from "next/link";
 import { 
   Briefcase, 
   MapPin, 
-  Building2, 
   TrendingUp, 
   ArrowRight, 
   Cpu, 
@@ -13,8 +12,7 @@ import {
   CheckCircle2, 
   Train, 
   Film, 
-  Factory, 
-  Hospital 
+  Factory 
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -75,34 +73,6 @@ const projectsList = [
     outcome: "Eliminated unplanned kiln stoppages and achieved 12% power factor correction optimization.",
     imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
     caseStudyId: "ultratech-cement"
-  },
-  {
-    id: "global-hospital",
-    title: "Global Multispeciality Hospital",
-    industry: "Healthcare & Critical Facilities",
-    location: "Vadodara, Gujarat",
-    icon: Hospital,
-    challenge: "Strict OT room air pressurization and indoor air quality standards with high uninterrupted power costs.",
-    solution: "Integrated building management and smart energy meters with automated emergency power backup supervision.",
-    scope: "Full-facility environmental monitoring covering 6 Operation Theaters and 120 Intensive Care beds.",
-    technology: ["Differential Pressure Sensors", "BMS Integration", "UPS Health Monitor", "Real-Time Telemetry"],
-    outcome: "100% compliance with NABH surgical standards and 14% overall electrical utility optimization.",
-    imageUrl: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=80",
-    caseStudyId: "global-hospital"
-  },
-  {
-    id: "dlf-cybercity",
-    title: "DLF CyberCity Tech Park",
-    industry: "Commercial Office Real Estate",
-    location: "Gurugram, NCR",
-    icon: Building2,
-    challenge: "Fragmented sub-metering and excessive lighting/chiller runtimes during off-hours across multi-tenant corporate towers.",
-    solution: "Centralized cloud BMS aggregating 200+ smart energy meters with automated scheduled chiller modulation.",
-    scope: "2 commercial towers with over 600,000 sq. ft. of prime office space.",
-    technology: ["Smart IoT Energy Meters", "Chiller Plant Automation", "Cloud Multi-Tenant Portal"],
-    outcome: "18% average peak-hour demand reduction and automated monthly tenant utility reporting.",
-    imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
-    caseStudyId: "dlf-cybercity"
   }
 ];
 

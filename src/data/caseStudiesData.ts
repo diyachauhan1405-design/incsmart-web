@@ -612,6 +612,36 @@ export const caseStudiesList: CaseStudyData[] = [
   }
 ];
 
+export interface CaseStudyGroup {
+  id: string;
+  category: string;
+  name: string;
+  children: CaseStudyData[];
+}
+
+export const caseStudyGroups: CaseStudyGroup[] = [
+  {
+    id: "cinema",
+    category: "cinema",
+    name: "Cinemas & Entertainment",
+    children: caseStudiesList.filter(
+      (study) => study.slug === "rajhans-cinemas" || study.slug === "pvr-inox"
+    ),
+  },
+  {
+    id: "infrastructure",
+    category: "infrastructure",
+    name: "Rail & Infrastructure",
+    children: caseStudiesList.filter((study) => study.slug === "western-railway"),
+  },
+  {
+    id: "industrial",
+    category: "industrial",
+    name: "Heavy Manufacturing",
+    children: caseStudiesList.filter((study) => study.slug === "ultratech-cement"),
+  },
+];
+
 export function getCaseStudyBySlug(slug: string): CaseStudyData | undefined {
   return caseStudiesList.find((study) => study.slug === slug || study.id === slug);
 }

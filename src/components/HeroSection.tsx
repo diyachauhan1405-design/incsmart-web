@@ -157,7 +157,7 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
             {/* Tagline */}
             <div className="flex items-center space-x-3 min-w-0">
               <span className="w-8 h-[2px] bg-gradient-to-r from-brand-lime to-brand-cyan flex-shrink-0"></span>
-              <span className="text-[10px] font-semibold tracking-[0.15em] sm:tracking-[0.2em] text-[#06B6D4] uppercase leading-snug">
+              <span className="text-[11px] sm:text-xs font-semibold tracking-[0.14em] sm:tracking-[0.2em] text-cyan-400 uppercase leading-snug">
                 INTELLIGENT IOT & ENERGY MANAGEMENT
               </span>
             </div>

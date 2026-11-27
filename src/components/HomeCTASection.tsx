@@ -16,12 +16,12 @@ export default function HomeCTASection() {
           
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6">
             <Sparkles className="w-3.5 h-3.5 text-brand-lime" />
-            <span className="text-[10px] font-bold tracking-widest text-slate-300 uppercase">
+            <span className="text-[11px] sm:text-xs font-bold tracking-wider sm:tracking-widest text-slate-200 uppercase">
               Start Your Smart Infrastructure Journey
             </span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4 font-heading">
+          <h2 className="text-[1.65rem] sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4 font-heading">
             Ready to Cut Energy Costs & <br />
             <span className="text-gradient-cyan-lime font-bold">Automate Your Operations?</span>
           </h2>

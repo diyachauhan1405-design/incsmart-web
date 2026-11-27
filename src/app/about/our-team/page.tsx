@@ -258,8 +258,8 @@ export default function OurTeamPage() {
               {/* Left Column Content */}
               <div className="lg:col-span-5 flex flex-col space-y-6">
                 <div className="flex items-center space-x-3">
-                  <span className="w-8 h-[1.5px] bg-[#06B6D4]"></span>
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+                  <span className="w-8 h-[1.5px] bg-cyan-400"></span>
+                  <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
                     ABOUT IncSmart
                   </span>
                 </div>
@@ -303,7 +303,7 @@ export default function OurTeamPage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-blue/5 rounded-full blur-[120px] pointer-events-none"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
-              <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.18em] sm:tracking-[0.24em] text-blue-400 uppercase">
                 EXECUTIVE LEADERSHIP
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-heading">
@@ -385,7 +385,7 @@ export default function OurTeamPage() {
           <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
-              <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.18em] sm:tracking-[0.24em] text-blue-400 uppercase">
                 ENGINEERING HELP DESK
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-heading">
@@ -485,10 +485,10 @@ export default function OurTeamPage() {
             {/* Horizontal Journey — full width */}
             <div className="mb-16">
               <div className="text-center md:text-left mb-2">
-                <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+                <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
                   OUR JOURNEY
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-white mt-1 font-heading">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mt-1 font-heading">
                   Milestones & History
                 </h3>
                 <p className="text-xs text-slate-400 mt-2 max-w-xl md:max-w-none">
@@ -502,10 +502,10 @@ export default function OurTeamPage() {
             {/* Vision & Mission */}
             <div className="space-y-6">
               <div>
-                <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+                <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
                   VISION & MISSION
                 </span>
-                <h3 className="text-xl font-bold text-white mt-1 font-heading">Our Driving Goals</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mt-1 font-heading">Our Driving Goals</h3>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
@@ -545,7 +545,7 @@ export default function OurTeamPage() {
               {/* Left Column: What We Stand For (Core Values) */}
               <div className="lg:col-span-6 flex flex-col space-y-6">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-300 text-[10px] font-bold tracking-[0.2em] uppercase mb-2">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-300 text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase mb-2">
                     <Sparkles className="w-3 h-3 text-cyan-400" />
                     <span>CORE VALUES</span>
                   </div>
@@ -590,7 +590,7 @@ export default function OurTeamPage() {
               {/* Right Column: Our Competitive Edge */}
               <div className="lg:col-span-6 flex flex-col space-y-6">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-blue-500/30 bg-blue-950/40 text-blue-300 text-[10px] font-bold tracking-[0.2em] uppercase mb-2">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-blue-500/30 bg-blue-950/40 text-blue-300 text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase mb-2">
                     <Award className="w-3 h-3 text-blue-400" />
                     <span>WHY CHOOSE INCSMART?</span>
                   </div>
@@ -644,10 +644,10 @@ export default function OurTeamPage() {
               {/* Tech Flow list */}
               <div className="lg:col-span-6 flex flex-col space-y-6">
                 <div>
-                  <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
+                  <span className="text-[11px] sm:text-xs font-bold tracking-[0.18em] sm:tracking-[0.24em] text-blue-400 uppercase">
                     OUR TECHNOLOGY PLATFORM
                   </span>
-                  <h3 className="text-xl font-bold text-white mt-1 font-heading">Smart Telemetry Flow</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mt-1 font-heading">Smart Telemetry Flow</h3>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -668,10 +668,10 @@ export default function OurTeamPage() {
               {/* Industries serve grid */}
               <div className="lg:col-span-6 flex flex-col space-y-6">
                 <div>
-                  <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
+                  <span className="text-[11px] sm:text-xs font-bold tracking-[0.18em] sm:tracking-[0.24em] text-blue-400 uppercase">
                     INDUSTRIES WE SERVE
                   </span>
-                  <h3 className="text-xl font-bold text-white mt-1 font-heading">Tailored Solutions</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mt-1 font-heading">Tailored Solutions</h3>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -699,10 +699,10 @@ export default function OurTeamPage() {
               {/* Achievements Column */}
               <div className="lg:col-span-6 flex flex-col space-y-6">
                 <div>
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+                  <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
                     ACHIEVEMENTS
                   </span>
-                  <h3 className="text-xl font-bold text-white mt-1 font-heading">Proven Track Record</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mt-1 font-heading">Proven Track Record</h3>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -724,10 +724,10 @@ export default function OurTeamPage() {
               {/* Trusted Brands Column */}
               <div className="lg:col-span-6 flex flex-col space-y-6">
                 <div>
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#06B6D4] uppercase">
+                  <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-cyan-400 uppercase">
                     TRUSTED BY LEADING ORGANISATIONS
                   </span>
-                  <h3 className="text-xl font-bold text-white mt-1 font-heading">Enterprise Partners</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mt-1 font-heading">Enterprise Partners</h3>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -752,12 +752,12 @@ export default function OurTeamPage() {
               <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
                 <div className="flex flex-col space-y-4 max-w-2xl text-left">
                   <div className="flex items-center space-x-3">
-                    <span className="w-8 h-[2px] bg-[#3b82f6]"></span>
-                    <span className="text-[10px] font-bold tracking-[0.2em] text-brand-blue uppercase">
+                    <span className="w-8 h-[2px] bg-blue-400"></span>
+                    <span className="text-[11px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] text-blue-400 uppercase">
                       Ready to Build
                     </span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading">
                     Smarter Infrastructure?
                   </h2>
                   <p className="text-sm text-slate-400 leading-relaxed">
