@@ -17,7 +17,7 @@ interface DropdownItem {
   name: string;
   href: string;
   description: string;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<{ className?: string }>;
   badge?: string;
 }
 
@@ -30,6 +30,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { name: "Solutions", href: "/solutions" },
+  { name: "IoT vs. BMS", href: "/iot-vs-bms" },
   { name: "Projects", href: "/projects" },
   { name: "Case Studies", href: "/case-studies" },
   { name: "About Us", href: "/about/our-team" },
@@ -127,7 +128,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-4 xl:space-x-8 items-center ml-auto mr-4 lg:mr-8">
+          <nav className="hidden lg:flex space-x-4 xl:space-x-7 items-center ml-auto mr-4 lg:mr-8">
             {navItems.map((item) => {
               if (item.isDropdown && item.dropdownItems) {
                 return (

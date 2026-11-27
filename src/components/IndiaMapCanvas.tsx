@@ -13,29 +13,41 @@ const DARK_TILE_URL =
 const DARK_TILE_ATTRIBUTION =
   '&copy; <a href="https://www.esri.com/">Esri</a> &copy; OpenStreetMap';
 
-/** Geographic extent of India — SW & NE corners */
-const INDIA_SW: [number, number] = [6.8, 68.0];
+/** Geographic extent of complete India (including Ladakh & J&K) — SW & NE corners */
+const INDIA_SW: [number, number] = [6.7, 68.0];
 const INDIA_NE: [number, number] = [37.2, 97.5];
 
 /** Padded bounds so the full country is visible with balanced margins */
 function getFullIndiaBounds() {
-  return L.latLngBounds(INDIA_SW, INDIA_NE).pad(0.08);
+  return L.latLngBounds(INDIA_SW, INDIA_NE).pad(0.03);
 }
 
 function FitFullIndiaView({ compact }: { compact: boolean }) {
   const map = useMap();
 
   useEffect(() => {
-    // Invalidate size once layout stabilizes so pins are never clustered
-    const timer = setTimeout(() => {
+    const fit = () => {
       map.invalidateSize();
       map.fitBounds(getFullIndiaBounds(), {
-        padding: compact ? [15, 15] : [25, 25],
+        paddingTopLeft: compact ? [14, 24] : [24, 24],
+        paddingBottomRight: compact ? [14, 72] : [24, 24],
         animate: false,
       });
-    }, 150);
+    };
 
-    return () => clearTimeout(timer);
+    // Invalidate size once layout stabilizes and whenever container resizes
+    const timer = setTimeout(fit, 150);
+    const container = map.getContainer();
+    const observer =
+      typeof ResizeObserver !== "undefined" ? new ResizeObserver(() => fit()) : null;
+    if (observer) {
+      observer.observe(container);
+    }
+
+    return () => {
+      clearTimeout(timer);
+      observer?.disconnect();
+    };
   }, [map, compact]);
 
   return null;
@@ -78,8 +90,13 @@ export default function IndiaMapCanvas({
 
   return (
     <MapContainer
-      center={[22.5, 79.5]}
-      zoom={compact ? 4 : 4.5}
+      bounds={indiaBounds}
+      boundsOptions={{
+        paddingTopLeft: compact ? [14, 24] : [24, 24],
+        paddingBottomRight: compact ? [14, 72] : [24, 24],
+      }}
+      minZoom={3}
+      maxBounds={indiaBounds.pad(0.4)}
       zoomSnap={0.1}
       scrollWheelZoom={false}
       zoomControl={!compact}
@@ -89,15 +106,15 @@ export default function IndiaMapCanvas({
     >
       <TileLayer url={DARK_TILE_URL} attribution={DARK_TILE_ATTRIBUTION} />
       
-      {/* Visual outline and subtle fill for the territory of India */}
+      {/* Official full-India outline (including complete Jammu & Kashmir and Ladakh) */}
       <GeoJSON
-        data={indiaGeoData as any}
+        data={indiaGeoData as GeoJSON.GeoJsonObject}
         style={{
-          fillColor: "#00E5FF",
-          fillOpacity: 0.05,
+          fillColor: "#0a2035",
+          fillOpacity: 0.85,
           color: "#00E5FF",
-          weight: 1.6,
-          opacity: 0.75,
+          weight: 1.8,
+          opacity: 0.85,
           dashArray: "4, 6",
         }}
       />
