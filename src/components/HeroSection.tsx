@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -20,26 +19,6 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
-  const [savingsVal, setSavingsVal] = useState(20);
-  const [powerVal, setPowerVal] = useState(1450);
-
-  // Simple telemetry updates
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSavingsVal((prev) => {
-        const change = Math.random() > 0.5 ? 1 : -1;
-        const newVal = prev + change;
-        return newVal >= 18 && newVal <= 22 ? newVal : prev;
-      });
-      setPowerVal((prev) => {
-        const change = Math.floor(Math.random() * 20) - 10;
-        return prev + change;
-      });
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   if (isLoggedIn) {
     return (
       <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 bg-[#07111D] overflow-hidden bg-grid-pattern">
@@ -271,7 +250,7 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
 
             {/* Repositioned Live Overview Dashboard - Full-width strip underneath the enlarged video */}
             <div className="w-full">
-              <TelemetryDashboard savingsVal={savingsVal} powerVal={powerVal} />
+              <TelemetryDashboard />
             </div>
           </div>
 
@@ -281,12 +260,7 @@ export default function HeroSection({ isLoggedIn = false }: HeroSectionProps) {
   );
 }
 
-interface TelemetryProps {
-  savingsVal: number;
-  powerVal: number;
-}
-
-function TelemetryDashboard({ savingsVal, powerVal }: TelemetryProps) {
+function TelemetryDashboard() {
   return (
     <div className="w-full bg-[#081325]/85 border border-white/10 rounded-2xl p-3.5 sm:p-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md">
       <div className="flex items-center justify-between mb-2.5">
@@ -302,11 +276,11 @@ function TelemetryDashboard({ savingsVal, powerVal }: TelemetryProps) {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
-        {/* Metric 1: Energy Savings */}
+        {/* Metric 1: System Uptime */}
         <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-lime/20 transition-all duration-300 min-h-[95px]">
           <div>
-            <span className="text-[9px] text-slate-400 font-semibold tracking-wider">Energy Savings</span>
-            <div className="text-xl font-bold text-brand-lime mt-0.5 font-heading">{savingsVal}%</div>
+            <span className="text-[10px] text-[#8293AA] font-semibold tracking-wider">System Uptime</span>
+            <div className="text-xl font-bold text-brand-lime mt-0.5 font-heading">99.9%</div>
           </div>
           <div className="h-5 my-1 relative">
             <svg className="w-full h-full" viewBox="0 0 100 30" preserveAspectRatio="none">
@@ -329,20 +303,18 @@ function TelemetryDashboard({ savingsVal, powerVal }: TelemetryProps) {
               />
             </svg>
           </div>
-          <div className="flex items-center text-[8px] text-slate-400 select-none">
-            <span className="text-brand-lime font-bold mr-1 flex items-center">
-              ▲ 18%
-            </span>
-            <span>vs Last Month</span>
+          <div className="flex items-center text-[9px] text-[#8293AA] select-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-lime mr-1 animate-pulse"></span>
+            <span>24×7 Cloud NOC</span>
           </div>
         </div>
 
-        {/* Metric 2: Power Consumption */}
+        {/* Metric 2: Energy Saved */}
         <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-cyan/20 transition-all duration-300 min-h-[95px]">
           <div>
-            <span className="text-[9px] text-slate-400 font-semibold tracking-wider">Power Demand</span>
+            <span className="text-[10px] text-[#8293AA] font-semibold tracking-wider">Energy Saved</span>
             <div className="text-xl font-bold text-brand-cyan mt-0.5 font-heading">
-              {powerVal} <span className="text-[8px] text-slate-400 font-normal">kW</span>
+              1,866 <span className="text-[9px] text-[#8293AA] font-normal">kWh</span>
             </div>
           </div>
           <div className="h-5 my-1 relative">
@@ -366,22 +338,22 @@ function TelemetryDashboard({ savingsVal, powerVal }: TelemetryProps) {
               />
             </svg>
           </div>
-          <div className="flex items-center text-[8px] text-slate-400 select-none">
-            <span className="w-1 h-1 rounded-full bg-brand-cyan mr-1 animate-pulse shadow-[0_0_6px_#06B6D4]"></span>
-            <span>Continuous Ingest</span>
+          <div className="flex items-center text-[9px] text-[#8293AA] select-none">
+            <span className="text-brand-cyan font-bold mr-1">18.74%</span>
+            <span>Verified Audit</span>
           </div>
         </div>
 
         {/* Metric 3: HVAC Health */}
         <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-lime/20 transition-all duration-300 min-h-[95px]">
           <div>
-            <span className="text-[9px] text-slate-400 font-semibold tracking-wider">HVAC Health</span>
+            <span className="text-[10px] text-[#8293AA] font-semibold tracking-wider">HVAC Health</span>
             <div className="text-xl font-bold text-brand-lime mt-0.5 font-heading">98%</div>
           </div>
           <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden my-2">
             <div className="bg-gradient-to-r from-emerald-500 to-brand-lime h-full rounded-full w-[98%]" />
           </div>
-          <div className="flex items-center text-[8px] text-slate-400 select-none">
+          <div className="flex items-center text-[9px] text-[#8293AA] select-none">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-lime mr-1 animate-pulse"></span>
             <span>Chillers Calibrated</span>
           </div>
@@ -390,13 +362,13 @@ function TelemetryDashboard({ savingsVal, powerVal }: TelemetryProps) {
         {/* Metric 4: Carbon Reduction */}
         <div className="bg-[#0c1a2d]/80 border border-white/5 rounded-xl p-2.5 flex flex-col justify-between hover:border-brand-cyan/20 transition-all duration-300 min-h-[95px]">
           <div>
-            <span className="text-[9px] text-slate-400 font-semibold tracking-wider">Carbon Reduction</span>
+            <span className="text-[10px] text-[#8293AA] font-semibold tracking-wider">Carbon Reduction</span>
             <div className="text-xl font-bold text-brand-cyan mt-0.5 font-heading">18%</div>
           </div>
           <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden my-2">
             <div className="bg-gradient-to-r from-cyan-500 to-teal-400 h-full rounded-full w-[78%]" />
           </div>
-          <div className="flex items-center text-[8px] text-slate-400 select-none">
+          <div className="flex items-center text-[9px] text-[#8293AA] select-none">
             <span className="text-brand-cyan font-bold mr-1 flex items-center">
               ▲ 15%
             </span>

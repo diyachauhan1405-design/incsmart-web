@@ -67,22 +67,24 @@ const steps: StepItem[] = [
 
 export default function TelemetryFlowSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const flowRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0.2);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  // Scroll listener to calculate progress smoothly through the section
+  // Scroll listener to calculate progress smoothly across both desktop and mobile flows
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
+      const target = flowRef.current ?? sectionRef.current;
+      if (!target) return;
+      const rect = target.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Starts increasing as the section enters upper 75% of viewport
-      const startOffset = windowHeight * 0.75;
-      const endOffset = windowHeight * 0.25;
-      const totalDistance = rect.height + (startOffset - endOffset);
-      const scrolledDistance = startOffset - rect.top;
+      // Start as the flow enters the lower viewport; complete while Step 6 is still clearly visible
+      const startTop = windowHeight * 0.88;
+      const endBottom = windowHeight * 0.72;
+      const totalDistance = Math.max(rect.height + (startTop - endBottom), 1);
+      const scrolledDistance = startTop - rect.top;
 
       const rawProgress = scrolledDistance / totalDistance;
       const clamped = Math.min(Math.max(rawProgress, 0), 1);
@@ -91,9 +93,13 @@ export default function TelemetryFlowSection() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   // Determine current active step (0 to 5)
@@ -142,6 +148,7 @@ export default function TelemetryFlowSection() {
           </div>
         </div>
 
+        <div ref={flowRef}>
         {/* ========================================================
             DESKTOP HORIZONTAL ANIMATED FLOW (lg and above)
             ======================================================== */}
@@ -322,14 +329,14 @@ export default function TelemetryFlowSection() {
           {/* Animated Filled Vertical Progress Line */}
           <div 
             className="absolute top-6 left-7 w-[3px] rounded-full z-0 bg-gradient-to-b from-brand-blue via-cyan-400 to-emerald-400 shadow-[0_0_15px_rgba(6,182,212,0.85)] transition-all duration-300 ease-out"
-            style={{ height: `${Math.min(100, scrollProgress * 100)}%` }}
+            style={{ height: `calc((100% - 3rem) * ${Math.min(1, scrollProgress)})` }}
           />
 
           {/* Traveling Photon on Mobile */}
           {scrollProgress > 0.05 && (
             <div 
               className="absolute left-7 w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_12px_#22d3ee] -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none transition-all duration-300"
-              style={{ top: `calc(1.5rem + ${Math.min(94, scrollProgress * 94)}%)` }}
+              style={{ top: `calc(1.5rem + (100% - 3rem) * ${Math.min(1, scrollProgress)})` }}
             >
               <span className="absolute inset-0 rounded-full bg-cyan-400 animate-ping opacity-75" />
             </div>
@@ -400,6 +407,7 @@ export default function TelemetryFlowSection() {
               );
             })}
           </div>
+        </div>
         </div>
 
       </div>

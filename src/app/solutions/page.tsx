@@ -491,42 +491,15 @@ export default function SolutionsPage() {
         {/* 3. TECHNOLOGY PLATFORM FLOW */}
         <TelemetryFlowSection />
 
-        {/* 5. PROJECTS CTA PER SECTION 24 & 27 OF BRIEF */}
-        <section className="py-16 border-b border-white/5 bg-[#081325]/35 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-[#0b1a2d] to-[#081325] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-              <div className="space-y-2 text-center md:text-left">
-                <span className="text-[10px] font-bold tracking-[0.25em] text-brand-cyan uppercase">
-                  VERIFIED IMPLEMENTATIONS
-                </span>
-                <h2 className="text-xl sm:text-2xl font-bold text-white font-heading">
-                  See How We Deploy These Solutions in the Real World
-                </h2>
-                <p className="text-xs sm:text-sm text-slate-400 max-w-xl">
-                  Explore delivered implementations across PVR INOX, Western Railway, UltraTech Cement, and healthcare facilities.
-                </p>
-              </div>
-
-              <Link
-                href="/projects"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full text-xs font-bold text-slate-900 bg-gradient-to-r from-brand-lime to-brand-cyan hover:opacity-95 active:scale-95 transition-all shadow-md flex-shrink-0"
-              >
-                <span>Explore Our Projects</span>
-                <ArrowRight className="w-3.5 h-3.5 ml-2" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* 6. WHY CHOOSE IncSmart */}
-        <section className="py-20 bg-gradient-to-b from-[#081325] to-[#07111D] relative">
+        {/* 4. WHY CHOOSE IncSmart */}
+        <section className="py-20 border-t border-white/5 bg-gradient-to-b from-[#081325] to-[#07111D] relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <span className="text-[10px] font-bold tracking-[0.25em] text-brand-blue uppercase">
                 WHY CHOOSE IncSmart?
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2 font-heading">
-                Decades of Engineering Excellence
+                Decade of Engineering Excellence
               </h2>
             </div>
 
